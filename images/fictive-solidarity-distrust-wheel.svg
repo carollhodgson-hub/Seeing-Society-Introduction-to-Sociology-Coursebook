@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-labelledby="title desc">
+  <title id="title">The fictive solidarity power and distrust wheel</title>
+  <desc id="desc">A six-step clockwise cycle moves from need for belonging to strategic validation, unverified repetition, apparent solidarity, manipulation revealed, and widening distrust.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#9b4d3d"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#183247" flood-opacity=".18"/></filter>
+    <style>
+      .node{stroke:#183247;stroke-width:3;filter:url(#shadow)}
+      .arrow{fill:none;stroke:#9b4d3d;stroke-width:8;stroke-linecap:round;marker-end:url(#arrow)}
+      .num{font:800 27px Arial,sans-serif;fill:#fff;text-anchor:middle}
+      .head{font:800 23px Arial,sans-serif;fill:#183247;text-anchor:middle}
+      .copy{font:500 18px Arial,sans-serif;fill:#284759;text-anchor:middle}
+      .centerHead{font:800 32px Georgia,serif;fill:#fff;stroke:#0b2730;stroke-width:6px;paint-order:stroke fill;text-anchor:middle;letter-spacing:.5px}
+      .centerCopy{font:700 20px Arial,sans-serif;fill:#fff;stroke:#0b2730;stroke-width:4px;paint-order:stroke fill;text-anchor:middle}
+    </style>
+  </defs>
+  <rect width="1400" height="1000" rx="36" fill="#f7f3e8"/>
+  <path class="arrow" d="M535 145 C635 90 765 90 865 145"/>
+  <path class="arrow" d="M1125 260 C1240 285 1300 345 1305 395"/>
+  <path class="arrow" d="M1305 590 C1295 670 1220 735 1125 765"/>
+  <path class="arrow" d="M865 855 C765 910 635 910 535 855"/>
+  <path class="arrow" d="M275 765 C180 735 105 670 95 590"/>
+  <path class="arrow" d="M95 395 C100 345 160 285 275 260"/>
+  <circle cx="700" cy="500" r="160" fill="#173f4b" filter="url(#shadow)"/>
+  <text x="700" y="458" class="centerHead">POWER AND</text>
+  <text x="700" y="500" class="centerHead">FICTIVE SOLIDARITY</text>
+  <text x="700" y="548" class="centerCopy">The feeling of connection is real—</text>
+  <text x="700" y="578" class="centerCopy">but its basis may be manipulated.</text>
+  <g transform="translate(160 105)"><rect class="node" width="360" height="165" rx="24" fill="#dcefe9"/><circle cx="38" cy="38" r="24" fill="#397b73"/><text x="38" y="47" class="num">1</text><text x="205" y="46" class="head">Need for belonging</text><text x="205" y="88" class="copy">Isolation, uncertainty, or weak</text><text x="205" y="116" class="copy">institutional connection</text></g>
+  <g transform="translate(880 105)"><rect class="node" width="360" height="165" rx="24" fill="#fff0bd"/><circle cx="38" cy="38" r="24" fill="#a87917"/><text x="38" y="47" class="num">2</text><text x="205" y="46" class="head">Strategic validation</text><text x="205" y="88" class="copy">A powerful actor mirrors identity,</text><text x="205" y="116" class="copy">fear, anger, or values</text></g>
+  <g transform="translate(1010 410)"><rect class="node" width="360" height="180" rx="24" fill="#f7d9d1"/><circle cx="38" cy="38" r="24" fill="#a65b4b"/><text x="38" y="47" class="num">3</text><text x="205" y="46" class="head">Unverified repetition</text><text x="205" y="88" class="copy">Peers, influencers, bots, and</text><text x="205" y="116" class="copy">algorithms make a claim familiar</text><text x="205" y="144" class="copy">and apparently widely accepted</text></g>
+  <g transform="translate(880 775)"><rect class="node" width="360" height="165" rx="24" fill="#e9e0f5"/><circle cx="38" cy="38" r="24" fill="#70578b"/><text x="38" y="47" class="num">4</text><text x="205" y="46" class="head">Apparent solidarity</text><text x="205" y="88" class="copy">Agreement feels like trust, mutual</text><text x="205" y="116" class="copy">knowledge, and group loyalty</text></g>
+  <g transform="translate(160 775)"><rect class="node" width="360" height="165" rx="24" fill="#f8d8d8"/><circle cx="38" cy="38" r="24" fill="#874b4b"/><text x="38" y="47" class="num">5</text><text x="205" y="46" class="head">Manipulation revealed</text><text x="205" y="88" class="copy">Hidden incentives, false claims,</text><text x="205" y="116" class="copy">or unequal benefits become visible</text></g>
+  <g transform="translate(30 410)"><rect class="node" width="360" height="180" rx="24" fill="#dce6ea"/><circle cx="38" cy="38" r="24" fill="#315d72"/><text x="38" y="47" class="num">6</text><text x="205" y="46" class="head">Widening distrust</text><text x="205" y="88" class="copy">Trust in leaders, institutions,</text><text x="205" y="116" class="copy">evidence, and other people falls—</text><text x="205" y="144" class="copy">renewing the need for validation</text></g>
+</svg>
