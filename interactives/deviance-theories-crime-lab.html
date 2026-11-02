@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SOC-210 Deviance Theories Crime Lab</title>
+<style>
+  :root{
+    --navy:#26384f; --purple:#6d597a; --blue:#4f83b8; --teal:#4f9a9a; --mint:#e9f8f3; --cream:#fff8e8; --rose:#fff0f3; --gold:#d6a83f; --ink:#223044; --white:#ffffff; --soft:#f7fbff; --danger:#b23a48; --green:#2d6a4f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#f5f8fc,#eef4fa);color:var(--ink);line-height:1.65}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px}
+  .hero{background:linear-gradient(135deg,var(--navy),var(--purple));border-radius:28px;padding:34px;color:white;text-align:center;box-shadow:0 18px 35px rgba(38,56,79,.22);position:relative;overflow:hidden}
+  .hero:before{content:"⚖️ 🕵️ 🧩 🚔 🏷️";position:absolute;top:18px;left:20px;right:20px;opacity:.12;font-size:54px;letter-spacing:14px;white-space:nowrap}
+  .hero h1{font-size:clamp(32px,5vw,58px);margin:8px 0 8px;line-height:1.05}
+  .hero p{font-size:20px;max-width:850px;margin:0 auto}
+  .badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:8px 16px;font-weight:bold;margin-bottom:12px}
+  .card{background:white;border:1px solid #d9e8f8;border-radius:24px;padding:26px;margin:24px 0;box-shadow:0 10px 24px rgba(38,56,79,.08)}
+  .card h2{margin-top:0;color:var(--navy);font-size:30px;line-height:1.2}
+  .intro{background:#f8fbff;border-left:8px solid var(--blue);border-radius:18px;padding:22px;font-size:18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:18px}
+  .mini{border-radius:18px;padding:20px;border:1px solid #dce8f6;background:#f9fcff;transition:.2s;min-height:150px}
+  .mini:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(38,56,79,.12)}
+  .mini h3{margin-top:0;color:var(--navy);font-size:22px}.mini p{margin-bottom:0}
+  .btn{cursor:pointer;border:0;border-radius:14px;padding:12px 16px;background:var(--navy);color:white;font-weight:bold;margin:6px 6px 6px 0;font-size:15px}
+  .btn:hover,.btn:focus{background:var(--purple)}
+  .btn.light{background:#eaf1fb;color:var(--navy);border:1px solid #cbdcf0}.btn.light:hover{background:#dce9f7}
+  .reveal{display:none;margin-top:14px;border-radius:16px;background:#f7fbff;border-left:6px solid var(--teal);padding:16px}
+  .reveal.show{display:block;animation:fade .25s ease-in}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}.tab{cursor:pointer;border:1px solid #c9d8eb;background:#edf4fd;color:var(--navy);border-radius:999px;padding:10px 14px;font-weight:bold}.tab.active{background:var(--navy);color:white}
+  .panel{display:none;background:#fbfdff;border:1px solid #dce8f6;border-radius:18px;padding:22px}.panel.active{display:block}
+  .flow{display:flex;align-items:stretch;gap:12px;flex-wrap:wrap;margin-top:18px}.step{flex:1 1 180px;background:#eef8ff;border:1px solid #cce3f7;border-radius:18px;padding:16px;text-align:center}.step .icon{font-size:34px}.arrow{align-self:center;font-size:28px;color:var(--blue)}
+  .split{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}.good{border-left:7px solid var(--green);background:#f0fbf4}.warning{border-left:7px solid var(--gold);background:#fff9ec}.danger{border-left:7px solid var(--danger);background:#fff3f4}
+  .meterBox{background:#f8fbff;border-radius:18px;border:1px solid #dce8f6;padding:20px}.meter{height:28px;background:#d9e4ef;border-radius:999px;overflow:hidden;border:1px solid #c8d9e8}.meterFill{height:100%;width:50%;background:linear-gradient(90deg,#67b99a,#f2cc8f,#b23a48);transition:.25s}.meterLabel{font-weight:bold;margin-top:10px}.checklist label{display:block;background:white;border:1px solid #d9e8f8;border-radius:14px;padding:10px;margin:8px 0;cursor:pointer}
+  details{background:#fbfdff;border:1px solid #dce8f6;border-radius:16px;padding:14px;margin:10px 0}summary{cursor:pointer;font-weight:bold;color:var(--navy);font-size:18px}
+  .quizChoice{display:block;width:100%;text-align:left;background:#fff;border:1px solid #d6e4f2;border-radius:14px;padding:12px;margin:8px 0;cursor:pointer}.quizChoice:hover{background:#eef6ff}.feedback{display:none;margin-top:8px;padding:12px;border-radius:14px;background:#eefaf2;border-left:6px solid var(--green)}
+  .note{background:linear-gradient(135deg,#fff8e8,#f5fbff);border:1px solid #ecd9a6;border-radius:20px;padding:22px;margin-top:18px}.small{font-size:14px;color:#536273}.footer{text-align:center;color:white;background:linear-gradient(135deg,var(--navy),var(--purple));border-radius:24px;padding:26px;margin:26px 0}
+  .pill{display:inline-block;border-radius:999px;padding:5px 10px;background:#edf4fd;color:var(--navy);font-weight:bold;margin:3px}.callout{font-size:19px;background:#f8fbff;border-left:7px solid var(--blue);border-radius:18px;padding:20px}.crimeType{background:#fff;border-top:8px solid var(--blue)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div class="badge">SOC-210 Interactive Mini-Chapter</div>
+    <h1>🕵️ Deviance Theories Crime Lab</h1>
+    <p>Investigate why people break norms, how society labels deviance, and why different theories explain crime in very different ways.</p>
+  </section>
+
+  <section class="card">
+    <h2>🔎 Opening Question: Why Do People Break Rules?</h2>
+    <div class="intro">Biologists, psychologists, and sociologists all study deviance, but they look in different places. This chapter focuses on the sociological question: <strong>What is happening around the person?</strong></div>
+    <div class="grid">
+      <div class="mini"><h3>🧬 Sociobiology</h3><p>Looks for explanations inside the body, including genetics, body type, or inherited traits.</p><button class="btn light" onclick="toggleReveal('bio')">Open example</button><div id="bio" class="reveal">Older theories sometimes claimed body type, XYY chromosomes, or intelligence explained criminality. Sociology is cautious about these claims because they often ignore social conditions.</div></div>
+      <div class="mini"><h3>🧠 Psychology</h3><p>Looks inside the individual mind, personality, coping patterns, trauma, or mental health.</p><button class="btn light" onclick="toggleReveal('psych')">Open example</button><div id="psych" class="reveal">Psychological explanations may focus on personality disorders, emotional distress, or individual coping. These can matter, but they still do not explain why deviance varies across groups, places, and time periods.</div></div>
+      <div class="mini"><h3>🌍 Sociology</h3><p>Looks outside the individual at socialization, groups, inequality, power, labels, opportunity, and culture.</p><button class="btn light" onclick="toggleReveal('soc')">Open example</button><div id="soc" class="reveal">Sociologists ask how families, schools, peer groups, neighborhoods, social class, subcultures, and institutions shape behavior.</div></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>⚠️ Deviance vs. Crime</h2>
+    <div class="split">
+      <div class="mini warning"><h3>⚠️ Deviance</h3><p>Behavior that violates social norms and causes a social reaction.</p><p><strong>Example:</strong> loudly singing in a quiet library.</p></div>
+      <div class="mini danger"><h3>🚔 Crime</h3><p>A violation of norms that have been written into law.</p><p><strong>Example:</strong> robbery, assault, theft, or fraud.</p></div>
+    </div>
+    <div class="note"><strong>Key idea:</strong> Not all deviance is criminal, and not all crimes are treated with the same level of social disapproval.</div>
+  </section>
+
+  <section class="card">
+    <h2>🧠 Thomas Szasz, Medicalization, and Mental Health</h2>
+    <div class="callout">Medicalization of deviance means behavior once seen as sinful, strange, or criminal may be redefined as a medical problem requiring treatment.</div>
+    <div class="tabs">
+      <button class="tab active" onclick="openPanel(event,'szasz')">Szasz's Argument</button>
+      <button class="tab" onclick="openPanel(event,'balanced')">Balanced View</button>
+      <button class="tab" onclick="openPanel(event,'doom')">Doom Scrolling</button>
+    </div>
+    <div id="szasz" class="panel active">
+      <h3>👨‍⚕️ Szasz's Concern</h3>
+      <p>Thomas Szasz argued that some behaviors labeled as mental illness may actually reflect social problems, stressful life experiences, coping behaviors, or behaviors society finds unacceptable. His argument has some merit when it reminds us not to ignore the social world around the person.</p>
+      <p><strong>Sociological question:</strong> If social conditions change and symptoms improve, how much of the problem was created or intensified by the environment?</p>
+    </div>
+    <div id="balanced" class="panel">
+      <h3>⚖️ A Balanced Sociological View</h3>
+      <p>Sociology does not deny biology, psychology, or medical treatment. Instead, sociology adds another layer: relationships, stress, media, inequality, institutions, stigma, and coping behaviors can shape well-being.</p>
+      <p><span class="pill">Biology matters</span><span class="pill">Treatment can help</span><span class="pill">Social support matters</span><span class="pill">Coping behavior matters</span></p>
+    </div>
+    <div id="doom" class="panel">
+      <h3>📱 The Doom Scrolling Connection</h3>
+      <p>Many students recognize this pattern: news alerts all day, scrolling crisis stories before bed, online conflict, and constant exposure to frightening information. Social science research has linked heavy exposure to distressing media and doom scrolling with worse mood, stress, anxiety, rumination, and sleep problems.</p>
+      <p><strong>Changing coping behavior can change the environment:</strong> turning off news alerts, limiting doom scrolling, checking news at planned times, taking screen breaks, connecting with others, and improving sleep routines may reduce stress.</p>
+    </div>
+
+    <div class="meterBox" style="margin-top:20px">
+      <h3>🎮 Build Your Mental Health Environment</h3>
+      <p>Select habits and watch the stress meter change. This is not medical advice; it is a sociology example showing how environments and coping behaviors matter.</p>
+      <div class="checklist">
+        <label><input type="checkbox" data-stress="18" onchange="updateStress()"> News alerts on all day</label>
+        <label><input type="checkbox" data-stress="20" onchange="updateStress()"> Doom scrolling before bed</label>
+        <label><input type="checkbox" data-stress="15" onchange="updateStress()"> Constant online conflict</label>
+        <label><input type="checkbox" data-stress="-15" onchange="updateStress()"> Turn off non-urgent alerts</label>
+        <label><input type="checkbox" data-stress="-15" onchange="updateStress()"> Check news at planned times only</label>
+        <label><input type="checkbox" data-stress="-14" onchange="updateStress()"> Sleep routine and screen break before bed</label>
+        <label><input type="checkbox" data-stress="-12" onchange="updateStress()"> Talk with supportive people</label>
+      </div>
+      <div class="meter"><div id="stressFill" class="meterFill"></div></div>
+      <div id="stressLabel" class="meterLabel">Stress Environment: Moderate</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>👥 Differential Association Theory</h2>
+    <p>Edwin Sutherland argued that people learn deviance or conformity through the groups they associate with. Groups can teach skills, values, attitudes, and justifications.</p>
+    <button class="btn" onclick="toggleReveal('dat')">Show the simple formula</button>
+    <div id="dat" class="reveal"><strong>Close relationships + repeated exposure + learned values = increased likelihood of similar behavior.</strong><br>People can learn how to deviate and learn to value deviance.</div>
+  </section>
+
+  <section class="card">
+    <h2>🏷️ Labeling Theory Simulator</h2>
+    <p>Labeling theory focuses on how labels affect self-concept and how others treat a person.</p>
+    <div class="flow">
+      <div class="step"><div class="icon">🙂</div><strong>Primary Deviance</strong><p>Rule-breaking before being caught or publicly labeled.</p></div><div class="arrow">➡️</div>
+      <div class="step"><div class="icon">🏷️</div><strong>Label Applied</strong><p>Others define the person as deviant.</p></div><div class="arrow">➡️</div>
+      <div class="step"><div class="icon">🪞</div><strong>Self-Concept</strong><p>The label may become part of identity.</p></div><div class="arrow">➡️</div>
+      <div class="step"><div class="icon">🔁</div><strong>Secondary Deviance</strong><p>Continued deviance after the label.</p></div>
+    </div>
+    <div class="note">Labels like “addict,” “criminal,” “loser,” or “troublemaker” can become self-fulfilling prophecies when people are treated as if that label is their identity.</div>
+  </section>
+
+  <section class="card">
+    <h2>🎭 Techniques of Neutralization</h2>
+    <p>Sykes and Matza explained that people may reject negative labels by justifying behavior. Click each technique.</p>
+    <details><summary>🚫 Denial of Responsibility</summary><p>“It was not really my fault.” The person claims outside forces caused the behavior.</p></details>
+    <details><summary>💥 Denial of Injury</summary><p>“No one was really hurt.” The person minimizes the harm.</p></details>
+    <details><summary>😡 Denial of a Victim</summary><p>“They deserved it.” The person claims the target was not a true victim.</p></details>
+    <details><summary>👨‍👩‍👧 Appeal to Higher Loyalties</summary><p>“I did it for my family/friends/group.” Loyalty to one group is used to justify violating wider rules.</p></details>
+    <details><summary>👉 Condemnation of the Condemners</summary><p>“The people judging me are worse.” Attention shifts to the supposed hypocrisy of critics.</p></details>
+    <div class="quizBlock">
+      <h3>Quick Check</h3>
+      <p>A person says, “Stealing from that huge company does not matter because they will not even notice.” Which technique is this?</p>
+      <button class="quizChoice" onclick="showFeedback('nf1')">Denial of injury</button>
+      <button class="quizChoice" onclick="showFeedback('nf2')">Appeal to higher loyalties</button>
+      <button class="quizChoice" onclick="showFeedback('nf3')">Denial of responsibility</button>
+      <div id="nf1" class="feedback">Correct. The person is minimizing the harm.</div>
+      <div id="nf2" class="feedback">Not this time. Appeal to higher loyalties would justify behavior as loyalty to family, friends, or a group.</div>
+      <div id="nf3" class="feedback">Not this time. Denial of responsibility would sound more like “I had no choice.”</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>💰 Merton's Strain Theory</h2>
+    <div class="callout">Strain theory argues that deviance may occur when society teaches people to desire cultural goals, but not everyone has equal access to legitimate ways to achieve them.</div>
+    <div class="flow">
+      <div class="step"><div class="icon">🏆</div><strong>Cultural Goals</strong><p>Money, status, success, power.</p></div><div class="arrow">➡️</div>
+      <div class="step"><div class="icon">🎓</div><strong>Institutionalized Means</strong><p>Education, jobs, legal opportunities.</p></div><div class="arrow">➡️</div>
+      <div class="step"><div class="icon">🚧</div><strong>Blocked Access</strong><p>Inequality limits opportunity.</p></div><div class="arrow">➡️</div>
+      <div class="step"><div class="icon">⚡</div><strong>Strain</strong><p>Frustration may lead to adaptation.</p></div>
+    </div>
+    <div class="grid">
+      <div class="mini good"><h3>✅ Conformity</h3><p>Accept goals and use legitimate means.</p></div>
+      <div class="mini warning"><h3>💵 Innovation</h3><p>Accept goals but use illegitimate means.</p></div>
+      <div class="mini"><h3>📋 Ritualism</h3><p>Give up goals but continue following rules.</p></div>
+      <div class="mini"><h3>🚶 Retreatism</h3><p>Reject goals and legitimate means.</p></div>
+      <div class="mini danger"><h3>🔥 Rebellion</h3><p>Replace goals and means with new ones.</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>🔒 Control Theory and Social Bonds</h2>
+    <p>Control theory begins with a different assumption: people may be tempted toward deviance, but controls and social bonds restrain behavior.</p>
+    <div class="split">
+      <div class="mini good"><h3>🧠 Inner Controls</h3><p>Morality, integrity, fear of punishment, desire to be good, and self-control.</p></div>
+      <div class="mini good"><h3>👥 Outer Controls</h3><p>Family, friends, schools, police, jobs, and community expectations.</p></div>
+    </div>
+    <h3>Hirschi's Social Bonds</h3>
+    <div class="grid">
+      <div class="mini"><h3>❤️ Attachment</h3><p>Strong connections to others encourage conformity.</p></div>
+      <div class="mini"><h3>🎓 Commitment</h3><p>Investment in future goals discourages risky behavior.</p></div>
+      <div class="mini"><h3>⚽ Involvement</h3><p>Time spent in legitimate activities leaves less room for deviance.</p></div>
+      <div class="mini"><h3>⚖️ Belief</h3><p>Respect for conventional values and authority discourages deviance.</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>🌆 Illegitimate Opportunity Structures</h2>
+    <p>Cloward and Ohlin argued that some communities have organized opportunities for crime woven into daily life, especially when legitimate opportunities fail.</p>
+    <div class="split">
+      <div class="mini good"><h3>🏫 Legitimate Opportunity</h3><p>Strong schools, stable jobs, mentoring, safe neighborhoods, transportation, and legal pathways to success.</p></div>
+      <div class="mini danger"><h3>🚧 Illegitimate Opportunity</h3><p>Drug markets, theft networks, gambling, prostitution, burglary, gangs, or “hustles” that appear to offer success.</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>⚔️ Conflict Theory and Crime</h2>
+    <p>Conflict theorists focus on power: who makes laws, whose behavior is punished, and whose harm is overlooked.</p>
+    <div class="grid">
+      <div class="mini"><h3>🏛️ Who Writes the Rules?</h3><p>Powerful groups often shape law and enforcement.</p></div>
+      <div class="mini"><h3>🚔 Who Gets Policed?</h3><p>Law enforcement may focus more heavily on working-class and marginalized communities.</p></div>
+      <div class="mini"><h3>💼 Who Gets Protected?</h3><p>Corporate or elite harm may receive less attention unless highly visible.</p></div>
+    </div>
+    <div class="note">Conflict theory does not say street crime is harmless. It asks why some harms are punished more aggressively than others.</div>
+  </section>
+
+  <section class="card">
+    <h2>🚔 Types of Crime Gallery</h2>
+    <div class="grid">
+      <div class="mini crimeType"><h3>🔪 Street / Conventional Crime</h3><p>Crimes commonly associated with public fear, such as robbery, assault, burglary, theft, or drug offenses.</p></div>
+      <div class="mini crimeType"><h3>💼 White-Collar Crime</h3><p>Crimes committed by people of respectable or high social status in the course of their occupations, such as fraud, embezzlement, wage theft, or unsafe working conditions.</p></div>
+      <div class="mini crimeType"><h3>❤️‍🩹 Hate Crime</h3><p>A crime motivated by bias against a status or identity, such as race, religion, sexual orientation, political belief, subculture, occupation, or another stereotyped category.</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>🏆 Final Theory Detective Challenge</h2>
+    <p>Choose the theory that best fits each scenario.</p>
+    <details><summary>Scenario 1: A student is repeatedly called “troublemaker” and eventually stops trying to prove people wrong.</summary><p><strong>Best fit:</strong> Labeling theory. The label shapes self-concept and others' expectations.</p></details>
+    <details><summary>Scenario 2: A person wants wealth and status but has blocked access to education and stable employment, so they turn to fraud.</summary><p><strong>Best fit:</strong> Strain theory. Cultural goals remain, but legitimate means are blocked.</p></details>
+    <details><summary>Scenario 3: A teenager learns from friends how to shoplift and begins to see it as normal.</summary><p><strong>Best fit:</strong> Differential association. Deviance is learned through close relationships.</p></details>
+    <details><summary>Scenario 4: A corporation harms workers through unsafe conditions, but the public focuses more on street crime.</summary><p><strong>Best fit:</strong> Conflict theory and white-collar crime.</p></details>
+  </section>
+
+  <section class="footer">
+    <h2>🎓 Certified Sociology Crime Investigator</h2>
+    <p>Deviance is not just about “bad choices.” Sociology asks how labels, groups, opportunity, inequality, power, and social environments shape behavior.</p>
+  </section>
+</div>
+<script>
+function toggleReveal(id){document.getElementById(id).classList.toggle('show')}
+function openPanel(evt,id){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');evt.currentTarget.classList.add('active')}
+function showFeedback(id){document.querySelectorAll('.feedback').forEach(f=>f.style.display='none');document.getElementById(id).style.display='block'}
+function updateStress(){let base=50;document.querySelectorAll('input[data-stress]').forEach(cb=>{if(cb.checked)base+=Number(cb.dataset.stress)});base=Math.max(5,Math.min(100,base));document.getElementById('stressFill').style.width=base+'%';let label='Stress Environment: Moderate';if(base<35)label='Stress Environment: Lower';if(base>70)label='Stress Environment: High';document.getElementById('stressLabel').textContent=label}
+updateStress();
+</script>
+</body>
+</html>

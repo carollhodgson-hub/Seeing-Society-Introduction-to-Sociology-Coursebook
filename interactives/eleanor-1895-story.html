@@ -1,0 +1,2036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+The Sociological Imagination: Ordinary Lives Through Extraordinary Change
+</title>
+
+<style>
+
+/* =========================================================
+   1. GENERAL PAGE STYLING
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at top, #25364b 0%, #111923 62%, #090d13 100%);
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+button,
+textarea {
+    font: inherit;
+}
+
+.lecture-shell {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   2. TOP HEADER
+   ========================================================= */
+
+.lecture-header {
+    padding: 14px 22px;
+    background: rgba(7, 12, 18, 0.92);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header-title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.header-subtitle {
+    margin: 2px 0 0;
+    color: #c9d6e5;
+    font-size: 13px;
+}
+
+.progress-wrap {
+    width: min(280px, 38vw);
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #d9e3ee;
+    margin-bottom: 5px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.16);
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #d8ad55, #f0d38c);
+    border-radius: 999px;
+    transition: width 0.55s ease;
+}
+
+
+/* =========================================================
+   3. PRESENTATION STAGE
+   ========================================================= */
+
+.presentation-stage {
+    flex: 1;
+    position: relative;
+    min-height: 700px;
+}
+
+.scene {
+    display: none;
+    min-height: 700px;
+    padding: 58px 24px 110px;
+    animation: sceneFadeIn 0.9s ease both;
+}
+
+.scene.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes sceneFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(3px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.scene-inner {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   4. TYPOGRAPHY AND VISUAL LANGUAGE
+   ========================================================= */
+
+.eyebrow {
+    margin: 0 0 12px;
+    color: #efd28e;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    font-size: 14px;
+}
+
+.display-title {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 88px);
+    line-height: 1.04;
+    max-width: 980px;
+}
+
+.subtitle {
+    max-width: 820px;
+    margin: 22px 0 0;
+    color: #d4dfeb;
+    font-size: clamp(18px, 2.3vw, 27px);
+}
+
+.centered {
+    text-align: center;
+}
+
+.centered .display-title,
+.centered .subtitle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.concept-gold {
+    color: #f0cf7a;
+}
+
+.technology-blue {
+    color: #83c7f4;
+}
+
+.research-green {
+    color: #8bd0aa;
+}
+
+.sociologist-burgundy {
+    color: #e79a9a;
+}
+
+.reflection-purple {
+    color: #c7a9ef;
+}
+
+.emphasis-line {
+    display: block;
+    margin-top: 16px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   5. OPENING QUESTION SCENES
+   ========================================================= */
+
+.question-stack {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.question-line {
+    opacity: 0;
+    transform: translateY(14px);
+    margin: 16px 0;
+    padding: 12px 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(25px, 3.4vw, 42px);
+    border-left: 5px solid rgba(240, 207, 122, 0.75);
+    background: rgba(255,255,255,0.055);
+    border-radius: 0 14px 14px 0;
+}
+
+.scene.active .question-line {
+    animation: revealLine 0.65s ease forwards;
+}
+
+.scene.active .question-line:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.scene.active .question-line:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.scene.active .question-line:nth-child(3) {
+    animation-delay: 1.4s;
+}
+
+.scene.active .question-line:nth-child(4) {
+    animation-delay: 2s;
+}
+
+.scene.active .question-line:nth-child(5) {
+    animation-delay: 2.6s;
+}
+
+.scene.active .question-line:nth-child(6) {
+    animation-delay: 3.2s;
+}
+
+@keyframes revealLine {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   6. SOCIAL ASSESSMENT / ALGORITHM DIAGRAM
+   ========================================================= */
+
+.assessment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 34px;
+}
+
+.assessment-card {
+    min-height: 122px;
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    opacity: 0;
+    transform: translateY(16px);
+}
+
+.scene.active .assessment-card {
+    animation: cardReveal 0.65s ease forwards;
+}
+
+.scene.active .assessment-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.scene.active .assessment-card:nth-child(2) {
+    animation-delay: 0.45s;
+}
+
+.scene.active .assessment-card:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.scene.active .assessment-card:nth-child(4) {
+    animation-delay: 0.95s;
+}
+
+.scene.active .assessment-card:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+.scene.active .assessment-card:nth-child(6) {
+    animation-delay: 1.45s;
+}
+
+.scene.active .assessment-card:nth-child(7) {
+    animation-delay: 1.7s;
+}
+
+.scene.active .assessment-card:nth-child(8) {
+    animation-delay: 1.95s;
+}
+
+.scene.active .assessment-card:nth-child(9) {
+    animation-delay: 2.2s;
+}
+
+@keyframes cardReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.assessment-card h3 {
+    margin: 0 0 7px;
+    color: #f0cf7a;
+    font-size: 20px;
+}
+
+.assessment-card p {
+    margin: 0;
+    color: #dce6f0;
+}
+
+.response-box {
+    max-width: 680px;
+    margin: 28px auto 0;
+    padding: 18px 22px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        rgba(121, 69, 146, 0.78),
+        rgba(73, 52, 120, 0.82)
+    );
+    border-radius: 18px;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   7. LARGE CONCEPT REVEAL
+   ========================================================= */
+
+.concept-reveal {
+    text-align: center;
+}
+
+.concept-reveal .small-line {
+    color: #d4dfeb;
+    font-size: clamp(20px, 3vw, 32px);
+}
+
+.concept-reveal .large-line {
+    margin: 22px 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(48px, 8vw, 98px);
+    color: #f0cf7a;
+    line-height: 1.05;
+    text-shadow: 0 0 28px rgba(240, 207, 122, 0.22);
+}
+
+
+/* =========================================================
+   8. IMAGE SCENES
+   ========================================================= */
+
+.image-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(290px, 0.65fr);
+    gap: 28px;
+    align-items: center;
+}
+
+.featured-image {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.44);
+    border: 2px solid rgba(255,255,255,0.18);
+    background: #111;
+}
+
+.featured-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.image-caption {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    padding: 14px 18px;
+    border-radius: 15px;
+    background: rgba(7, 12, 18, 0.84);
+    backdrop-filter: blur(6px);
+    font-size: 16px;
+}
+
+.story-card {
+    padding: 28px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.92);
+    color: #243447;
+    box-shadow: 0 16px 38px rgba(0,0,0,0.3);
+}
+
+.story-card h2 {
+    margin: 0 0 12px;
+    color: #5b3b2d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+}
+
+.story-card p {
+    font-size: 18px;
+}
+
+.story-card .year {
+    color: #8c663b;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   9. INDUSTRIALIZATION SCENE
+   ========================================================= */
+
+.change-word {
+    text-align: center;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(72px, 14vw, 175px);
+    line-height: 0.92;
+    color: #83c7f4;
+    letter-spacing: 0.05em;
+    text-shadow:
+        0 0 30px rgba(131,199,244,0.25),
+        0 14px 42px rgba(0,0,0,0.45);
+}
+
+.change-list {
+    max-width: 800px;
+    margin: 35px auto 0;
+    display: grid;
+    gap: 12px;
+}
+
+.change-item {
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.075);
+    border-left: 6px solid #83c7f4;
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   10. OPTIONAL OPENING PANELS
+   ========================================================= */
+
+.panel-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.panel-button {
+    border: 0;
+    border-radius: 13px;
+    padding: 12px 17px;
+    background: #6d4b78;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 7px 16px rgba(0,0,0,0.2);
+}
+
+.panel-button:hover,
+.panel-button:focus-visible {
+    background: #895e96;
+    outline: 3px solid #d9c2ef;
+    outline-offset: 3px;
+}
+
+.info-panel {
+    display: none;
+    margin-top: 17px;
+    padding: 21px;
+    border-radius: 17px;
+    background: rgba(247, 249, 252, 0.96);
+    color: #263746;
+    border-left: 7px solid #8bd0aa;
+}
+
+.info-panel.open {
+    display: block;
+    animation: panelOpen 0.45s ease both;
+}
+
+@keyframes panelOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   11. BOTTOM NAVIGATION
+   ========================================================= */
+
+.navigation {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    padding: 13px 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    background: rgba(7, 12, 18, 0.94);
+    border-top: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+}
+
+.nav-button {
+    min-width: 128px;
+    border: 0;
+    border-radius: 14px;
+    padding: 12px 18px;
+    color: #18202a;
+    background: #f0cf7a;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.nav-button:hover,
+.nav-button:focus-visible {
+    background: #ffe5a3;
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.nav-button:disabled {
+    opacity: 0.36;
+    cursor: not-allowed;
+}
+
+.scene-counter {
+    min-width: 90px;
+    text-align: center;
+    color: #dce5ee;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   12. MOBILE AND SMALL SCREEN ADJUSTMENTS
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .lecture-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .progress-wrap {
+        width: 100%;
+    }
+
+    .presentation-stage,
+    .scene {
+        min-height: auto;
+    }
+
+    .scene {
+        padding: 38px 17px 110px;
+    }
+
+    .assessment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .change-word {
+        font-size: 18vw;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="lecture-shell">
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="lecture-header">
+
+        <div>
+            <p class="header-title">
+                The Sociological Imagination
+            </p>
+
+            <p class="header-subtitle">
+                Ordinary Lives Through Extraordinary Change
+            </p>
+        </div>
+
+        <div class="progress-wrap" aria-label="Lecture progress">
+
+            <div class="progress-label">
+                <span>Part One</span>
+                <span id="progressText">Scene 1 of 7</span>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         PRESENTATION
+         ===================================================== -->
+
+    <main class="presentation-stage" id="presentationStage">
+
+
+        <!-- =================================================
+             SCENE 1: TITLE
+             ================================================= -->
+
+        <section class="scene active" aria-labelledby="scene1Title">
+
+            <div class="scene-inner centered">
+
+                <p class="eyebrow">
+                    Part One
+                </p>
+
+                <h1 class="display-title" id="scene1Title">
+                    The World You Think You See
+                </h1>
+
+                <p class="subtitle">
+                    Before we can understand society, we must first ask how
+                    society teaches us what is real, normal, proper, and expected.
+                </p>
+
+                <p class="subtitle">
+                    <span class="emphasis-line">
+                        How do you know what to do next?
+                    </span>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SCENE 2: EVERYDAY ASSESSMENT
+             ================================================= -->
+
+        <section class="scene" aria-labelledby="scene2Title">
+
+            <div class="scene-inner">
+
+                <p class="eyebrow">
+                    Your Everyday Social Assessment
+                </p>
+
+                <h2 class="display-title" id="scene2Title">
+                    You enter a room.
+                </h2>
+
+                <div class="question-stack">
+
+                    <div class="question-line">
+                        Where am I?
+                    </div>
+
+                    <div class="question-line">
+                        Who is here?
+                    </div>
+
+                    <div class="question-line">
+                        What are they doing?
+                    </div>
+
+                    <div class="question-line">
+                        How are they dressed?
+                    </div>
+
+                    <div class="question-line">
+                        What is expected of me?
+                    </div>
+
+                    <div class="question-line">
+                        How should I respond?
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SCENE 3: MENTAL MODEL / ALGORITHM ANALOGY
+             ================================================= -->
+
+        <section class="scene" aria-labelledby="scene3Title">
+
+            <div class="scene-inner">
+
+                <p class="eyebrow">
+                    A Human Pattern-Recognition System
+                </p>
+
+                <h2 class="display-title" id="scene3Title">
+                    Your response is shaped by more than the situation.
+                </h2>
+
+                <p class="subtitle">
+                    Like a recommendation algorithm, you use patterns to make
+                    predictions. But your social assessment also contains
+                    experience, emotion, culture, identity, and bias.
+                </p>
+
+                <div class="assessment-grid">
+
+                    <div class="assessment-card">
+                        <h3>Location</h3>
+                        <p>
+                            A classroom, funeral, workplace, concert, or family
+                            gathering each carries different expectations.
+                        </p>
+                    </div>
+
+                    <div class="assessment-card">
+                        <h3>People</h3>
+                        <p>
+                            You consider who is present and your relationship
+                            with them.
+                        </p>
+                    </div>
+
+                    <div class="assessment-card">
+                        <h3>Culture</h3>
+                        <p>
+                            Your culture teaches you what actions and meanings
+                            seem familiar.
+                        </p>
+                    </div>
+
+                    <div class="assessment-card">
+                        <h3>Socialization</h3>
+                        <p>
+                            Family, education, religion, media, and peers teach
+                            behavioral expectations.
+                        </p>
+                    </div>
+
+                    <div class="assessment-card">
+                        <h3>Past Experience</h3>
+                        <p>
+                            Previous interactions influence what you expect to
+                            happen next.
+                        </p>
+                    </div>
+
+                    <div class="assessment-card">
+                        <h3>Emotions</h3>
+                        <p>
+                            Stress, confidence, fear, happiness, or fatigue may
+                            change your response.
+                        </p>
+                    </div>
+
+                    <div class="assessment-card">
+                        <h3>Identity</h3>
+                        <p>
+                            Age, gender, class, occupation, and other identities
+                            shape social experiences.
+                        </p>
+                    </div>
+
+                    <div class="assessment-card">
+                        <h3>Bias</h3>
+                        <p>
+                            Stereotypes and unconscious assumptions may enter
+                            the assessment.
+                        </p>
+                    </div>
+
+                    <div class="assessment-card">
+                        <h3>Reflection</h3>
+                        <p>
+                            Unlike an automated system, you can examine and
+                            intentionally revise your response.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="response-box">
+                    Situation + Social Learning + Experience + Bias
+                    → Response
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SCENE 4: SOCIAL CONSTRUCTION
+             ================================================= -->
+
+        <section class="scene" aria-labelledby="scene4Title">
+
+            <div class="scene-inner concept-reveal">
+
+                <p class="small-line">
+                    No one is born knowing what is
+                </p>
+
+                <h2 class="large-line" id="scene4Title">
+                    normal.
+                </h2>
+
+                <p class="small-line">
+                    We learn meanings, expectations, categories, and rules
+                    from other people and from social institutions.
+                </p>
+
+                <p class="subtitle">
+                    Sociologists call this the
+                    <strong class="concept-gold">
+                        social construction of reality.
+                    </strong>
+                </p>
+
+                <div class="panel-row" style="justify-content:center;">
+
+                    <button
+                        class="panel-button"
+                        type="button"
+                        onclick="togglePanel('constructionPanel', this)"
+                        aria-expanded="false"
+                        aria-controls="constructionPanel">
+                        What does “social construction” mean?
+                    </button>
+
+                </div>
+
+                <div class="info-panel" id="constructionPanel">
+
+                    <strong>Social construction does not mean imaginary.</strong>
+
+                    <p>
+                        It means that people collectively create, repeat, teach,
+                        and enforce meanings. Money, status, gender expectations,
+                        professional titles, manners, and ideas about appropriate
+                        behavior are socially meaningful because people and
+                        institutions recognize them.
+                    </p>
+
+                    <p>
+                        These constructions have real consequences. They influence
+                        opportunities, laws, relationships, treatment, and life
+                        chances.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SCENE 5: MEET ELEANOR
+             ================================================= -->
+
+        <section class="scene" aria-labelledby="scene5Title">
+
+            <div class="scene-inner">
+
+                <div class="image-layout">
+
+	<div class="featured-image">
+
+   	 	<img
+      			src="https://i.imgur.com/avXeVnx.png"
+       			 alt="Illustrated historical timeline introducing Eleanor and her family in the late nineteenth century">
+
+	</div>
+
+                    <article class="story-card">
+
+                        <p class="year">
+                            Chapter One · 1895
+                        </p>
+
+                        <h2 id="scene5Title">
+                            Meet Eleanor
+                        </h2>
+
+                        <p>
+                            Eleanor is sixteen years old. She lives in a world
+                            shaped by family duty, religion, handwritten letters,
+                            trains, factories, social class, and strict expectations
+                            for women.
+                        </p>
+
+                        <p>
+                            She does not call these expectations
+                            <strong>norms</strong>,
+                            <strong>values</strong>,
+                            <strong>gender roles</strong>, or
+                            <strong>socialization</strong>.
+                        </p>
+
+                        <p>
+                            To Eleanor, they simply feel like the way life is
+                            supposed to be.
+                        </p>
+
+                        <div class="panel-row">
+
+                            <button
+                                class="panel-button"
+                                type="button"
+                                onclick="togglePanel('eleanorQuestionPanel', this)"
+                                aria-expanded="false"
+                                aria-controls="eleanorQuestionPanel">
+                                Think Like a Sociologist
+                            </button>
+
+                        </div>
+
+                        <div class="info-panel" id="eleanorQuestionPanel">
+
+                            <strong>Ask yourself:</strong>
+
+                            <p>
+                                Which parts of Eleanor’s world are facts of nature,
+                                and which are social expectations taught by her
+                                culture?
+                            </p>
+
+                            <p>
+                                Which assumptions did you make about Eleanor before
+                                learning anything about her?
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SCENE 6: INDUSTRIALIZATION
+             ================================================= -->
+
+        <section class="scene" aria-labelledby="scene6Title">
+
+            <div class="scene-inner">
+
+                <p class="eyebrow centered">
+                    Eleanor Is Living Through a Transformation
+                </p>
+
+                <h2 class="change-word" id="scene6Title">
+                    CHANGE
+                </h2>
+
+                <p class="subtitle centered">
+                    The development of factories and mass production is
+                    reorganizing society.
+                </p>
+
+                <div class="change-list">
+
+                    <div class="change-item">
+                        Workshops and household production are increasingly
+                        replaced by factories.
+                    </div>
+
+                    <div class="change-item">
+                        Wage labor changes the relationship between workers,
+                        families, and employers.
+                    </div>
+
+                    <div class="change-item">
+                        Railroads and mass transportation connect communities
+                        and markets.
+                    </div>
+
+                    <div class="change-item">
+                        Urbanization places large numbers of strangers together
+                        in rapidly growing cities.
+                    </div>
+
+                    <div class="change-item">
+                        Mass production creates new opportunities for wealth,
+                        status, consumer goods, and “new money.”
+                    </div>
+
+                    <div class="change-item">
+                        Industrialization also produces dangerous work,
+                        exploitation, inequality, instability, and social
+                        dislocation.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SCENE 7: WHY SOCIOLOGY EMERGED
+             ================================================= -->
+
+        <section class="scene" aria-labelledby="scene7Title">
+
+            <div class="scene-inner centered">
+
+                <p class="eyebrow">
+                    Why Sociology Emerged
+                </p>
+
+                <h2 class="display-title" id="scene7Title">
+                    Society changed.
+                    <span class="concept-gold">
+                        People needed a way to understand why.
+                    </span>
+                </h2>
+
+                <p class="subtitle">
+                    Early sociology developed in response to industrialization,
+                    urbanization, political upheaval, changing class structures,
+                    and the weakening of older forms of community life.
+                </p>
+
+                <p class="subtitle">
+                    Thinkers such as
+                    <strong class="sociologist-burgundy">Auguste Comte</strong>
+                    and
+                    <strong class="sociologist-burgundy">Herbert Spencer</strong>
+                    tried to explain the social patterns they observed.
+                </p>
+
+                <p class="subtitle">
+                    Their work raised important questions—but it also leads us
+                    to one of sociology’s most important responsibilities:
+                </p>
+
+                <p class="subtitle">
+                    <span class="emphasis-line research-green">
+                        How do we test whether an explanation about society is
+                        supported by evidence?
+                    </span>
+                </p>
+
+                <div class="panel-row" style="justify-content:center;">
+
+                    <button
+                        class="panel-button"
+                        type="button"
+                        onclick="togglePanel('nextPreviewPanel', this)"
+                        aria-expanded="false"
+                        aria-controls="nextPreviewPanel">
+                        Preview the Next Part
+                    </button>
+
+                </div>
+
+                <div class="info-panel" id="nextPreviewPanel">
+
+                    <strong>Coming next:</strong>
+
+                    <p>
+                        Comte’s vision of studying society scientifically,
+                        Spencer’s broad observations about social evolution,
+                        the later misuse of evolutionary assumptions, and why
+                        systematic research and research ethics became essential.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+<!-- =================================================
+     SCENE 8: PART TWO OPENING
+     ================================================= -->
+
+<section class="scene" aria-labelledby="scene8Title">
+
+    <div class="scene-inner part-divider">
+
+        <p class="eyebrow">
+            Part Two
+        </p>
+
+        <h2 id="scene8Title">
+            When Society Changed Faster Than Anyone Expected
+        </h2>
+
+        <p>
+            Industrialization did more than introduce new machines.
+            It reorganized work, family life, cities, class, status,
+            wealth, community, and the meaning of progress.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SCENE 9: FACTORIES AND MASS PRODUCTION
+     ================================================= -->
+
+<section class="scene" aria-labelledby="scene9Title">
+
+    <div class="scene-inner">
+
+        <div class="documentary-layout">
+
+            <div class="documentary-image">
+
+                <img
+                    src="https://i.imgur.com/F9f8iHy.png"
+                    alt="Illustrated industrial city with factories, smoke, railroads, workers, and mass production">
+
+            </div>
+
+            <article class="documentary-text">
+
+                <p class="year">
+                    Eleanor’s Changing World
+                </p>
+
+                <h2 id="scene9Title">
+                    The Factory Changes Everything
+                </h2>
+
+                <p>
+                    Eleanor’s grandparents lived in a society where many goods
+                    were made by hand, work often took place near the home, and
+                    communities changed slowly.
+                </p>
+
+                <p>
+                    Factories and mass production changed that social structure.
+                    Work moved away from the household. Employers controlled
+                    wages and schedules. Cities expanded as people migrated in
+                    search of opportunity.
+                </p>
+
+                <p>
+                    Mass production made goods more affordable and allowed some
+                    people without inherited status to build enormous fortunes.
+                    “New money” began competing with established “old money.”
+                </p>
+
+                <p>
+                    But industrialization also produced dangerous labor,
+                    overcrowded cities, child labor, insecurity, exploitation,
+                    and concentrated wealth.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SCENE 10: INDUSTRIALIZATION BUILDS A NEW SOCIETY
+     ================================================= -->
+
+<section class="scene" aria-labelledby="scene10Title">
+
+    <div class="scene-inner">
+
+        <p class="eyebrow centered">
+            A New Social Structure
+        </p>
+
+        <h2 class="display-title centered" id="scene10Title">
+            Technology did not simply change tools.
+            <span class="technology-blue">
+                It changed society.
+            </span>
+        </h2>
+
+        <div class="idea-sequence">
+
+            <div class="idea-step">
+                Factories increased production.
+            </div>
+
+            <div class="idea-step">
+                Mass production expanded markets and consumer goods.
+            </div>
+
+            <div class="idea-step">
+                Railroads connected people, resources, and cities.
+            </div>
+
+            <div class="idea-step">
+                Urbanization brought strangers and diverse groups together.
+            </div>
+
+            <div class="idea-step">
+                New industries created opportunities for wealth and status.
+            </div>
+
+            <div class="idea-step">
+                Owners and workers experienced industrialization very differently.
+            </div>
+
+            <div class="idea-step">
+                Sociology emerged to study these enormous social changes.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SCENE 11: COMTE AND SPENCER
+     ================================================= -->
+
+<section class="scene" aria-labelledby="scene11Title">
+
+    <div class="scene-inner">
+
+        <div class="documentary-layout">
+
+            <div class="documentary-image">
+
+                <img
+                    src="https://i.imgur.com/xE4wwUp.png"
+                    alt="Illustrated portraits of Auguste Comte and Herbert Spencer as early sociological thinkers">
+
+            </div>
+
+            <article class="documentary-text">
+
+                <p class="year">
+                    Searching for Answers
+                </p>
+
+                <h2 id="scene11Title">
+                    Comte and Spencer Observe a Changing Society
+                </h2>
+
+                <h3>Auguste Comte</h3>
+
+                <p>
+                    Comte argued that society should be studied systematically
+                    and scientifically. His idea of positivism helped establish
+                    sociology as a distinct field of study.
+                </p>
+
+                <blockquote>
+                    Society follows patterns that people can observe and study.
+                </blockquote>
+
+                <h3>Herbert Spencer</h3>
+
+                <p>
+                    Spencer compared society to a living organism and developed
+                    broad theories about social evolution, specialization, and
+                    increasing complexity.
+                </p>
+
+                <p>
+                    Both thinkers raised important questions. However, many of
+                    their broad explanations were based on observation and
+                    philosophical reasoning rather than hypothesis testing under
+                    modern research standards.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SCENE 12: HOW DO WE KNOW?
+     ================================================= -->
+
+<section class="scene" aria-labelledby="scene12Title">
+
+    <div class="scene-inner">
+
+        <p class="eyebrow centered">
+            The Question That Changes Sociology
+        </p>
+
+        <h2 class="big-question" id="scene12Title">
+            How do we know?
+        </h2>
+
+        <p class="subtitle centered">
+            Observations can inspire a theory. They cannot, by themselves,
+            establish that the theory accurately explains society.
+        </p>
+
+        <p class="subtitle centered">
+            Personal experience is shaped by culture, social position,
+            ethnocentrism, assumptions, and bias.
+        </p>
+
+        <p class="subtitle centered">
+            Sociology becomes stronger when explanations are examined through
+            systematic evidence.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SCENE 13: DURKHEIM
+     ================================================= -->
+
+<section class="scene" aria-labelledby="scene13Title">
+
+    <div class="scene-inner">
+
+        <div class="documentary-layout">
+
+            <div class="documentary-image">
+
+                <img
+                    src="https://i.imgur.com/yVWysY8.png"
+                    alt="Illustrated portrait and research imagery representing Émile Durkheim and empirical sociology">
+
+            </div>
+
+            <article class="documentary-text">
+
+                <p class="year">
+                    A New Kind of Sociology
+                </p>
+
+                <h2 id="scene13Title">
+                    Émile Durkheim Looks for Evidence
+                </h2>
+
+                <p>
+                    Durkheim argued that social facts—such as laws, norms,
+                    institutions, and rates of behavior—exist beyond any one
+                    individual and can be studied systematically.
+                </p>
+
+                <p>
+                    In his research on suicide, he compared patterns across
+                    groups rather than assuming suicide was only an individual
+                    or psychological decision.
+                </p>
+
+                <p>
+                    His approach helped demonstrate that seemingly private
+                    experiences may also be influenced by social integration,
+                    regulation, community, and rapid social change.
+                </p>
+
+                <p>
+                    Durkheim’s work remains relevant when sociologists examine
+                    isolation, weakened community bonds, social disruption,
+                    belonging, and anomie.
+                </p>
+
+            </article>
+
+        </div>
+
+        <div class="evidence-words" aria-label="Elements of empirical sociology">
+
+            <span class="evidence-word">Evidence</span>
+            <span class="evidence-word">Data</span>
+            <span class="evidence-word">Comparison</span>
+            <span class="evidence-word">Patterns</span>
+            <span class="evidence-word">Testing</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SCENE 14: THEORY WITHOUT EVIDENCE
+     ================================================= -->
+
+<section class="scene" aria-labelledby="scene14Title">
+
+    <div class="scene-inner">
+
+        <div class="documentary-layout">
+
+            <div class="documentary-image">
+
+                <img
+                    src="https://i.imgur.com/YZvHWOD.png"
+                    alt="Illustrated warning about the danger of theories accepted or applied without sufficient evidence">
+
+            </div>
+
+            <article class="documentary-text">
+
+                <p class="year">
+                    Ideas Have Consequences
+                </p>
+
+                <h2 id="scene14Title">
+                    When Assumptions Become Social Policy
+                </h2>
+
+                <p>
+                    Spencer did not create eugenics and was not personally
+                    responsible for the eugenics movement.
+                </p>
+
+                <p>
+                    However, other people borrowed evolutionary language and
+                    ideas associated with competition, social evolution, and
+                    “survival of the fittest.” They used those ideas to claim
+                    that inequality reflected natural superiority and inferiority.
+                </p>
+
+                <p>
+                    These claims were filtered through ethnocentrism, racism,
+                    class prejudice, ableism, and political interests.
+                </p>
+
+                <p>
+                    Untested assumptions were presented as scientific truths and
+                    used to justify discrimination, forced sterilization,
+                    exclusion, and other harmful policies.
+                </p>
+
+            </article>
+
+        </div>
+
+        <div class="warning-card">
+
+            <h3>Why Research and Ethics Matter</h3>
+
+            <p>
+                A theory is not automatically true because it sounds logical,
+                matches someone’s personal observations, or supports a
+                society’s existing values.
+            </p>
+
+            <p>
+                Sociologists must ask how evidence was collected, whose
+                experiences were represented, which assumptions shaped the
+                research, who may be harmed, and whether conclusions go beyond
+                what the evidence supports.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SCENE 15: EUGENICS VIDEO
+     ================================================= -->
+
+<section class="scene" aria-labelledby="scene15Title">
+
+    <div class="scene-inner">
+
+        <p class="eyebrow centered">
+            Living Through History
+        </p>
+
+        <h2 class="display-title centered" id="scene15Title">
+            Eugenics Occurred During Eleanor’s Lifetime
+        </h2>
+
+        <p class="subtitle centered">
+            As you watch, consider how cultural prejudice and political power
+            can be disguised as objective science.
+        </p>
+
+        <div class="video-frame">
+
+            <iframe
+                src="https://www.youtube.com/embed/IaH0Ws8RtSc?si=1NZTz3z2YFgmEF2N"
+                title="Video about the history of eugenics"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+        <div class="reflection-prompt">
+
+            <h3>Pause and Discuss</h3>
+
+            <p>
+                How did social values and ethnocentric beliefs influence what
+                people were willing to accept as scientific?
+            </p>
+
+            <p>
+                What ethical responsibilities do researchers have when their
+                theories may affect laws, institutions, medical treatment, or
+                people’s rights?
+            </p>
+
+            <p>
+                How could systematic research, diverse samples, peer review,
+                and ethical oversight challenge harmful assumptions?
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SCENE 16: WEBER
+     ================================================= -->
+
+<section class="scene" aria-labelledby="scene16Title">
+
+    <div class="scene-inner">
+
+        <div class="documentary-layout">
+
+            <div class="documentary-image">
+
+                <img
+                    src="https://i.imgur.com/iFjxj4D.png"
+                    alt="Illustrated portrait of Max Weber with imagery representing bureaucracy, authority, and modern institutions">
+
+            </div>
+
+            <article class="documentary-text">
+
+                <p class="year">
+                    Looking Beneath the Surface
+                </p>
+
+                <h2 id="scene16Title">
+                    Max Weber Studies Meaning and Modern Institutions
+                </h2>
+
+                <p>
+                    Weber believed sociology must study both social structures
+                    and the meanings people attach to their actions.
+                </p>
+
+                <p>
+                    He examined rationalization, authority, capitalism,
+                    bureaucracy, religion, and the growing power of formal
+                    institutions.
+                </p>
+
+                <blockquote>
+                    What does an action mean to the person performing it?
+                </blockquote>
+
+                <p>
+                    Weber’s ideas remain relevant whenever we encounter
+                    credentials, rules, forms, schedules, organizations,
+                    passwords, policies, databases, and systems that promise
+                    efficiency but may also feel impersonal.
+                </p>
+
+                <p>
+                    The factories of Eleanor’s lifetime were part of the same
+                    broader movement toward calculation, efficiency, rules,
+                    and organized control that Weber studied.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SCENE 17: RESEARCH EVOLVES
+     ================================================= -->
+
+<section class="scene" aria-labelledby="scene17Title">
+
+    <div class="scene-inner centered">
+
+        <p class="eyebrow">
+            Sociology Continues to Evolve
+        </p>
+
+        <h2 class="display-title" id="scene17Title">
+            Better questions require
+            <span class="research-green">
+                better methods.
+            </span>
+        </h2>
+
+        <p class="subtitle">
+            Sociology gradually developed more systematic methods for
+            collecting evidence, comparing groups, measuring variables,
+            examining correlations, evaluating competing explanations, and
+            protecting research participants.
+        </p>
+
+        <p class="subtitle">
+            Ethical standards developed because research can affect real
+            people, reinforce social inequalities, influence policy, and
+            shape how groups are understood.
+        </p>
+
+        <div class="evidence-words">
+
+            <span class="evidence-word">Sampling</span>
+            <span class="evidence-word">Measurement</span>
+            <span class="evidence-word">Correlation</span>
+            <span class="evidence-word">Peer Review</span>
+            <span class="evidence-word">Ethics</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SCENE 18: RETURN TO ELEANOR
+     ================================================= -->
+
+<section class="scene" aria-labelledby="scene18Title">
+
+    <div class="scene-inner">
+
+        <div class="documentary-layout">
+
+            <div class="documentary-image">
+
+                <img
+                    src="https://i.imgur.com/DyTayjO.png"
+                    alt="Illustrated transition showing Eleanor’s family story continuing through social change">
+
+            </div>
+
+            <article class="documentary-text">
+
+                <p class="year">
+                    The Story Continues
+                </p>
+
+                <h2 id="scene18Title">
+                    Eleanor Lives Through the Questions Sociologists Study
+                </h2>
+
+                <p>
+                    Industrialization, inequality, new wealth, changing
+                    institutions, scientific claims, and political policies are
+                    not merely ideas in a textbook.
+                </p>
+
+                <p>
+                    They shape Eleanor’s family, opportunities, expectations,
+                    fears, beliefs, and understanding of what is normal.
+                </p>
+
+                <p>
+                    Sociology connects these large historical transformations
+                    to the everyday lives of ordinary people.
+                </p>
+
+            </article>
+
+        </div>
+
+        <div class="diary-paper">
+
+            <strong>From Eleanor’s Diary</strong>
+
+            <p>
+                The trains pass more often now, and the town seems louder every
+                month. Father says the factories will bring opportunity, but
+                Mother worries about the children who work inside them.
+            </p>
+
+            <p>
+                Newspapers speak as though educated men understand which kinds
+                of people strengthen society and which do not. I wonder how
+                anyone could know such a thing. I wonder what happens when
+                powerful people mistake their beliefs for truth.
+            </p>
+
+            <p>
+                Everyone says progress is coming. I hope progress remembers the
+                people expected to live through it.
+            </p>
+
+            <p class="diary-signature">
+                — Eleanor
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SCENE 19: PART TWO CLOSING
+     ================================================= -->
+
+<section class="scene" aria-labelledby="scene19Title">
+
+    <div class="scene-inner part-divider">
+
+        <p class="eyebrow">
+            Part Two Complete
+        </p>
+
+        <h2 id="scene19Title">
+            Society Changed.
+            Sociology Changed With It.
+        </h2>
+
+        <p>
+            The next generation will encounter electricity, automobiles,
+            radio, movies, women’s suffrage, consumer culture, and new ideas
+            about identity, family, freedom, and modern life.
+        </p>
+
+        <p>
+            Next: <strong>Mary’s World — 1925</strong>
+        </p>
+
+    </div>
+
+</section>
+    </main>
+
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <nav class="navigation" aria-label="Lecture scene navigation">
+
+        <button
+            class="nav-button"
+            id="backButton"
+            type="button"
+            onclick="changeScene(-1)">
+            ← Back
+        </button>
+
+        <div class="scene-counter" id="sceneCounter">
+            1 / 7
+        </div>
+
+        <button
+            class="nav-button"
+            id="nextButton"
+            type="button"
+            onclick="changeScene(1)">
+            Next →
+        </button>
+
+    </nav>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   PRESENTATION CONTROLS
+   ========================================================= */
+
+const scenes = Array.from(document.querySelectorAll(".scene"));
+
+let currentScene = 0;
+
+
+/* Show the selected scene and hide all others. */
+
+function showScene(index) {
+
+    if (index < 0 || index >= scenes.length) {
+        return;
+    }
+
+    scenes.forEach((scene, sceneIndex) => {
+
+        scene.classList.toggle("active", sceneIndex === index);
+
+        if (sceneIndex === index) {
+            scene.removeAttribute("aria-hidden");
+        } else {
+            scene.setAttribute("aria-hidden", "true");
+        }
+
+    });
+
+    currentScene = index;
+
+    closeAllPanels();
+
+    updateNavigation();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* Move forward or backward. */
+
+function changeScene(direction) {
+
+    const newIndex = currentScene + direction;
+
+    if (newIndex >= 0 && newIndex < scenes.length) {
+        showScene(newIndex);
+    }
+}
+
+
+/* Update progress information and buttons. */
+
+function updateNavigation() {
+
+    const totalScenes = scenes.length;
+    const visibleNumber = currentScene + 1;
+    const percent = (visibleNumber / totalScenes) * 100;
+
+    document.getElementById("sceneCounter").textContent =
+        visibleNumber + " / " + totalScenes;
+
+    document.getElementById("progressText").textContent =
+        "Scene " + visibleNumber + " of " + totalScenes;
+
+    document.getElementById("progressBar").style.width =
+        percent + "%";
+
+    document.getElementById("backButton").disabled =
+        currentScene === 0;
+
+    document.getElementById("nextButton").disabled =
+        currentScene === totalScenes - 1;
+
+    document.getElementById("nextButton").textContent =
+        currentScene === totalScenes - 1
+            ? "Part One Complete"
+            : "Next →";
+}
+
+
+/* =========================================================
+   OPENING AND CLOSING OPTIONAL PANELS
+   ========================================================= */
+
+function togglePanel(panelId, button) {
+
+    const panel = document.getElementById(panelId);
+    const isOpen = panel.classList.contains("open");
+
+    closeAllPanels();
+
+    if (!isOpen) {
+        panel.classList.add("open");
+        button.setAttribute("aria-expanded", "true");
+    }
+}
+
+
+function closeAllPanels() {
+
+    document.querySelectorAll(".info-panel").forEach(panel => {
+        panel.classList.remove("open");
+    });
+
+    document.querySelectorAll(".panel-button").forEach(button => {
+        button.setAttribute("aria-expanded", "false");
+    });
+}
+
+
+/* =========================================================
+   KEYBOARD CONTROLS
+   ========================================================= */
+
+document.addEventListener("keydown", function(event) {
+
+    const activeTag = document.activeElement.tagName.toLowerCase();
+
+    if (
+        activeTag === "textarea" ||
+        activeTag === "input" ||
+        activeTag === "select"
+    ) {
+        return;
+    }
+
+    if (event.key === "ArrowRight" || event.key === "PageDown") {
+        changeScene(1);
+    }
+
+    if (event.key === "ArrowLeft" || event.key === "PageUp") {
+        changeScene(-1);
+    }
+
+    if (event.key === "Escape") {
+        closeAllPanels();
+    }
+});
+
+
+/* Initialize presentation. */
+
+showScene(0);
+
+</script>
+
+</body>
+</html>

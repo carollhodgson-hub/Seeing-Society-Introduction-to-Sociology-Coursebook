@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Which Classic Sociologist Do You Think Like?</title>
+  <style>
+    :root {
+      --navy:#203a5f;
+      --blue:#456b91;
+      --teal:#6fb7a7;
+      --mint:#dff5ee;
+      --gold:#f5c84c;
+      --cream:#fff9ed;
+      --rose:#f6d6d9;
+      --lavender:#e7ddf7;
+      --ink:#263238;
+      --white:#ffffff;
+      --shadow:0 10px 25px rgba(32,58,95,.16);
+      --radius:22px;
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(111,183,167,.25), transparent 30%),
+        radial-gradient(circle at top right, rgba(245,200,76,.22), transparent 28%),
+        linear-gradient(180deg, #f7fbff 0%, #fff9ed 100%);
+      line-height:1.55;
+    }
+
+    .page {
+      max-width:1050px;
+      margin:0 auto;
+      padding:18px;
+    }
+
+    .hero {
+      background:linear-gradient(135deg, var(--navy), var(--blue));
+      color:white;
+      border-radius:28px;
+      padding:34px 24px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before, .hero::after {
+      content:"";
+      position:absolute;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+    }
+
+    .hero::before { width:180px; height:180px; right:-50px; top:-50px; }
+    .hero::after { width:120px; height:120px; left:-35px; bottom:-45px; }
+    .hero-content { position:relative; z-index:2; }
+
+    .eyebrow {
+      display:inline-block;
+      background:rgba(245,200,76,.95);
+      color:#253047;
+      padding:7px 12px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:.9rem;
+      margin-bottom:14px;
+    }
+
+    h1 {
+      font-size:clamp(2rem, 5vw, 4rem);
+      line-height:1.05;
+      margin:0 0 14px;
+    }
+
+    .hero p {
+      max-width:820px;
+      font-size:1.08rem;
+      margin:0;
+    }
+
+    .progress-wrap {
+      margin:18px 0 0;
+      background:rgba(255,255,255,.18);
+      border-radius:999px;
+      overflow:hidden;
+      height:14px;
+      border:1px solid rgba(255,255,255,.28);
+    }
+
+    .progress-bar {
+      width:0%;
+      height:100%;
+      background:linear-gradient(90deg, var(--gold), var(--teal));
+      transition:width .3s ease;
+    }
+
+    .progress-label {
+      margin-top:8px;
+      font-size:.92rem;
+      opacity:.95;
+    }
+
+    .section {
+      background:rgba(255,255,255,.9);
+      border:1px solid rgba(32,58,95,.08);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 8px 22px rgba(32,58,95,.08);
+      margin:18px 0;
+    }
+
+    .section h2 {
+      color:var(--navy);
+      font-size:clamp(1.45rem, 3vw, 2.15rem);
+      margin:0 0 10px;
+    }
+
+    .badge {
+      display:inline-block;
+      padding:5px 10px;
+      border-radius:999px;
+      background:var(--lavender);
+      color:var(--navy);
+      font-weight:700;
+      font-size:.88rem;
+      margin-bottom:8px;
+    }
+
+    .callout {
+      background:var(--mint);
+      border-left:8px solid var(--teal);
+      padding:16px;
+      border-radius:16px;
+      margin:16px 0;
+    }
+
+    .quiz-card {
+      background:white;
+      border-radius:20px;
+      padding:20px;
+      border:1px solid rgba(32,58,95,.1);
+      box-shadow:0 6px 18px rgba(32,58,95,.08);
+      margin-top:16px;
+    }
+
+    .question-number {
+      color:var(--blue);
+      font-weight:800;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+      font-size:.9rem;
+    }
+
+    .question-text {
+      font-size:1.35rem;
+      color:var(--navy);
+      font-weight:800;
+      margin:8px 0 16px;
+    }
+
+    .answers {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+      gap:12px;
+    }
+
+    .answer-btn {
+      border:2px solid rgba(32,58,95,.12);
+      border-radius:18px;
+      background:#ffffff;
+      padding:16px;
+      min-height:110px;
+      text-align:left;
+      cursor:pointer;
+      font:inherit;
+      color:var(--ink);
+      box-shadow:0 4px 12px rgba(32,58,95,.07);
+      transition:transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+
+    .answer-btn:hover, .answer-btn:focus {
+      transform:translateY(-2px);
+      border-color:var(--teal);
+      background:#f7fffc;
+      outline:none;
+    }
+
+    .answer-btn strong {
+      display:block;
+      color:var(--navy);
+      font-size:1.02rem;
+      margin-bottom:6px;
+    }
+
+    .controls {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .tool-button {
+      border:0;
+      border-radius:999px;
+      padding:12px 16px;
+      background:var(--navy);
+      color:white;
+      font-weight:800;
+      box-shadow:0 4px 12px rgba(32,58,95,.14);
+      cursor:pointer;
+      transition:transform .15s ease, background .15s ease;
+    }
+
+    .tool-button:hover { transform:translateY(-2px); background:var(--blue); }
+    .secondary { background:white; color:var(--navy); border:1px solid rgba(32,58,95,.15); }
+    .secondary:hover { background:var(--cream); color:var(--navy); }
+
+    .result-grid, .sociologist-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+      gap:14px;
+      margin-top:16px;
+    }
+
+    .result-card, .mini-card {
+      background:white;
+      border-radius:18px;
+      padding:18px;
+      border:1px solid rgba(32,58,95,.08);
+      box-shadow:0 6px 18px rgba(32,58,95,.08);
+    }
+
+    .result-card h3, .mini-card h3 {
+      margin:0 0 8px;
+      color:var(--navy);
+    }
+
+    .portrait {
+      font-size:3rem;
+      width:76px;
+      height:76px;
+      border-radius:24px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--mint), var(--lavender));
+      margin-bottom:12px;
+    }
+
+    .score-row {
+      margin:10px 0;
+    }
+
+    .score-label {
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      font-size:.93rem;
+      font-weight:700;
+      color:var(--navy);
+      margin-bottom:4px;
+    }
+
+    .score-bar-wrap {
+      height:11px;
+      border-radius:999px;
+      background:#edf1f7;
+      overflow:hidden;
+    }
+
+    .score-bar {
+      height:100%;
+      width:0%;
+      background:linear-gradient(90deg, var(--teal), var(--gold));
+      transition:width .35s ease;
+    }
+
+    .class-dashboard {
+      background:
+        radial-gradient(circle at 8% 12%, rgba(245,200,76,.30), transparent 24%),
+        radial-gradient(circle at 92% 8%, rgba(231,221,247,.55), transparent 28%),
+        linear-gradient(145deg, #f7fffc, #fff9ed);
+      border:2px solid rgba(111,183,167,.25);
+    }
+
+    .dashboard-intro {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:18px;
+    }
+
+    .class-total {
+      min-width:150px;
+      text-align:center;
+      color:white;
+      background:linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius:22px;
+      padding:14px 20px;
+      box-shadow:var(--shadow);
+    }
+
+    .class-total strong { display:block; font-size:2.25rem; line-height:1; }
+    .class-total span { font-size:.9rem; font-weight:700; }
+
+    .leader-banner {
+      background:white;
+      color:var(--navy);
+      border:2px solid var(--gold);
+      border-radius:18px;
+      padding:14px 16px;
+      margin:14px 0 18px;
+      font-size:1.08rem;
+      font-weight:800;
+      box-shadow:0 6px 16px rgba(32,58,95,.08);
+    }
+
+    .tally-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:14px;
+    }
+
+    .tally-card {
+      --person-color:var(--teal);
+      background:white;
+      border:2px solid color-mix(in srgb, var(--person-color) 48%, white);
+      border-top:9px solid var(--person-color);
+      border-radius:20px;
+      padding:16px;
+      box-shadow:0 7px 18px rgba(32,58,95,.09);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+
+    .tally-card.is-leading {
+      transform:translateY(-4px);
+      box-shadow:0 12px 25px rgba(32,58,95,.18);
+    }
+
+    .tally-top {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-height:70px;
+    }
+
+    .tally-icon {
+      flex:0 0 58px;
+      height:58px;
+      display:grid;
+      place-items:center;
+      border-radius:18px;
+      background:color-mix(in srgb, var(--person-color) 18%, white);
+      font-size:2rem;
+    }
+
+    .tally-name { color:var(--navy); font-weight:900; line-height:1.15; }
+    .tally-tagline { color:#566575; font-size:.82rem; line-height:1.25; margin-top:4px; }
+
+    .tally-count {
+      text-align:center;
+      color:var(--navy);
+      font-size:2.5rem;
+      font-weight:900;
+      line-height:1;
+      margin:14px 0 10px;
+    }
+
+    .class-bar-wrap {
+      height:13px;
+      overflow:hidden;
+      border-radius:999px;
+      background:#edf1f7;
+      margin-bottom:13px;
+    }
+
+    .class-bar {
+      height:100%;
+      width:0%;
+      border-radius:999px;
+      background:var(--person-color);
+      transition:width .3s ease;
+    }
+
+    .tally-controls { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+    .tally-button {
+      border:0;
+      border-radius:14px;
+      min-height:44px;
+      font:inherit;
+      font-size:1.25rem;
+      font-weight:900;
+      cursor:pointer;
+    }
+    .tally-add { background:var(--person-color); color:#14202b; }
+    .tally-subtract { background:#edf1f7; color:var(--navy); }
+    .tally-button:hover, .tally-button:focus { filter:brightness(.96); outline:3px solid rgba(32,58,95,.18); }
+
+    .hidden { display:none; }
+
+    .footer-note {
+      text-align:center;
+      color:#4c5b6b;
+      font-size:.95rem;
+      padding:24px 8px 12px;
+    }
+
+    @media (max-width:650px) {
+      .page { padding:10px; }
+      .hero, .section { padding:20px; border-radius:20px; }
+      .question-text { font-size:1.18rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">SOC-210 Fun Learning Quiz</span>
+        <h1>Which Classic Sociologist Do You Think Like?</h1>
+        <p>
+          Choose the answers that sound most like your way of thinking. At the end, you will see which classic sociologist your answers most closely match. This is not a scientific personality test; it is a playful way to learn major sociological ideas.
+        </p>
+        <div class="progress-wrap" aria-label="Quiz progress">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="progress-label" id="progressLabel">Question 1 of 12</div>
+      </div>
+    </header>
+
+    <section class="section" id="introSection">
+      <span class="badge">Before you begin</span>
+      <h2>How this works</h2>
+      <p>
+        Each answer adds points to one or more sociologists. Your top result shows the thinker whose ideas most closely match your responses. Your second result shows another lens you may also use when thinking about society.
+      </p>
+      <div class="callout">
+        <strong>Instructor note:</strong> This activity introduces major thinkers often included in Introduction to Sociology: Marx, Durkheim, Weber, Martineau, Du Bois, Addams, Mead, and Goffman.
+      </div>
+      <button class="tool-button" onclick="startQuiz()">Start the Quiz</button>
+    </section>
+
+    <section class="section hidden" id="quizSection">
+      <span class="badge">Choose one answer</span>
+      <div class="quiz-card">
+        <div class="question-number" id="questionNumber">Question 1</div>
+        <div class="question-text" id="questionText"></div>
+        <div class="answers" id="answerArea"></div>
+      </div>
+      <div class="controls">
+        <button class="tool-button secondary" onclick="goBack()" id="backBtn">Back</button>
+        <button class="tool-button secondary" onclick="resetQuiz()">Reset</button>
+      </div>
+    </section>
+
+    <section class="section hidden" id="resultSection">
+      <span class="badge">Your result</span>
+      <h2 id="resultHeading">You think like...</h2>
+      <div class="result-grid">
+        <article class="result-card" id="topResult"></article>
+        <article class="result-card" id="secondResult"></article>
+      </div>
+
+      <div class="callout">
+        <strong>Reflection:</strong> Which result surprised you? Which sociologist would be most useful for analyzing a social issue you care about?
+      </div>
+
+      <h2>Score Mix</h2>
+      <p>Your answers may show more than one sociological lens. That is a good thing: sociologists often combine perspectives to understand society more fully.</p>
+      <div id="scoreMix"></div>
+
+      <div class="controls">
+        <button class="tool-button" onclick="resetQuiz()">Take Again</button>
+      </div>
+    </section>
+
+    <section class="section class-dashboard" id="classDashboard">
+      <div class="dashboard-intro">
+        <div>
+          <span class="badge">Live classroom visual</span>
+          <h2>Who Does Our Class Think Like?</h2>
+          <p>Ask students for their top result, then tap <strong>+</strong> once for each student. Use <strong>−</strong> to correct a tally.</p>
+        </div>
+        <div class="class-total" aria-live="polite">
+          <strong id="classTotal">0</strong>
+          <span>students counted</span>
+        </div>
+      </div>
+
+      <div class="leader-banner" id="leaderBanner" aria-live="polite">
+        Add the first result to reveal your class's leading sociologist.
+      </div>
+
+      <div class="tally-grid" id="tallyGrid"></div>
+
+      <div class="controls">
+        <button class="tool-button secondary" onclick="resetClassTally()">Reset Class Results</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="badge">Study guide</span>
+      <h2>Meet the Sociologists</h2>
+      <div class="sociologist-grid" id="sociologistGrid"></div>
+    </section>
+
+    <p class="footer-note">SOC-210 Introduction to Sociology • Classic Sociologist Quiz • Designed for visual, interactive learning</p>
+  </main>
+
+  <script>
+    const sociologists = {
+      marx: {
+        name: 'Karl Marx',
+        icon: '⚔️',
+        tagline: 'The Conflict & Inequality Thinker',
+        summary: 'You notice power, class inequality, exploitation, and who benefits from social arrangements.',
+        contribution: 'Known for analyzing capitalism, class conflict, labor, exploitation, and the relationship between economic systems and social life.',
+        classroom: 'Useful for studying poverty, wages, wealth gaps, housing inequality, and power.'
+      },
+      durkheim: {
+        name: 'Émile Durkheim',
+        icon: '🤝',
+        tagline: 'The Social Order & Solidarity Thinker',
+        summary: 'You think about social bonds, shared norms, institutions, and what holds society together.',
+        contribution: 'Known for social facts, social solidarity, anomie, and showing that even personal acts can be studied sociologically.',
+        classroom: 'Useful for studying community, norms, social isolation, religion, and social cohesion.'
+      },
+      weber: {
+        name: 'Max Weber',
+        icon: '🏛️',
+        tagline: 'The Meaning, Authority & Bureaucracy Thinker',
+        summary: 'You notice authority, rules, organizations, bureaucracy, values, and the meanings people attach to action.',
+        contribution: 'Known for bureaucracy, rationalization, verstehen, authority, and the relationship between ideas and social change.',
+        classroom: 'Useful for studying schools, workplaces, government, rules, paperwork, and institutional power.'
+      },
+      martineau: {
+        name: 'Harriet Martineau',
+        icon: '🔎',
+        tagline: 'The Inequality & Observation Thinker',
+        summary: 'You pay attention to whose experiences are ignored and believe society should be studied carefully and ethically.',
+        contribution: 'Known as an early sociologist who studied morals, manners, inequality, gender, slavery, and social reform.',
+        classroom: 'Useful for studying gender, family, inequality, social values, and everyday life.'
+      },
+      dubois: {
+        name: 'W. E. B. Du Bois',
+        icon: '📚',
+        tagline: 'The Race, Data & Double Consciousness Thinker',
+        summary: 'You notice race, inequality, identity, evidence, and how people experience society differently based on social position.',
+        contribution: 'Known for empirical sociology, double consciousness, studies of race and racism, and analysis of structural inequality.',
+        classroom: 'Useful for studying race, identity, institutions, inequality, and lived experience.'
+      },
+      addams: {
+        name: 'Jane Addams',
+        icon: '🏘️',
+        tagline: 'The Community Reform & Public Sociology Thinker',
+        summary: 'You want sociology to improve real communities through service, reform, and practical action.',
+        contribution: 'Known for Hull House, settlement work, public sociology, peace activism, and applied social reform.',
+        classroom: 'Useful for studying community action, poverty, immigration, social services, and reform.'
+      },
+      mead: {
+        name: 'George Herbert Mead',
+        icon: '💬',
+        tagline: 'The Self, Symbols & Interaction Thinker',
+        summary: 'You focus on how people develop identity through interaction, language, symbols, and role-taking.',
+        contribution: 'Known for theories of the self, role-taking, symbolic interaction, and how society shapes identity.',
+        classroom: 'Useful for studying socialization, identity, communication, family, and peer groups.'
+      },
+      goffman: {
+        name: 'Erving Goffman',
+        icon: '🎭',
+        tagline: 'The Social Performance Thinker',
+        summary: 'You notice how people manage impressions, perform roles, and adjust behavior depending on the social setting.',
+        contribution: 'Known for dramaturgy, impression management, front stage/back stage behavior, and everyday interaction.',
+        classroom: 'Useful for studying social media, classrooms, workplaces, dating, and public behavior.'
+      }
+    };
+
+    const questions = [
+      {
+        text: 'When you see a social problem, what do you notice first?',
+        answers: [
+          { title:'Who has power?', desc:'I ask who benefits and who is disadvantaged.', points:{ marx:3, dubois:1 } },
+          { title:'What holds people together?', desc:'I ask whether shared norms or institutions are weakening.', points:{ durkheim:3, addams:1 } },
+          { title:'What meanings are people using?', desc:'I ask how people interpret the situation.', points:{ mead:2, weber:2 } },
+          { title:'What is happening in everyday interaction?', desc:'I watch how people perform roles and manage impressions.', points:{ goffman:3, mead:1 } }
+        ]
+      },
+      {
+        text: 'Which classroom topic pulls you in the most?',
+        answers: [
+          { title:'Class inequality and capitalism', desc:'Wealth, labor, exploitation, and economic power.', points:{ marx:3 } },
+          { title:'Community and belonging', desc:'Norms, anomie, religion, and social cohesion.', points:{ durkheim:3 } },
+          { title:'Race, identity, and evidence', desc:'Structural racism, lived experience, and data.', points:{ dubois:3 } },
+          { title:'Social reform and helping communities', desc:'Applying sociology to improve real lives.', points:{ addams:3, martineau:1 } }
+        ]
+      },
+      {
+        text: 'What do you think society needs most?',
+        answers: [
+          { title:'More equality', desc:'Fewer extreme gaps in wealth, power, and opportunity.', points:{ marx:2, dubois:2 } },
+          { title:'More solidarity', desc:'Stronger bonds, shared responsibility, and connection.', points:{ durkheim:3, addams:1 } },
+          { title:'More understanding', desc:'People need to understand meanings and viewpoints.', points:{ weber:2, mead:2 } },
+          { title:'More practical reform', desc:'Communities need action, not just talk.', points:{ addams:3, martineau:1 } }
+        ]
+      },
+      {
+        text: 'You are studying a school. What do you focus on?',
+        answers: [
+          { title:'Rules and bureaucracy', desc:'Forms, policies, rankings, authority, and procedures.', points:{ weber:3 } },
+          { title:'Unequal access', desc:'Funding, tracking, class, race, and opportunity gaps.', points:{ marx:2, dubois:2 } },
+          { title:'Peer interaction', desc:'How students learn identity through others.', points:{ mead:3, goffman:1 } },
+          { title:'Shared values', desc:'How school teaches norms and social expectations.', points:{ durkheim:3 } }
+        ]
+      },
+      {
+        text: 'Which phrase sounds most like you?',
+        answers: [
+          { title:'Follow the money.', desc:'Economic power explains more than people realize.', points:{ marx:3 } },
+          { title:'Look for the social facts.', desc:'Patterns exist outside individuals and shape behavior.', points:{ durkheim:3 } },
+          { title:'Understand the meaning.', desc:'We need to know what actions mean to people.', points:{ weber:3 } },
+          { title:'Observe morals and manners.', desc:'Everyday values reveal how society really works.', points:{ martineau:3 } }
+        ]
+      },
+      {
+        text: 'How do you understand identity?',
+        answers: [
+          { title:'Through interaction', desc:'The self develops as we take the role of others.', points:{ mead:3 } },
+          { title:'Through performance', desc:'People manage impressions depending on the audience.', points:{ goffman:3 } },
+          { title:'Through inequality', desc:'Identity is shaped by race, class, gender, and power.', points:{ dubois:2, martineau:2 } },
+          { title:'Through community bonds', desc:'Identity connects people to groups and shared values.', points:{ durkheim:2, addams:1 } }
+        ]
+      },
+      {
+        text: 'What bothers you most about society?',
+        answers: [
+          { title:'Exploitation', desc:'Some people profit while others struggle.', points:{ marx:3 } },
+          { title:'Disconnection', desc:'People feel isolated, normless, or without belonging.', points:{ durkheim:3 } },
+          { title:'Dehumanizing systems', desc:'Rules can become more important than people.', points:{ weber:3, addams:1 } },
+          { title:'Ignored voices', desc:'Some experiences are treated as less important.', points:{ martineau:2, dubois:2 } }
+        ]
+      },
+      {
+        text: 'Which research style sounds most appealing?',
+        answers: [
+          { title:'Analyze economic systems', desc:'Study labor, production, class, and power.', points:{ marx:3 } },
+          { title:'Study patterns and statistics', desc:'Use evidence to show social forces at work.', points:{ durkheim:2, dubois:2 } },
+          { title:'Observe everyday life', desc:'Watch behavior, manners, roles, and interactions.', points:{ martineau:2, goffman:2 } },
+          { title:'Work directly in communities', desc:'Use sociology to support reform and services.', points:{ addams:3 } }
+        ]
+      },
+      {
+        text: 'A person is experiencing homelessness. What question do you ask first?',
+        answers: [
+          { title:'What economic structures contributed?', desc:'Housing costs, wages, ownership, and inequality.', points:{ marx:3 } },
+          { title:'How do labels affect treatment?', desc:'Stigma changes how people interact with them.', points:{ goffman:2, mead:2 } },
+          { title:'Which institutions failed?', desc:'Family, economy, healthcare, and government may be disconnected.', points:{ durkheim:2, addams:2 } },
+          { title:'Whose story is missing?', desc:'Listen to the person’s lived experience and gather evidence.', points:{ dubois:2, martineau:2 } }
+        ]
+      },
+      {
+        text: 'Which social force do you think is most powerful?',
+        answers: [
+          { title:'Economic class', desc:'Class shapes resources, opportunities, and life chances.', points:{ marx:3 } },
+          { title:'Authority and organizations', desc:'Bureaucracy shapes modern life.', points:{ weber:3 } },
+          { title:'Culture and interaction', desc:'Symbols, language, and roles shape identity.', points:{ mead:2, goffman:2 } },
+          { title:'Social reform', desc:'People can organize to make communities better.', points:{ addams:3, martineau:1 } }
+        ]
+      },
+      {
+        text: 'When people disagree about a social issue, you think...',
+        answers: [
+          { title:'They may have different material interests.', desc:'Groups often view issues based on resources and power.', points:{ marx:3 } },
+          { title:'They may have different values and meanings.', desc:'Ideas, beliefs, and interpretations matter.', points:{ weber:3, mead:1 } },
+          { title:'They may occupy different social positions.', desc:'Race, class, gender, and history shape what people see.', points:{ dubois:2, martineau:2 } },
+          { title:'They may be performing for different audiences.', desc:'People adjust what they say depending on the setting.', points:{ goffman:3 } }
+        ]
+      },
+      {
+        text: 'What should sociology do?',
+        answers: [
+          { title:'Expose inequality', desc:'Reveal systems of power and exploitation.', points:{ marx:2, dubois:2 } },
+          { title:'Explain social order', desc:'Show how institutions, norms, and solidarity shape society.', points:{ durkheim:3 } },
+          { title:'Interpret human action', desc:'Understand meaning, values, authority, and motivation.', points:{ weber:3 } },
+          { title:'Improve society', desc:'Use knowledge for reform, justice, and community support.', points:{ addams:2, martineau:2 } }
+        ]
+      }
+    ];
+
+    let currentQuestion = 0;
+    let scores = {};
+    let history = [];
+    const classColors = {
+      marx:'#ef7d7d', durkheim:'#65c4ad', weber:'#f2bd48', martineau:'#b797e8',
+      dubois:'#729ee8', addams:'#f49bbb', mead:'#6fc7df', goffman:'#f09a59'
+    };
+    let classTallies = {};
+
+    function initializeScores() {
+      scores = {};
+      Object.keys(sociologists).forEach(key => scores[key] = 0);
+    }
+
+    function startQuiz() {
+      initializeScores();
+      history = [];
+      currentQuestion = 0;
+      document.getElementById('introSection').classList.add('hidden');
+      document.getElementById('resultSection').classList.add('hidden');
+      document.getElementById('quizSection').classList.remove('hidden');
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const q = questions[currentQuestion];
+      document.getElementById('questionNumber').textContent = `Question ${currentQuestion + 1}`;
+      document.getElementById('questionText').textContent = q.text;
+      document.getElementById('progressBar').style.width = `${(currentQuestion / questions.length) * 100}%`;
+      document.getElementById('progressLabel').textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+      document.getElementById('backBtn').style.display = currentQuestion === 0 ? 'none' : 'inline-block';
+
+      const area = document.getElementById('answerArea');
+      area.innerHTML = '';
+      q.answers.forEach((answer, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'answer-btn';
+        btn.innerHTML = `<strong>${answer.title}</strong>${answer.desc}`;
+        btn.onclick = () => selectAnswer(index);
+        area.appendChild(btn);
+      });
+    }
+
+    function selectAnswer(index) {
+      const answer = questions[currentQuestion].answers[index];
+      history.push({ questionIndex: currentQuestion, answerIndex: index, points: answer.points });
+      Object.entries(answer.points).forEach(([key, value]) => {
+        scores[key] += value;
+      });
+
+      currentQuestion++;
+      if (currentQuestion >= questions.length) {
+        showResults();
+      } else {
+        showQuestion();
+      }
+    }
+
+    function goBack() {
+      if (history.length === 0) return;
+      const last = history.pop();
+      Object.entries(last.points).forEach(([key, value]) => {
+        scores[key] -= value;
+      });
+      currentQuestion = last.questionIndex;
+      showQuestion();
+    }
+
+    function showResults() {
+      document.getElementById('quizSection').classList.add('hidden');
+      document.getElementById('resultSection').classList.remove('hidden');
+      document.getElementById('progressBar').style.width = '100%';
+      document.getElementById('progressLabel').textContent = 'Quiz complete';
+
+      const ranked = Object.entries(scores).sort((a,b) => b[1] - a[1]);
+      const top = ranked[0];
+      const second = ranked[1];
+      const topData = sociologists[top[0]];
+      const secondData = sociologists[second[0]];
+
+      document.getElementById('resultHeading').textContent = `You think most like ${topData.name}!`;
+      document.getElementById('topResult').innerHTML = resultHTML(topData, 'Top Match');
+      document.getElementById('secondResult').innerHTML = resultHTML(secondData, 'Also Showing');
+
+      renderScoreMix(ranked);
+    }
+
+    function resultHTML(person, label) {
+      return `
+        <div class="portrait">${person.icon}</div>
+        <span class="badge">${label}</span>
+        <h3>${person.name}</h3>
+        <p><strong>${person.tagline}</strong></p>
+        <p>${person.summary}</p>
+        <p><strong>Major contribution:</strong> ${person.contribution}</p>
+        <p><strong>Use this lens for:</strong> ${person.classroom}</p>
+      `;
+    }
+
+    function renderScoreMix(ranked) {
+      const maxScore = ranked[0][1] || 1;
+      const mix = document.getElementById('scoreMix');
+      mix.innerHTML = '';
+      ranked.forEach(([key, value]) => {
+        const person = sociologists[key];
+        const percent = Math.round((value / maxScore) * 100);
+        const row = document.createElement('div');
+        row.className = 'score-row';
+        row.innerHTML = `
+          <div class="score-label"><span>${person.icon} ${person.name}</span><span>${value}</span></div>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:${percent}%"></div></div>
+        `;
+        mix.appendChild(row);
+      });
+    }
+
+    function resetQuiz() {
+      initializeScores();
+      history = [];
+      currentQuestion = 0;
+      document.getElementById('introSection').classList.remove('hidden');
+      document.getElementById('quizSection').classList.add('hidden');
+      document.getElementById('resultSection').classList.add('hidden');
+      document.getElementById('progressBar').style.width = '0%';
+      document.getElementById('progressLabel').textContent = `Question 1 of ${questions.length}`;
+      window.scrollTo({ top:0, behavior:'smooth' });
+    }
+
+    function renderSociologistGrid() {
+      const grid = document.getElementById('sociologistGrid');
+      grid.innerHTML = '';
+      Object.values(sociologists).forEach(person => {
+        const card = document.createElement('article');
+        card.className = 'mini-card';
+        card.innerHTML = `
+          <div class="portrait">${person.icon}</div>
+          <h3>${person.name}</h3>
+          <p><strong>${person.tagline}</strong></p>
+          <p>${person.contribution}</p>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function initializeClassTallies() {
+      Object.keys(sociologists).forEach(key => classTallies[key] = 0);
+    }
+
+    function renderTallyGrid() {
+      const grid = document.getElementById('tallyGrid');
+      grid.innerHTML = '';
+      Object.entries(sociologists).forEach(([key, person]) => {
+        const card = document.createElement('article');
+        card.className = 'tally-card';
+        card.id = `tally-${key}`;
+        card.style.setProperty('--person-color', classColors[key]);
+        card.innerHTML = `
+          <div class="tally-top">
+            <div class="tally-icon" aria-hidden="true">${person.icon}</div>
+            <div>
+              <div class="tally-name">${person.name}</div>
+              <div class="tally-tagline">${person.tagline}</div>
+            </div>
+          </div>
+          <div class="tally-count" id="count-${key}" aria-live="polite">0</div>
+          <div class="class-bar-wrap"><div class="class-bar" id="bar-${key}"></div></div>
+          <div class="tally-controls">
+            <button class="tally-button tally-subtract" onclick="changeClassTally('${key}', -1)" aria-label="Subtract one from ${person.name}">−</button>
+            <button class="tally-button tally-add" onclick="changeClassTally('${key}', 1)" aria-label="Add one to ${person.name}">+</button>
+          </div>`;
+        grid.appendChild(card);
+      });
+      updateClassDashboard();
+    }
+
+    function changeClassTally(key, amount) {
+      classTallies[key] = Math.max(0, classTallies[key] + amount);
+      updateClassDashboard();
+    }
+
+    function updateClassDashboard() {
+      const entries = Object.entries(classTallies);
+      const total = entries.reduce((sum, entry) => sum + entry[1], 0);
+      const max = Math.max(0, ...entries.map(entry => entry[1]));
+      document.getElementById('classTotal').textContent = total;
+
+      entries.forEach(([key, value]) => {
+        document.getElementById(`count-${key}`).textContent = value;
+        document.getElementById(`bar-${key}`).style.width = total ? `${Math.round((value / total) * 100)}%` : '0%';
+        document.getElementById(`tally-${key}`).classList.toggle('is-leading', max > 0 && value === max);
+      });
+
+      const banner = document.getElementById('leaderBanner');
+      if (!total) {
+        banner.textContent = "Add the first result to reveal your class's leading sociologist.";
+        return;
+      }
+      const leaders = entries.filter(entry => entry[1] === max).map(entry => sociologists[entry[0]]);
+      if (leaders.length === 1) {
+        banner.textContent = `${leaders[0].icon} Our class currently thinks most like ${leaders[0].name} — ${max} of ${total} students.`;
+      } else {
+        banner.textContent = `We have a tie: ${leaders.map(person => `${person.icon} ${person.name}`).join(' and ')} each have ${max} students.`;
+      }
+    }
+
+    function resetClassTally() {
+      if (!window.confirm('Reset all class totals to zero?')) return;
+      initializeClassTallies();
+      updateClassDashboard();
+    }
+
+    initializeScores();
+    initializeClassTallies();
+    renderSociologistGrid();
+    renderTallyGrid();
+  </script>
+</body>
+</html>

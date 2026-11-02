@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Three Big Sociology Lenses</title>
+<style>
+  :root{
+    --ink:#233246;
+    --muted:#64748b;
+    --navy:#243b63;
+    --blue:#dff1ff;
+    --red:#ffe7e7;
+    --green:#e8f8ed;
+    --gold:#fff3c7;
+    --lav:#f0ecff;
+    --paper:#ffffff;
+    --shadow:0 12px 30px rgba(35,50,70,.14);
+    --radius:24px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--ink);
+    line-height:1.65;
+    background:
+      radial-gradient(circle at 8% 5%, rgba(223,241,255,.95), transparent 24rem),
+      radial-gradient(circle at 92% 8%, rgba(255,231,231,.9), transparent 26rem),
+      radial-gradient(circle at 50% 95%, rgba(232,248,237,.85), transparent 26rem),
+      linear-gradient(180deg,#fffaf0,#f7fbff 65%,#fffaf0);
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:22px}
+  header{
+    background:linear-gradient(135deg,#243b63,#6c5b7b);
+    color:#fff;
+    border-radius:30px;
+    padding:36px 24px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header:before{
+    content:"";
+    position:absolute;
+    inset:-70px;
+    background:
+      radial-gradient(circle at 20% 25%,rgba(255,255,255,.23),transparent 12rem),
+      radial-gradient(circle at 80% 30%,rgba(255,243,199,.25),transparent 15rem),
+      radial-gradient(circle at 52% 110%,rgba(223,241,255,.20),transparent 16rem);
+  }
+  header>*{position:relative}
+  h1{
+    font-size:clamp(2.1rem,5vw,4rem);
+    margin:0 0 10px;
+    line-height:1.05;
+    letter-spacing:-.04em;
+  }
+  header p{font-size:1.12rem;max-width:850px;margin:0 auto}
+  .tagrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+  .tag{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 12px;font-weight:800}
+  .tracker{
+    position:sticky;
+    top:0;
+    z-index:9;
+    background:rgba(255,250,240,.95);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(35,50,70,.12);
+    border-radius:0 0 18px 18px;
+    padding:13px 16px;
+    box-shadow:0 8px 18px rgba(35,50,70,.08);
+    margin-bottom:22px;
+  }
+  .tracker-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .bar{height:12px;background:#e9eef6;border-radius:999px;overflow:hidden;margin-top:9px}
+  .bar span{display:block;width:0%;height:100%;background:linear-gradient(90deg,#5aa7d6,#d56b6b,#65a879);transition:.3s}
+  .pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+  .pill{background:#eef3f8;color:#536174;border-radius:999px;padding:6px 10px;font-weight:800;font-size:.9rem}
+  .pill.done{background:#e1f5e7;color:#235d3a}
+  section{
+    background:rgba(255,255,255,.94);
+    border:1px solid rgba(35,50,70,.1);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:24px;
+    margin:22px 0;
+  }
+  h2{font-size:clamp(1.45rem,3vw,2.25rem);margin:0 0 12px;color:#2f4d72}
+  h3{margin:12px 0 7px;color:#31465f}
+  .visual-map{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:16px;
+  }
+  .visual-panel{
+    border-radius:24px;
+    padding:20px;
+    min-height:390px;
+    border:1px solid rgba(35,50,70,.12);
+    box-shadow:0 8px 18px rgba(35,50,70,.08);
+    position:relative;
+    overflow:hidden;
+  }
+  .visual-panel h3{font-size:1.45rem;margin-top:0}
+  .functional-panel{background:linear-gradient(180deg,#e5f6ff,#f7fcff)}
+  .conflict-panel{background:linear-gradient(180deg,#ffe5e5,#fff8f3)}
+  .symbolic-panel{background:linear-gradient(180deg,#e8f8ed,#f7fff9)}
+  .visual-icon{
+    font-size:3.2rem;
+    display:block;
+    text-align:center;
+    margin:2px 0 8px;
+  }
+  .puzzle-area{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin:16px 0;
+  }
+  .piece{
+    min-height:60px;
+    border-radius:18px;
+    display:grid;
+    place-items:center;
+    font-weight:900;
+    color:#233246;
+    border:2px solid rgba(35,50,70,.16);
+    box-shadow:0 5px 12px rgba(35,50,70,.08);
+  }
+  .piece:nth-child(1){background:#bfe7ff}
+  .piece:nth-child(2){background:#dff6cf}
+  .piece:nth-child(3){background:#fff0aa}
+  .piece:nth-child(4){background:#d9d0ff}
+  .scale{
+    margin:18px auto 12px;
+    width:220px;
+    max-width:100%;
+    height:125px;
+    position:relative;
+  }
+  .scale .beam{
+    position:absolute;
+    left:25px;right:25px;top:42px;height:9px;
+    background:#8b2f2f;
+    transform:rotate(-6deg);
+    border-radius:999px;
+  }
+  .scale .post{
+    position:absolute;
+    left:50%;top:25px;transform:translateX(-50%);
+    width:10px;height:90px;background:#8b2f2f;border-radius:999px;
+  }
+  .scale .base{
+    position:absolute;
+    left:50%;bottom:0;transform:translateX(-50%);
+    width:95px;height:14px;background:#8b2f2f;border-radius:999px;
+  }
+  .pan{
+    position:absolute;
+    width:78px;
+    height:40px;
+    border-radius:0 0 38px 38px;
+    display:grid;
+    place-items:center;
+    color:white;
+    font-weight:900;
+    font-size:.88rem;
+  }
+  .pan.left{left:6px;top:58px;background:#b33a3a}
+  .pan.right{right:6px;top:45px;background:#d06b3f}
+  .fist{
+    text-align:center;
+    font-size:3rem;
+    margin-top:4px;
+  }
+  .bubble-area{
+    position:relative;
+    min-height:170px;
+    margin:12px 0;
+  }
+  .bubble{
+    position:absolute;
+    padding:10px 12px;
+    border-radius:18px;
+    background:white;
+    border:2px solid rgba(35,50,70,.14);
+    font-weight:800;
+    box-shadow:0 5px 12px rgba(35,50,70,.08);
+  }
+  .b1{left:3%;top:8%;background:#fff3c7}
+  .b2{right:4%;top:20%;background:#e9e4ff}
+  .b3{left:23%;bottom:8%;background:#dff1ff}
+  .people-row{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    font-size:2.1rem;
+    margin-top:18px;
+  }
+  .callout{
+    background:rgba(255,255,255,.8);
+    border-left:6px solid #243b63;
+    border-radius:16px;
+    padding:13px;
+    margin-top:14px;
+  }
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{
+    border-radius:20px;
+    border:1px solid rgba(35,50,70,.12);
+    padding:18px;
+    box-shadow:0 8px 18px rgba(35,50,70,.08);
+    background:white;
+  }
+  .lens-card{cursor:pointer;transition:.18s ease;min-height:275px}
+  .lens-card:hover,.lens-card:focus{transform:translateY(-3px);outline:3px solid rgba(36,59,99,.15)}
+  .lens-card.active{border:3px solid #243b63}
+  .functional{background:var(--blue)}
+  .conflict{background:var(--red)}
+  .symbolic{background:var(--green)}
+  .emoji{font-size:2.2rem;display:block}
+  .hidden{display:none;margin-top:10px;padding:13px;border-radius:16px;background:rgba(255,255,255,.75)}
+  .hidden.show{display:block}
+  button{
+    border:0;
+    border-radius:999px;
+    padding:10px 14px;
+    font:inherit;
+    font-weight:800;
+    cursor:pointer;
+    background:#243b63;
+    color:white;
+    transition:.18s ease;
+  }
+  button:hover,button:focus{transform:translateY(-2px);outline:3px solid rgba(36,59,99,.22)}
+  .secondary{background:#eef3f8;color:#243447}
+  .choice{
+    width:100%;
+    text-align:left;
+    background:#f7f9fc;
+    color:var(--ink);
+    border:1px solid rgba(35,50,70,.14);
+    box-shadow:none;
+    border-radius:15px;
+    margin:8px 0;
+  }
+  .choice.correct{background:#e4f8ea;border-color:#4e9c68}
+  .choice.wrong{background:#ffecef;border-color:#c94c4c}
+  .feedback{
+    min-height:62px;
+    margin-top:12px;
+    padding:13px;
+    border-radius:16px;
+    background:#f4f7fb;
+    border-left:6px solid #5aa7d6;
+  }
+  .lens-buttons{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+  .lens-output{
+    padding:18px;
+    border-radius:18px;
+    border-left:7px solid #6c5b7b;
+    background:#f7f4ff;
+    min-height:122px;
+  }
+  .scenario-box{
+    background:#fffaf0;
+    border:1px solid rgba(35,50,70,.12);
+    border-radius:20px;
+    padding:18px;
+  }
+  .module-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .mini{
+    border-radius:18px;
+    background:#f8fbff;
+    border:1px solid rgba(35,50,70,.1);
+    padding:16px;
+  }
+  .complete{
+    display:none;
+    background:linear-gradient(135deg,#e8f8ed,#fff3c7);
+    border:2px solid #4e9c68;
+  }
+  .complete.show{display:block}
+  textarea{
+    width:100%;
+    min-height:110px;
+    resize:vertical;
+    border:1px solid rgba(35,50,70,.18);
+    border-radius:14px;
+    padding:12px;
+    font:inherit;
+  }
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .small{font-size:.92rem;color:var(--muted)}
+  @media(max-width:920px){
+    .grid,.visual-map{grid-template-columns:1fr}
+    .visual-panel{min-height:auto}
+  }
+  @media print{
+    .tracker,button,.actions{display:none!important}
+    body{background:white}
+    section,header{box-shadow:none;break-inside:avoid}
+    .hidden{display:block!important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>The Three Big Sociology Lenses</h1>
+    <p>A reusable interactive reference page for understanding structural functionalism, conflict theory, and symbolic interactionism across every section.</p>
+    <div class="tagrow">
+      <span class="tag">⚙️ Structure & Stability</span>
+      <span class="tag">⚔️ Power & Inequality</span>
+      <span class="tag">💬 Meaning & Interaction</span>
+    </div>
+  </header>
+
+  <div class="tracker">
+    <div class="tracker-top">
+      <strong>Successful Completion Tracker</strong>
+      <span id="progressText">0 of 5 sections completed</span>
+    </div>
+    <div class="pills">
+      <span class="pill" id="p-image">Visual Overview</span>
+      <span class="pill" id="p-cards">Theory Cards</span>
+      <span class="pill" id="p-same">Same Situation</span>
+      <span class="pill" id="p-quiz">Practice Check</span>
+      <span class="pill" id="p-reflect">Reflection</span>
+    </div>
+    <div class="bar"><span id="bar"></span></div>
+  </div>
+
+  <section>
+    <h2>1. Visual Overview: Three Ways to See Society</h2>
+    <p>Each perspective is like a different lens. Sociologists can look at the same social issue and ask different questions.</p>
+    <div class="visual-map">
+      <div class="visual-panel functional-panel">
+        <span class="visual-icon">🧩</span>
+        <h3>Structural Functionalism</h3>
+        <p><strong>Society is a system.</strong> Different parts work together to create order, stability, and cooperation.</p>
+        <div class="puzzle-area" aria-label="Puzzle pieces representing institutions">
+          <div class="piece">Family</div>
+          <div class="piece">School</div>
+          <div class="piece">Government</div>
+          <div class="piece">Economy</div>
+        </div>
+        <div class="callout"><strong>Question:</strong> How does this help society function?</div>
+      </div>
+
+      <div class="visual-panel conflict-panel">
+        <span class="visual-icon">⚔️</span>
+        <h3>Conflict Theory</h3>
+        <p><strong>Society involves struggle.</strong> Groups compete over power, resources, opportunities, and control.</p>
+        <div class="scale" aria-label="Unequal scale representing power and inequality">
+          <div class="beam"></div>
+          <div class="post"></div>
+          <div class="base"></div>
+          <div class="pan left">Power</div>
+          <div class="pan right">Access</div>
+        </div>
+        <div class="fist">✊</div>
+        <div class="callout"><strong>Question:</strong> Who benefits, who is harmed, and who has power?</div>
+      </div>
+
+      <div class="visual-panel symbolic-panel">
+        <span class="visual-icon">💬</span>
+        <h3>Symbolic Interactionism</h3>
+        <p><strong>Society is built through meaning.</strong> People create reality through symbols, language, labels, and everyday interactions.</p>
+        <div class="bubble-area" aria-label="Speech bubbles representing shared meaning">
+          <div class="bubble b1">What does it mean?</div>
+          <div class="bubble b2">How do others see me?</div>
+          <div class="bubble b3">What symbols matter?</div>
+        </div>
+        <div class="people-row">🧑🏽‍🎓 🧑🏻‍🏫 🧑🏿‍💼 🧑🏼‍🔧</div>
+        <div class="callout"><strong>Question:</strong> What meanings do people create through interaction?</div>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="markImage">I reviewed the visual overview</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Click the Theory Cards</h2>
+    <p>Each theory asks a different kind of question. Click each card to reveal its main question, focus, and common clue words.</p>
+    <div class="grid">
+      <div class="card lens-card functional" tabindex="0" role="button" data-card="functional">
+        <span class="emoji">⚙️</span>
+        <h3>Structural Functionalism</h3>
+        <p><strong>Big idea:</strong> Society is a system made of connected parts.</p>
+        <div class="hidden">
+          <p><strong>Main question:</strong> How does this help society function or stay stable?</p>
+          <p><strong>Focus:</strong> order, stability, institutions, functions, roles, cooperation.</p>
+          <p><strong>Watch for:</strong> “What purpose does it serve?”</p>
+        </div>
+      </div>
+      <div class="card lens-card conflict" tabindex="0" role="button" data-card="conflict">
+        <span class="emoji">⚔️</span>
+        <h3>Conflict Theory</h3>
+        <p><strong>Big idea:</strong> Society involves inequality and competition.</p>
+        <div class="hidden">
+          <p><strong>Main question:</strong> Who benefits, who is harmed, and who has power?</p>
+          <p><strong>Focus:</strong> inequality, resources, privilege, oppression, competition, change.</p>
+          <p><strong>Watch for:</strong> “Who gets more and who gets less?”</p>
+        </div>
+      </div>
+      <div class="card lens-card symbolic" tabindex="0" role="button" data-card="symbolic">
+        <span class="emoji">💬</span>
+        <h3>Symbolic Interactionism</h3>
+        <p><strong>Big idea:</strong> Society is created through everyday meanings.</p>
+        <div class="hidden">
+          <p><strong>Main question:</strong> What meanings do people create through interaction?</p>
+          <p><strong>Focus:</strong> symbols, language, labels, identity, communication, interpretation.</p>
+          <p><strong>Watch for:</strong> “What does this mean to people?”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Same Situation, Three Lenses</h2>
+    <p>Choose a lens to see how the same situation changes depending on the theory.</p>
+    <div class="scenario-box">
+      <h3>Scenario: A family eats dinner together most nights.</h3>
+      <div class="lens-buttons">
+        <button data-lens="fun">⚙️ Functionalism</button>
+        <button data-lens="con">⚔️ Conflict Theory</button>
+        <button data-lens="sym">💬 Symbolic Interactionism</button>
+      </div>
+      <div class="lens-output" id="lensOutput">Choose one theory lens.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Practice Check: Which Lens Fits Best?</h2>
+    <p>Choose the theory that best matches each explanation.</p>
+    <div class="grid">
+      <div class="card quiz">
+        <h3>Question 1</h3>
+        <p>Schools teach knowledge, routines, citizenship, and skills that help society continue.</p>
+        <button class="choice qbtn" data-correct="true">Structural Functionalism</button>
+        <button class="choice qbtn" data-correct="false">Conflict Theory</button>
+        <button class="choice qbtn" data-correct="false">Symbolic Interactionism</button>
+        <div class="feedback">Choose an answer.</div>
+      </div>
+      <div class="card quiz">
+        <h3>Question 2</h3>
+        <p>Some groups have more access to high-quality schools, wealth, healthcare, and political influence.</p>
+        <button class="choice qbtn" data-correct="false">Structural Functionalism</button>
+        <button class="choice qbtn" data-correct="true">Conflict Theory</button>
+        <button class="choice qbtn" data-correct="false">Symbolic Interactionism</button>
+        <div class="feedback">Choose an answer.</div>
+      </div>
+      <div class="card quiz">
+        <h3>Question 3</h3>
+        <p>A student’s identity changes after others label them as “gifted,” “troublemaker,” or “popular.”</p>
+        <button class="choice qbtn" data-correct="false">Structural Functionalism</button>
+        <button class="choice qbtn" data-correct="false">Conflict Theory</button>
+        <button class="choice qbtn" data-correct="true">Symbolic Interactionism</button>
+        <div class="feedback">Choose an answer.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. Theory Across the Sections</h2>
+    <p>Use this page from any section. The theories stay the same, but the topic changes.</p>
+    <div class="module-grid">
+      <div class="mini"><h3>Culture</h3><p>How do norms and values create stability, inequality, or meaning?</p></div>
+      <div class="mini"><h3>Socialization</h3><p>How do families, schools, peers, and media teach roles and identity?</p></div>
+      <div class="mini"><h3>Deviance</h3><p>Who defines deviance, how do rules maintain order, and how do labels affect behavior?</p></div>
+      <div class="mini"><h3>Institutions</h3><p>How do family, education, government, economy, and religion shape society?</p></div>
+      <div class="mini"><h3>Inequality</h3><p>How do race, class, gender, privilege, and discrimination shape life chances?</p></div>
+      <div class="mini"><h3>Social Change</h3><p>How do movements challenge inequality, change meanings, or help society adapt?</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. Final Reflection</h2>
+    <p>Choose one section topic and explain how all three theories could analyze it.</p>
+    <textarea id="reflection" placeholder="Example: Education can be analyzed through functionalism because..., conflict theory because..., and symbolic interactionism because..."></textarea>
+    <div class="actions">
+      <button id="markReflect">Mark Reflection Complete</button>
+      <button onclick="window.print()" class="secondary">Print / Save as PDF</button>
+      <button id="resetBtn" class="secondary">Reset Activity</button>
+    </div>
+    <p class="small">Privacy note: typed reflection stays on this device/browser unless printed, copied, or saved.</p>
+  </section>
+
+  <section class="complete" id="completeBox">
+    <h2>Successful Completion</h2>
+    <p><strong>Nice work.</strong> You reviewed the visual, explored the three theory cards, applied the lenses to the same situation, completed the practice check, and marked the reflection complete.</p>
+    <p>You are ready to use structural functionalism, conflict theory, and symbolic interactionism in section activities, discussions, and the Ideal Society Project.</p>
+  </section>
+</div>
+
+<script>
+  const completed = {image:false,cards:false,same:false,quiz:false,reflect:false};
+  function updateTracker(){
+    const total = Object.values(completed).filter(Boolean).length;
+    document.getElementById('progressText').textContent = total + ' of 5 sections completed';
+    document.getElementById('bar').style.width = (total/5*100) + '%';
+    const map = {image:'p-image',cards:'p-cards',same:'p-same',quiz:'p-quiz',reflect:'p-reflect'};
+    Object.keys(map).forEach(k => document.getElementById(map[k]).classList.toggle('done', completed[k]));
+    if(total === 5){ document.getElementById('completeBox').classList.add('show'); }
+  }
+
+  document.getElementById('markImage').addEventListener('click',()=>{
+    completed.image = true; updateTracker();
+  });
+
+  let openedCards = {};
+  function openCard(card){
+    card.classList.toggle('active');
+    card.querySelector('.hidden').classList.toggle('show');
+    openedCards[card.dataset.card] = true;
+    if(Object.keys(openedCards).length >= 3){ completed.cards = true; updateTracker(); }
+  }
+  document.querySelectorAll('.lens-card').forEach(card=>{
+    card.addEventListener('click',()=>openCard(card));
+    card.addEventListener('keydown',e=>{
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openCard(card); }
+    });
+  });
+
+  document.querySelectorAll('[data-lens]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const out = document.getElementById('lensOutput');
+      if(btn.dataset.lens === 'fun'){
+        out.innerHTML = '<strong>Structural Functionalism:</strong> Family dinner may help create stability by building routines, teaching manners, strengthening emotional bonds, and passing down values.';
+      }
+      if(btn.dataset.lens === 'con'){
+        out.innerHTML = '<strong>Conflict Theory:</strong> Family dinner can reveal power and inequality, such as who cooks, who cleans, whose schedule matters most, and whose voice is heard.';
+      }
+      if(btn.dataset.lens === 'sym'){
+        out.innerHTML = '<strong>Symbolic Interactionism:</strong> Family dinner gains meaning through conversation, rituals, jokes, seating patterns, traditions, and the way family members define “togetherness.”';
+      }
+      completed.same = true; updateTracker();
+    });
+  });
+
+  let quizCorrect = 0;
+  document.querySelectorAll('.quiz').forEach(card=>{
+    let answered = false;
+    card.querySelectorAll('.qbtn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        if(answered) return;
+        answered = true;
+        const fb = card.querySelector('.feedback');
+        if(btn.dataset.correct === 'true'){
+          btn.classList.add('correct');
+          quizCorrect++;
+          fb.innerHTML = '✅ Correct. This explanation matches that theory lens.';
+        } else {
+          btn.classList.add('wrong');
+          fb.innerHTML = 'Not quite. Look for the clue: stability/function, power/inequality, or meaning/interaction.';
+          card.querySelectorAll('.qbtn').forEach(b=>{ if(b.dataset.correct === 'true') b.classList.add('correct'); });
+        }
+        if(quizCorrect >= 2){ completed.quiz = true; updateTracker(); }
+      });
+    });
+  });
+
+  document.getElementById('markReflect').addEventListener('click',()=>{
+    completed.reflect = true; updateTracker();
+  });
+
+  document.getElementById('resetBtn').addEventListener('click',()=>location.reload());
+</script>
+</body>
+</html>

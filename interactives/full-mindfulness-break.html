@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mindfulness Moment: Breathe, Ground, Reset</title>
+<style>
+:root{
+  --cream:#fff8ee;
+  --cream2:#f7eadb;
+  --sage:#8ea98d;
+  --sage-dark:#3f5a42;
+  --lav:#b9a7d4;
+  --purple:#5b3f87;
+  --navy:#26304f;
+  --gold:#c9a75d;
+  --rose:#d6a5a5;
+  --text:#26304f;
+  --muted:#5f6b80;
+  --border:rgba(122,91,55,.18);
+  --shadow:0 20px 60px rgba(72,55,42,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  padding:18px;
+  min-height:100vh;
+  color:var(--text);
+  font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at 15% 14%, rgba(214,165,165,.35), transparent 15%),
+    radial-gradient(circle at 85% 18%, rgba(185,167,212,.35), transparent 16%),
+    radial-gradient(circle at 80% 84%, rgba(142,169,141,.28), transparent 18%),
+    linear-gradient(135deg, #fffaf1, #f7eadb 48%, #efe4f3);
+}
+.bg-flower{position:fixed; inset:0; pointer-events:none; opacity:.45; overflow:hidden; z-index:0}
+.flower{
+  position:absolute;
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle, rgba(255,255,255,.75) 0 10%, transparent 11%),
+    conic-gradient(from 0deg, rgba(214,165,165,.55), rgba(185,167,212,.35), rgba(142,169,141,.35), rgba(214,165,165,.55));
+}
+.f1{left:-40px;top:120px}
+.f2{right:-45px;top:360px;transform:scale(1.25)}
+.f3{left:8%;bottom:-65px;transform:scale(.9)}
+
+.botanical-corner{position:fixed;pointer-events:none;z-index:0;opacity:.78;width:260px;height:260px}
+.botanical-corner.right-top{right:18px;top:18px;transform:rotate(8deg)}
+.botanical-corner.left-bottom{left:10px;bottom:8px;transform:rotate(190deg) scale(.95)}
+.stem{position:absolute;width:3px;height:180px;background:linear-gradient(#9ab287,#6f8f73);border-radius:999px;left:126px;top:55px;transform:rotate(38deg);transform-origin:bottom;opacity:.75}
+.leaf{position:absolute;width:42px;height:20px;background:radial-gradient(circle at 30% 50%, #d7ead4, #8ea98d);border-radius:100% 0 100% 0;opacity:.82}
+.leaf.l1{left:132px;top:116px;transform:rotate(8deg)}
+.leaf.l2{left:92px;top:150px;transform:rotate(190deg)}
+.leaf.l3{left:146px;top:178px;transform:rotate(24deg)}
+.leaf.l4{left:86px;top:92px;transform:rotate(205deg)}
+.bloom{position:absolute;width:74px;height:74px;border-radius:50%;background:radial-gradient(circle at center, #8b5f2d 0 9%, #f5d67f 10% 18%, transparent 19%),conic-gradient(from 0deg, #f7c66d, #ffe6a7, #f1b965, #ffe7b3, #f7c66d);box-shadow:0 6px 18px rgba(201,167,93,.15)}
+.bloom::before{content:"";position:absolute;inset:13px;border-radius:50%;background:radial-gradient(circle, #9a6835 0 18%, #f4d88e 19% 35%, transparent 36%)}
+.bloom.b1{left:78px;top:38px}
+.bloom.b2{left:142px;top:92px;transform:scale(.68)}
+.bloom.b3{left:54px;top:132px;transform:scale(.55)}
+.lavender{position:absolute;width:16px;height:96px;left:174px;top:128px;transform:rotate(-18deg)}
+.lavender::before{content:"";position:absolute;left:7px;top:16px;width:2px;height:82px;background:#6f8f73;border-radius:999px}
+.lavender span{position:absolute;width:14px;height:10px;border-radius:999px;background:#b9a7d4}
+.lavender span:nth-child(1){top:0;left:2px}
+.lavender span:nth-child(2){top:12px;left:8px}
+.lavender span:nth-child(3){top:24px;left:1px}
+.lavender span:nth-child(4){top:36px;left:8px}
+.lavender span:nth-child(5){top:48px;left:2px}
+
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:10px;
+  background:#fff;
+  color:#26304f;
+  padding:12px 16px;
+  border-radius:12px;
+  z-index:99;
+}
+.skip-link:focus{left:10px}
+
+.wrap{max-width:1120px;margin:0 auto;position:relative;z-index:1}
+.main{border:1px solid var(--border); border-radius:30px; overflow:hidden; background:rgba(255,255,255,.64); box-shadow:var(--shadow); backdrop-filter:blur(12px)}
+.hero{text-align:center;padding:38px 22px 28px;background:linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,248,238,.58));border-bottom:1px solid var(--border)}
+.logo{width:86px;height:86px;margin:0 auto 12px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:50px;color:var(--gold);background:rgba(255,255,255,.68);border:1px solid rgba(201,167,93,.35)}
+h1{margin:0 0 8px;font-size:clamp(2.2rem,4vw,3.5rem);letter-spacing:.02em}
+.subtitle{max-width:860px;margin:0 auto;color:#526078;line-height:1.8;font-size:1.14rem}
+.pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
+.pill{border:1px solid var(--border);border-radius:999px;padding:8px 14px;background:rgba(255,255,255,.68);font-weight:800;color:#526078}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;padding:20px}
+.panel{border:1px solid var(--border);border-radius:24px;padding:24px;background:rgba(255,255,255,.76);box-shadow:0 10px 28px rgba(72,55,42,.08)}
+.panel::before{content:"";float:right;width:56px;height:56px;margin:-8px -4px 8px 10px;opacity:.18;border-radius:50%;background:radial-gradient(circle at center, #8b5f2d 0 10%, #f5d67f 11% 20%, transparent 21%),conic-gradient(from 0deg, #f7c66d, #ffe6a7, #f1b965, #ffe7b3, #f7c66d)}
+.full{grid-column:1/-1}
+.tag{display:inline-block;margin-bottom:12px;border-radius:999px;padding:8px 13px;font-size:.82rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;background:rgba(185,167,212,.28);color:#4a4260}
+.tag.sage{background:rgba(142,169,141,.25);color:#3f5a42}
+.tag.gold{background:rgba(201,167,93,.22);color:#6f5523}
+.tag.rose{background:rgba(214,165,165,.25);color:#714747}
+h2{margin:0 0 10px;font-size:1.45rem}
+h3{margin:0 0 8px;font-size:1.18rem}
+p,li{line-height:1.75;font-size:1.08rem}
+.note{color:#5f6b80;font-size:1.02rem;line-height:1.65}
+.btnrow{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:16px}
+button,.linkbtn{border:0;border-radius:999px;padding:13px 20px;font-weight:900;cursor:pointer;transition:.16s;text-decoration:none;display:inline-block;font-size:1rem}
+button:hover,.linkbtn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(72,55,42,.15)}
+button:disabled{opacity:.48;cursor:not-allowed;transform:none}
+.primary,.linkbtn{background:linear-gradient(135deg,var(--purple),#8faeff);color:#fff}
+.sagebtn{background:linear-gradient(135deg,#9fc29e,#d7ead4);color:#2e4a32}
+.soft{background:rgba(255,255,255,.72);color:#526078;border:1px solid var(--border)}
+.sliderbox{background:rgba(255,248,238,.82);border:1px solid var(--border);border-radius:20px;padding:18px;margin-top:14px}
+input[type=range]{width:100%;accent-color:var(--purple)}
+.num{text-align:center;font-size:2.2rem;font-weight:950;margin:6px 0}
+.breathewrap{display:flex;flex-direction:column;align-items:center;gap:14px;padding:12px 0}
+.orb{width:225px;height:225px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#fff;font-size:1.14rem;font-weight:950;line-height:1.45;background:radial-gradient(circle at 35% 30%, rgba(255,255,255,.8), rgba(185,167,212,.55) 28%, rgba(142,169,141,.45) 62%, rgba(201,167,93,.3));box-shadow:0 0 42px rgba(185,167,212,.42), inset 0 0 28px rgba(255,255,255,.28);animation:breathe 8s ease-in-out infinite}
+.message{min-height:94px;max-width:780px;width:100%;text-align:center;padding:18px;border-radius:22px;background:rgba(255,255,255,.78);border:1px solid var(--border);font-weight:850;line-height:1.65;font-size:1.18rem;transition:.8s}
+.fade{opacity:0;transform:translateY(8px)}
+.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
+.step{border:1px solid var(--border);border-radius:20px;padding:18px;background:rgba(255,248,238,.74)}
+.step.done{background:rgba(159,194,158,.26);border-color:rgba(142,169,141,.42)}
+.emoji{font-size:2.15rem;margin-bottom:8px}
+.progress{height:18px;border-radius:999px;overflow:hidden;background:rgba(82,96,120,.13);border:1px solid var(--border);margin-top:18px}
+.fill{height:100%;width:0%;background:linear-gradient(90deg,var(--sage),var(--lav));transition:.4s}
+.results,.bonus{display:none;margin-top:18px;padding:22px;border-radius:24px;border:1px solid var(--border)}
+.results{background:linear-gradient(135deg,rgba(142,169,141,.18),rgba(185,167,212,.15))}
+.bonus{background:linear-gradient(135deg,rgba(201,167,93,.18),rgba(214,165,165,.14))}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.stat{text-align:center;border-radius:18px;padding:14px;background:rgba(255,255,255,.64);border:1px solid var(--border)}
+.stat strong{display:block;font-size:1.75rem}
+.image-box{text-align:center}
+.image-box img{max-width:100%;border-radius:24px;border:1px solid var(--border);box-shadow:0 14px 38px rgba(72,55,42,.18)}
+.img-note{margin-top:10px;color:#5f6b80}
+.transcript{background:rgba(255,255,255,.84);border-left:6px solid var(--sage)}
+.transcript h3{margin-top:20px;color:#3f5a42}
+.name{display:inline-block;border-bottom:1px solid #526078;min-width:250px;font-weight:900}
+.footer{text-align:center;color:#647086;line-height:1.6;padding:0 22px 28px;font-size:.96rem}
+@keyframes breathe{0%,100%{transform:scale(.86)}50%{transform:scale(1.12)}}
+@media(max-width:900px){
+  body{padding:10px}
+  .grid,.steps{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .orb{width:180px;height:180px}
+  .panel{padding:20px}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#transcript">Skip to accessible transcript</a>
+
+<div class="bg-flower" aria-hidden="true">
+  <div class="flower f1"></div>
+  <div class="flower f2"></div>
+  <div class="flower f3"></div>
+</div>
+
+<div class="botanical-corner right-top" aria-hidden="true">
+  <div class="stem"></div><div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div><div class="leaf l4"></div>
+  <div class="bloom b1"></div><div class="bloom b2"></div><div class="bloom b3"></div>
+  <div class="lavender"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<div class="botanical-corner left-bottom" aria-hidden="true">
+  <div class="stem"></div><div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div><div class="leaf l4"></div>
+  <div class="bloom b1"></div><div class="bloom b2"></div><div class="bloom b3"></div>
+  <div class="lavender"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<div class="wrap">
+<main class="main">
+
+<section class="hero">
+  <div class="logo" aria-hidden="true">✿</div>
+  <h1>Mindfulness Moment</h1>
+  <p class="subtitle">
+    Pause, breathe, notice your muscles, and reset before continuing the section.
+    This activity connects psychology, biology, and sociology while giving you a grounding tool you can use anywhere.
+  </p>
+  <div class="pills" aria-label="Activity steps">
+    <div class="pill">Breathe</div>
+    <div class="pill">Ground</div>
+    <div class="pill">Reflect</div>
+    <div class="pill">Continue</div>
+  </div>
+  <div class="btnrow">
+    <a class="linkbtn" href="#transcript">📖 View Accessible Transcript</a>
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="panel full">
+  <div class="tag">Step 1: Before You Begin</div>
+  <h2>How tense or stressed do you feel right now?</h2>
+  <p class="note">Move the slider to show how your body and mind feel before the exercise.</p>
+  <div class="sliderbox">
+    <div class="num"><span id="beforeValue">50</span> / 100</div>
+    <label for="beforeStress" class="note">0 = very calm • 100 = very tense or stressed</label>
+    <input id="beforeStress" type="range" min="0" max="100" value="50">
+  </div>
+</article>
+
+<article class="panel full">
+  <div class="tag gold">Step 2: Breathing Cycle</div>
+  <h2>Follow the breathing ball and read each message as it changes.</h2>
+  <div class="breathewrap">
+    <div class="orb" aria-hidden="true">Breathe In<br>Breathe Out</div>
+    <div class="message" id="breathingMessage" aria-live="polite">
+      Breathe in as the circle grows. Breathe out as the circle softens.
+    </div>
+    <div class="note" id="cycleCount">Cycle 0 of 8</div>
+    <div class="btnrow">
+      <button class="primary" id="startBreathingBtn">Start Guided Breathing</button>
+      <button class="soft" id="resetBreathingBtn">Reset</button>
+    </div>
+    <p class="note">The muscle activity unlocks after the guided breathing cycle is complete.</p>
+  </div>
+</article>
+
+<article class="panel full">
+  <div class="tag sage">Step 3: Muscle Grounding</div>
+  <h2>Use your own muscles as a grounding tool.</h2>
+  <p>
+    Many grounding exercises ask you to focus on sights, sounds, smells, or objects outside yourself.
+    This activity asks you to gently focus on your own muscles and physical sensations.
+  </p>
+  <p>
+    Stress can become so familiar that we do not realize how much tension we are carrying.
+    Touching a muscle, noticing the tension, and intentionally softening that area can help bring your attention back to the present moment.
+  </p>
+
+  <div class="steps">
+    <div class="step" id="step0">
+      <div class="emoji" aria-hidden="true">😊</div>
+      <h3>Jaw and Face</h3>
+      <p>Run your fingertips along the sides of your jaw. Notice your cheeks, forehead, and eyes. Allow your face to soften.</p>
+      <button class="sagebtn stepbtn" data-step="0" disabled>Complete Face</button>
+    </div>
+
+    <div class="step" id="step1">
+      <div class="emoji" aria-hidden="true">🫱</div>
+      <h3>Neck</h3>
+      <p>Run your hands down the front, sides, and back of your neck. Notice where tension is stored. Let those muscles soften.</p>
+      <button class="sagebtn stepbtn" data-step="1" disabled>Complete Neck</button>
+    </div>
+
+    <div class="step" id="step2">
+      <div class="emoji" aria-hidden="true">💪</div>
+      <h3>Arms</h3>
+      <p>Run your hands down your upper arms, forearms, and wrists. Let your arms become heavy and relaxed.</p>
+      <button class="sagebtn stepbtn" data-step="2" disabled>Complete Arms</button>
+    </div>
+
+    <div class="step" id="step3">
+      <div class="emoji" aria-hidden="true">✋</div>
+      <h3>Hands and Fingers</h3>
+      <p>Touch each palm, finger, and thumb joint. Notice how much your hands do for you. Let your hands soften.</p>
+      <button class="sagebtn stepbtn" data-step="3" disabled>Complete Hands</button>
+    </div>
+  </div>
+
+  <div class="progress" aria-label="Muscle grounding progress">
+    <div class="fill" id="progressFill"></div>
+  </div>
+  <p class="note" id="progressText">Complete the breathing cycle first. Then finish each muscle grounding step.</p>
+</article>
+
+<article class="panel">
+  <div class="tag sage">Psychology and Biology</div>
+  <h2>Why This Works</h2>
+  <p>
+    Slow breathing and muscle relaxation can help the body move away from a stress response and toward a calmer state.
+    When breathing slows and muscles soften, attention and concentration may improve.
+  </p>
+  <p>
+    The oxygen you receive through steady breathing supports the brain and body.
+    This can help with learning, writing, math, test-taking, discussions, and problem solving.
+  </p>
+</article>
+
+<article class="panel">
+  <div class="tag rose">Sociology</div>
+  <h2>Why This Matters</h2>
+  <p>
+    Symbolic interactionism teaches that people attach meanings to situations.
+    A test, assignment, or discussion may feel stressful because of the meaning we give it.
+  </p>
+  <p>
+    The social construction of reality reminds us that our experiences are shaped by interpretation.
+    When we pause, breathe, and relax our muscles, we may change how we experience the situation in front of us.
+  </p>
+</article>
+
+<article class="panel full">
+  <div class="tag">Step 4: After the Activity</div>
+  <h2>How tense or stressed do you feel now?</h2>
+  <div class="sliderbox">
+    <div class="num"><span id="afterValue">50</span> / 100</div>
+    <label for="afterStress" class="note">0 = very calm • 100 = very tense or stressed</label>
+    <input id="afterStress" type="range" min="0" max="100" value="50" disabled>
+    <p class="note">This unlocks after the muscle grounding steps are complete.</p>
+  </div>
+  <div class="btnrow">
+    <button class="primary" id="showResultsBtn" disabled>Show My Results</button>
+  </div>
+
+  <div class="results" id="resultCard">
+    <h2>Mindfulness Moment Complete</h2>
+    <p>
+      You took a moment to breathe, notice your muscles, and reset.
+      Remember: your body can become your grounding tool.
+    </p>
+    <div class="stats">
+      <div class="stat"><strong id="beforeResult">50</strong>Before</div>
+      <div class="stat"><strong id="afterResult">50</strong>After</div>
+      <div class="stat"><strong id="changeResult">0</strong>Point Change</div>
+    </div>
+    <p class="note">
+      Your number does not have to change dramatically.
+      The goal is awareness, reflection, and a few minutes of care.
+    </p>
+  </div>
+
+  <div class="bonus" id="bonusCard">
+    <h2>🎁 Optional Bonus Opportunity</h2>
+    <p>Take a screenshot of this completed page showing your stress meter results. Email the screenshot to your instructor.</p>
+    <p><strong>In your email, answer this short question:</strong></p>
+    <p><strong>How might symbolic interactionism and the social construction of reality help explain your experience during this mindfulness exercise?</strong></p>
+    <p>
+      In 2–5 sentences, explain how your thoughts, interpretations, or feelings changed during the activity.
+      Did the exercise change the way you viewed stress, your body, a test, an assignment, or another situation? Why or why not?
+    </p>
+    <p class="note">Bonus credit is awarded for thoughtful participation rather than for having a specific answer.</p>
+  </div>
+</article>
+
+<article class="panel full image-box">
+  <div class="tag gold">Final Reflection</div>
+  <h2>A Message From Your Sociology Instructors</h2>
+  <img
+    src="../images/mindfulness-instructor-message.png"
+    alt="Mindfulness poster with a Van Gogh inspired night sky, lavender, cherry blossoms, sunflowers, candlelight, and a message from sociology instructors. The poster says that your body can become your grounding tool, connects breathing and relaxation to psychology, connects meaning-making to sociology, and invites students to screenshot their results and email their instructor with a reflection about symbolic interactionism and the social construction of reality."
+  >
+  <p class="img-note">Take a moment and simply look at the image before continuing.</p>
+  <div class="btnrow">
+    <a href="#transcript" class="linkbtn">📖 View Accessible Transcript</a>
+  </div>
+</article>
+
+<article class="panel full">
+  <div class="tag sage">A Note From Your Instructors</div>
+  <h2>Someone who cares, understands, and has been there posted this.</h2>
+  <p>
+    If you are feeling overwhelmed, frustrated, anxious, or simply tired, know that many students and instructors have felt the same way.
+    There are times when stress becomes so normal that people do not even realize how much tension they are carrying in their bodies.
+  </p>
+  <p>
+    This page is here because someone wanted to share a simple strategy that may help:
+    breathe slowly, notice your muscles, soften the tension, and continue one step at a time.
+  </p>
+  <p>Good luck on the rest of the section.</p>
+  <p><span class="name">From Your Sociology Instructors</span></p>
+</article>
+
+<article class="panel full transcript" id="transcript">
+  <div class="tag sage">Accessible Transcript</div>
+  <h2>Mindfulness Moment: Accessible Transcript & Image Description</h2>
+  <p>This transcript provides the same message as the visual image and activity for students using screen readers or anyone who prefers a text version.</p>
+
+  <h3>Image Description</h3>
+  <p>
+    The image shows a calming landscape inspired by swirling post-impressionist night skies.
+    It includes lavender, flowering trees, sunflowers, warm lantern light, and a peaceful nature scene.
+    The image is designed to create a calm mood and reinforce the idea that breathing, awareness, and self-compassion can help students continue through stressful situations.
+  </p>
+
+  <h3>Main Message</h3>
+  <p>You did something really important.</p>
+  <p>You took a few minutes to focus on your breathing, your muscles, and your well-being.</p>
+  <p><strong>Remember: Your body can become your grounding tool.</strong></p>
+  <p>Through psychology, we learn how breathing and relaxation affect the mind and body.</p>
+  <p>Through sociology, we learn that the meanings we attach to situations can influence how we experience them.</p>
+  <p>Sometimes changing our physical state helps us change our perspective as well.</p>
+  <p>Be kind to yourself. You are doing your best.</p>
+  <p>Good luck on the rest of the section.</p>
+  <p><strong>From Your Sociology Instructors</strong></p>
+
+  <h3>Mindful Muscle Grounding</h3>
+  <p>
+    Many grounding exercises encourage people to focus on sights, sounds, smells, or objects around them.
+    This activity explored another approach: using your own muscles and physical sensations as a grounding tool.
+  </p>
+  <p>
+    By gently touching your jaw, face, neck, arms, hands, and fingers, you may become more aware of tension that has been stored in your body.
+    Once that tension is noticed, it often becomes easier to relax those muscles.
+  </p>
+  <p>This exercise can be practiced while studying, exercising, preparing for a test, completing an assignment, or during everyday life.</p>
+
+  <h3>Sociology Connection</h3>
+  <p>
+    Symbolic interactionism teaches that people attach meanings to situations.
+    A test, assignment, or discussion may feel stressful because of the meaning we assign to it.
+  </p>
+  <p>
+    The social construction of reality reminds us that our experiences are shaped by interpretation.
+    When we pause, breathe, and relax, we may change how we experience the situation in front of us.
+  </p>
+
+  <h3>Bonus Opportunity</h3>
+  <p>If you completed this activity and would like a small amount of bonus credit, take a screenshot of your completed mindfulness page showing your stress meter results.</p>
+  <p>Email the screenshot to your instructor.</p>
+  <p>In your email, answer the following question:</p>
+  <p><strong>How might symbolic interactionism and the social construction of reality help explain your experience during this mindfulness exercise?</strong></p>
+  <p>
+    In 2–5 sentences, explain how your thoughts, interpretations, or feelings changed during the activity.
+    Did the exercise change the way you viewed stress, your body, a test, an assignment, or another situation? Why or why not?
+  </p>
+  <p>Attach your screenshot and include your response in the email.</p>
+  <p>Bonus credit is awarded for thoughtful participation rather than for having a specific answer.</p>
+</article>
+
+</section>
+
+<div class="footer">
+  This activity is for education and wellness support. It is not medical or mental health treatment.
+  If you are in crisis or need support, please contact appropriate emergency, counseling, or campus resources.
+</div>
+
+</main>
+</div>
+
+<script>
+const messages=[
+  "Breathe in as the circle grows. Breathe out as the circle softens.",
+  "Notice your jaw and face. You may be carrying tension without realizing it.",
+  "Allow your jaw, cheeks, forehead, and eyes to soften.",
+  "Notice your neck and shoulders. These muscles often hold stress.",
+  "Let your shoulders drop. Let your neck soften.",
+  "Notice your arms, wrists, hands, and fingers.",
+  "Your body can become your grounding tool.",
+  "Return to this moment. You can continue one step at a time."
+];
+
+let i=0;
+let timer=null;
+let breathingDone=false;
+const done=[false,false,false,false];
+
+const before=document.getElementById("beforeStress");
+const after=document.getElementById("afterStress");
+const beforeValue=document.getElementById("beforeValue");
+const afterValue=document.getElementById("afterValue");
+
+before.addEventListener("input",()=>beforeValue.textContent=before.value);
+after.addEventListener("input",()=>afterValue.textContent=after.value);
+
+function nextMsg(){
+  const box=document.getElementById("breathingMessage");
+  box.classList.add("fade");
+  setTimeout(()=>{
+    box.textContent=messages[i];
+    document.getElementById("cycleCount").textContent=`Cycle ${i+1} of ${messages.length}`;
+    box.classList.remove("fade");
+    i++;
+    if(i>=messages.length){
+      clearInterval(timer);
+      timer=null;
+      breathingDone=true;
+      document.getElementById("startBreathingBtn").disabled=true;
+      document.querySelectorAll(".stepbtn").forEach(b=>b.disabled=false);
+      document.getElementById("progressText").textContent="Great. Now complete each muscle grounding step.";
+    }
+  },650);
+}
+
+function start(){
+  if(timer)return;
+  i=0;
+  breathingDone=false;
+  nextMsg();
+  timer=setInterval(nextMsg,8000);
+}
+
+function reset(){
+  clearInterval(timer);
+  timer=null;
+  i=0;
+  breathingDone=false;
+  document.getElementById("breathingMessage").textContent=messages[0];
+  document.getElementById("cycleCount").textContent="Cycle 0 of 8";
+  document.getElementById("startBreathingBtn").disabled=false;
+
+  done.fill(false);
+  document.querySelectorAll(".step").forEach(c=>c.classList.remove("done"));
+  document.querySelectorAll(".stepbtn").forEach(b=>{
+    b.disabled=true;
+    b.textContent=b.textContent.replace("✓ ","");
+  });
+
+  after.disabled=true;
+  document.getElementById("showResultsBtn").disabled=true;
+  document.getElementById("resultCard").style.display="none";
+  document.getElementById("bonusCard").style.display="none";
+  updateProgress();
+}
+
+function updateProgress(){
+  const count=done.filter(Boolean).length;
+  const percent=Math.round(count/4*100);
+  document.getElementById("progressFill").style.width=percent+"%";
+  const text=document.getElementById("progressText");
+
+  if(!breathingDone){
+    text.textContent="Complete the breathing cycle first. Then finish each muscle grounding step.";
+  } else if(count<4){
+    text.textContent=`${count} of 4 muscle grounding steps complete.`;
+  } else {
+    text.textContent="All steps complete. Now complete the after-activity stress meter.";
+    after.disabled=false;
+    document.getElementById("showResultsBtn").disabled=false;
+  }
+}
+
+document.querySelectorAll(".stepbtn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const s=Number(btn.dataset.step);
+    done[s]=true;
+    document.getElementById("step"+s).classList.add("done");
+    btn.textContent="✓ Completed";
+    btn.disabled=true;
+    updateProgress();
+  });
+});
+
+document.getElementById("startBreathingBtn").addEventListener("click",start);
+document.getElementById("resetBreathingBtn").addEventListener("click",reset);
+
+document.getElementById("showResultsBtn").addEventListener("click",()=>{
+  const b=Number(before.value);
+  const a=Number(after.value);
+  const change=b-a;
+
+  document.getElementById("beforeResult").textContent=b;
+  document.getElementById("afterResult").textContent=a;
+  document.getElementById("changeResult").textContent=change>0 ? "-"+change : change===0 ? "0" : "+"+Math.abs(change);
+
+  document.getElementById("resultCard").style.display="block";
+  document.getElementById("bonusCard").style.display="block";
+  document.getElementById("bonusCard").scrollIntoView({behavior:"smooth",block:"center"});
+});
+</script>
+</body>
+</html>
