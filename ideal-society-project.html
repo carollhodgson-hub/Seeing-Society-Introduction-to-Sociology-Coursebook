@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ideal Society Project Guide | Seeing Society</title>
+    <meta
+      name="description"
+      content="Step-by-step instructions for the SOC-210 Ideal Society Project."
+    />
+    <style>
+      :root {
+        --ink: #183247;
+        --navy: #173b57;
+        --blue: #39749b;
+        --teal: #34786f;
+        --gold: #d5aa39;
+        --paper: #fff;
+        --cream: #fff8e7;
+        --mist: #eef6f8;
+        --lav: #f0ebf8;
+        --line: #c7d7df;
+        --shadow: 0 14px 34px rgba(24, 50, 71, 0.14);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        font:
+          17px/1.7 Arial,
+          sans-serif;
+        background: linear-gradient(#dcecf1, #fff8e9 32rem, #f5f8fa);
+      }
+      a {
+        color: #075b7d;
+      }
+      a:focus,
+      summary:focus {
+        outline: 3px solid #f3c64c;
+        outline-offset: 3px;
+      }
+      .skip {
+        position: absolute;
+        left: -9999px;
+      }
+      .skip:focus {
+        left: 10px;
+        top: 10px;
+        background: #fff;
+        padding: 10px;
+        z-index: 30;
+      }
+      header {
+        background: linear-gradient(135deg, #102e48, #2f6889 60%, #3c7c70);
+        color: #fff;
+        padding: 48px 20px 70px;
+      }
+      .hero {
+        max-width: 1100px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 28px;
+        align-items: center;
+      }
+      .hero h1 {
+        font:
+          clamp(2.5rem, 6vw, 5rem)/1.02 Georgia,
+          serif;
+        margin: 0.15em 0;
+      }
+      .hero p {
+        font-size: 1.15rem;
+      }
+      .hero img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        border: 3px solid rgba(255, 255, 255, 0.42);
+      }
+      .eyebrow {
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #ffe49a;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 15;
+        background: #fff;
+        box-shadow: 0 5px 17px rgba(24, 50, 71, 0.14);
+      }
+      nav div {
+        max-width: 1100px;
+        margin: auto;
+        padding: 8px 12px;
+        display: flex;
+        gap: 5px;
+        overflow: auto;
+      }
+      nav a {
+        white-space: nowrap;
+        text-decoration: none;
+        font-weight: 800;
+        padding: 9px 11px;
+        border-radius: 9px;
+      }
+      nav a:hover {
+        background: #e8f2f4;
+      }
+      main {
+        max-width: 1100px;
+        margin: -38px auto 0;
+        padding: 0 18px 50px;
+        position: relative;
+        z-index: 2;
+      }
+      .section {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+        padding: clamp(22px, 5vw, 46px);
+        margin-bottom: 25px;
+      }
+      .section h2 {
+        font:
+          clamp(2rem, 4vw, 3rem)/1.15 Georgia,
+          serif;
+        color: var(--navy);
+        margin-top: 0;
+      }
+      .section h3 {
+        color: var(--blue);
+      }
+      .callout {
+        background: var(--cream);
+        border-left: 7px solid var(--gold);
+        padding: 18px;
+        border-radius: 5px 14px 14px 5px;
+        margin: 18px 0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+        gap: 15px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-top: 7px solid var(--teal);
+        border-radius: 15px;
+        padding: 17px;
+        background: #fff;
+      }
+      .card:nth-child(2n) {
+        border-top-color: var(--gold);
+      }
+      .card h3 {
+        margin: 0.1rem 0;
+      }
+      .roadmap {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+      .slide {
+        background: var(--mist);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 13px;
+      }
+      .slide strong {
+        display: block;
+        color: var(--navy);
+      }
+      details {
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        margin: 12px 0;
+        overflow: hidden;
+        background: #fff;
+      }
+      summary {
+        cursor: pointer;
+        font-weight: 800;
+        color: var(--navy);
+        background: #edf5f7;
+        padding: 16px;
+      }
+      details > div {
+        padding: 18px;
+      }
+      .requirements {
+        background: #173b57;
+        color: #fff;
+      }
+      .requirements h2,
+      .requirements h3 {
+        color: #ffe49a;
+      }
+      .requirements .card {
+        color: var(--ink);
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 16px 0;
+      }
+      th,
+      td {
+        border: 1px solid #b7cad3;
+        padding: 11px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: #e6f0f3;
+      }
+      .reference {
+        padding-left: 2rem;
+        text-indent: -2rem;
+      }
+      .button {
+        display: inline-block;
+        background: var(--navy);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 800;
+        padding: 11px 15px;
+        border-radius: 11px;
+      }
+      .example {
+        background: var(--lav);
+        border-left: 7px solid #8067a1;
+        padding: 18px;
+        border-radius: 6px 14px 14px 6px;
+      }
+      .small {
+        font-size: 0.92rem;
+        color: #526a77;
+      }
+      footer {
+        max-width: 1100px;
+        margin: auto;
+        padding: 0 20px 35px;
+        color: #526a77;
+      }
+      @media (max-width: 760px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero img {
+          max-width: 520px;
+        }
+        .roadmap {
+          grid-template-columns: 1fr 1fr;
+        }
+        main {
+          margin-top: -28px;
+        }
+      }
+      @media (max-width: 450px) {
+        .roadmap {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media print {
+        nav,
+        .skip {
+          display: none;
+        }
+        body {
+          background: #fff;
+        }
+        .section {
+          box-shadow: none;
+          break-inside: auto;
+        }
+        details > div {
+          display: block !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to project instructions</a>
+    <header>
+      <div class="hero">
+        <div>
+          <div class="eyebrow">SOC-210 Appendix · Semester Project</div>
+          <h1>Build an Ideal Society</h1>
+          <p>
+            Design a society around your values, then use sociology to explain
+            how it would work, who it would serve, what problems it might
+            create, and how it could change.
+          </p>
+          <p><strong>Final product:</strong> 10-slide presentation</p>
+        </div>
+        <img
+          src="images/eleanor-introduction.png"
+          alt="A family timeline showing how society and technology change across generations"
+        />
+      </div>
+    </header>
+    <nav aria-label="Project navigation">
+      <div>
+        <a href="index.html">Book home</a><a href="#overview">Overview</a
+        ><a href="#roadmap">10 slides</a
+        ><a href="#section-prompts">Chapter prompts</a
+        ><a href="ideal-society-examples.html">Model slides</a
+        ><a href="#requirements">Requirements</a
+        ><a href="#citations">Citations</a
+        ><a href="#images-ai">Images &amp; AI</a
+        ><a href="#checklist">Checklist</a>
+      </div>
+    </nav>
+    <main id="main">
+      <section class="section">
+        <h2>See what a strong slide looks like</h2>
+        <p>
+          The restored model gallery demonstrates a focused claim, applied
+          sociology, APA citations, a purposeful visual, and a meaningful
+          trade-off on each slide.
+        </p>
+        <p>
+          <a class="button" href="ideal-society-examples.html"
+            >Open the model slide gallery</a
+          >
+        </p>
+      </section>
+      <section class="section" id="overview">
+        <div class="eyebrow" style="color: #7b5900">The big question</div>
+        <h2>
+          If society reflected what you believe matters most, what would it look
+          like—and how would it actually work?
+        </h2>
+        <p class="lead">
+          The Ideal Society Project is a semester-long sociological
+          investigation. Begin with a real social problem. Then return to the
+          same society in every chapter and test your ideas against culture,
+          socialization, deviance, institutions, inequality, and social change.
+        </p>
+        <div class="callout">
+          <strong>This is not a “perfect world” wish list.</strong> Sociology
+          asks you to consider institutions, power, shared meanings, unintended
+          consequences, and trade-offs. Your personal values begin the project,
+          but sociological concepts and evidence must explain it.
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Clarify values</h3>
+            <p>
+              Identify what your society defines as good, fair, necessary, or
+              worth protecting.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Design systems</h3>
+            <p>
+              Explain how institutions, roles, norms, and resources would turn
+              those values into social arrangements.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Test consequences</h3>
+            <p>
+              Ask who benefits, who bears costs, what latent problems could
+              appear, and how the society would respond.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="section" id="roadmap">
+        <h2>The 10-slide roadmap</h2>
+        <div class="roadmap">
+          <div class="slide">
+            <strong>1 · Title</strong>Name, SOC-210, instructor, project title
+          </div>
+          <div class="slide">
+            <strong>2 · Introduction</strong>Social problem and sociological
+            imagination
+          </div>
+          <div class="slide">
+            <strong>3 · Section 1</strong>Culture, structure, and theory
+          </div>
+          <div class="slide"><strong>4 · Section 2</strong>Socialization</div>
+          <div class="slide">
+            <strong>5 · Section 3</strong>Deviance and social control
+          </div>
+          <div class="slide">
+            <strong>6 · Section 4</strong>Social institutions
+          </div>
+          <div class="slide">
+            <strong>7 · Section 5</strong>Diversity and inequality
+          </div>
+          <div class="slide"><strong>8 · Section 6</strong>Social change</div>
+          <div class="slide">
+            <strong>9 · Conclusion</strong>Synthesis and real-world lessons
+          </div>
+          <div class="slide">
+            <strong>10 · References</strong>APA references for every source
+          </div>
+        </div>
+        <p class="small">
+          Build the assigned slide while studying its chapter. Save the slide,
+          revise it as your understanding grows, and combine all slides for the
+          final submission. Section slides are not submitted separately unless
+          the current Canvas directions say otherwise.
+        </p>
+      </section>
+      <section class="section" id="section-prompts">
+        <h2>Slide instructions by chapter</h2>
+        <details open>
+          <summary>Introduction · Sociological imagination</summary>
+          <div>
+            <p>
+              <strong>Prompt:</strong> How does the sociological imagination
+              help us envision a better society? What social problem inspires
+              your Ideal Society?
+            </p>
+            <p>
+              <strong>Required concepts:</strong>
+              <b>sociological imagination</b>,
+              <b>personal troubles and public issues</b>,
+              <b>social structure</b>, and
+              <b>social construction of reality</b>.
+            </p>
+            <p>
+              Connect an experience or concern to historical conditions,
+              institutions, inequality, technology, or other larger social
+              forces. State the problem your later slides will continue
+              addressing.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Section 1 · Culture, social structure, and theory</summary>
+          <div>
+            <p>
+              <strong>Prompt:</strong> What are your society’s core values and
+              beliefs? Which sociological theory best explains how it operates?
+            </p>
+            <p>
+              <strong>Possible concepts:</strong> culture, values, norms,
+              symbols, roles, social structure, institutions, functionalism,
+              conflict theory, and symbolic interactionism.
+            </p>
+            <p>
+              Explain how people would recognize these values in everyday rules
+              and behavior. Apply at least one theoretical perspective instead
+              of merely naming it.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Section 2 · Socialization</summary>
+          <div>
+            <p>
+              <strong>Prompt:</strong> How does your society teach people its
+              values? What are its main agents of socialization?
+            </p>
+            <p>
+              <strong>Possible concepts:</strong> socialization, family,
+              education, peer groups, media, life course, identity, gender
+              roles, resocialization, and hidden curriculum.
+            </p>
+            <p>
+              Explain how people learn expectations and become participating
+              members. Address how families and institutions support
+              development, guidance, belonging, safety, and the ability to
+              question harmful norms.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Section 3 · Deviance and social control</summary>
+          <div>
+            <p>
+              <strong>Prompt:</strong> What counts as deviance in your society?
+              How is social order maintained?
+            </p>
+            <p>
+              <strong>Possible concepts:</strong> norms, deviance, conformity,
+              sanctions, formal and informal social control, labeling, strain
+              theory, differential association, and rehabilitation.
+            </p>
+            <p>
+              Explain how the society balances freedom, safety, equality, and
+              order. Identify who defines deviance and whether responses
+              emphasize punishment, education, treatment, restoration, or
+              prevention.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Section 4 · Social institutions</summary>
+          <div>
+            <p>
+              <strong>Prompt:</strong> How do family, education, government,
+              economy, religion, health, and other institutions work together to
+              meet social needs?
+            </p>
+            <p>
+              <strong>Possible concepts:</strong> social institutions, statuses,
+              roles, social structure, interdependence, manifest functions,
+              latent functions, dysfunctions, power, and the three theoretical
+              perspectives.
+            </p>
+            <p>
+              Show at least one connection among institutions and predict how a
+              change in one would affect others.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Section 5 · Diversity and inequality</summary>
+          <div>
+            <p>
+              <strong>Prompt:</strong> How does your society address diversity,
+              inequality, inclusion, and fairness?
+            </p>
+            <p>
+              <strong>Possible concepts:</strong> stratification, social class,
+              race, ethnicity, gender, privilege, intersectionality,
+              stereotypes, discrimination, structural inequality, and conflict
+              theory.
+            </p>
+            <p>
+              Explain how institutions distribute resources, opportunities,
+              power, and prestige. Address both equal treatment and barriers
+              that affect groups differently.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Section 6 · Social change</summary>
+          <div>
+            <p>
+              <strong>Prompt:</strong> How does your society respond to change?
+              What movements, reforms, technologies, or collective actions help
+              it adapt?
+            </p>
+            <p>
+              <strong>Possible concepts:</strong> social change, social
+              movements, collective behavior, modernization, innovation,
+              cultural lag, environmental change, and institutional reform.
+            </p>
+            <p>
+              Explain how your society evaluates new technology and balances
+              change with stability. Include a way residents can challenge an
+              institution that no longer meets social needs.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Conclusion · Looking back</summary>
+          <div>
+            <p>
+              <strong>Prompt:</strong> How does your Ideal Society reflect
+              sociological understanding? What lessons apply to real societies
+              today?
+            </p>
+            <p>
+              Synthesize culture, institutions, inequality, and social change.
+              Revisit the social problem from the Introduction and explain how
+              your thinking developed. Acknowledge at least one trade-off,
+              limitation, or possible unintended consequence.
+            </p>
+          </div>
+        </details>
+      </section>
+      <section class="section requirements" id="requirements">
+        <h2>Requirements for every content slide</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>100–150 words</h3>
+            <p>
+              Use a focused paragraph or short connected paragraphs. The title
+              and reference slides are exceptions.
+            </p>
+          </article>
+          <article class="card">
+            <h3>At least 4 bold concepts</h3>
+            <p>
+              Define and apply them naturally. Do not submit a vocabulary list.
+            </p>
+          </article>
+          <article class="card">
+            <h3>3–6 in-text citations</h3>
+            <p>
+              Cite paraphrased definitions, evidence, examples, statistics, and
+              ideas drawn from sources.
+            </p>
+          </article>
+          <article class="card">
+            <h3>At least 1 visual</h3>
+            <p>
+              Use a relevant image, photograph, chart, symbol, diagram, or
+              original graphic.
+            </p>
+          </article>
+        </div>
+        <h3>Strong sociological writing</h3>
+        <p>
+          State what your society would do, identify the sociological concept,
+          explain how the concept operates, and analyze a likely consequence.
+          Use your own examples and wording. Do not use direct quotations unless
+          an assignment specifically requires one.
+        </p>
+        <div class="example">
+          <strong>Useful sentence pattern</strong><br />“My society would ___
+          because <b>[concept]</b> means ___. This arrangement could influence
+          ___ by ___. A possible unintended consequence is ___, so the society
+          would ___.”
+        </div>
+      </section>
+      <section class="section" id="citations">
+        <h2>Citing <em>Seeing Society</em> and other sources</h2>
+        <p>
+          Use the new coursebook as the primary source for concepts taught in
+          the book. Cite outside evidence when you add facts, statistics,
+          policies, or research beyond the chapter.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h3>Parenthetical citation</h3>
+            <p>
+              Social construction describes how shared meanings become embedded
+              in everyday life (Hodgson &amp; Norwood, 2026).
+            </p>
+          </article>
+          <article class="card">
+            <h3>Narrative citation</h3>
+            <p>
+              Hodgson and Norwood (2026) explain that technologies become social
+              forces when people build norms and institutions around them.
+            </p>
+          </article>
+        </div>
+        <h3>APA reference for the coursebook</h3>
+        <p class="reference">
+          Hodgson, C., &amp; Norwood, J. (2026).
+          <em
+            >Seeing society: A journey through time, technology, and social
+            reality</em
+          >. https://seeing-society-soc210.carollhodgson.chatgpt.site
+        </p>
+        <h3>Reference-slide rules</h3>
+        <ul>
+          <li>
+            Include every source used for concepts, facts, examples, images,
+            charts, or other borrowed material.
+          </li>
+          <li>
+            Cite every reference at least once somewhere in the presentation.
+          </li>
+          <li>
+            Alphabetize the reference list by the first author or organization.
+          </li>
+          <li>
+            Use hanging indents when the presentation software allows them.
+          </li>
+          <li>
+            Give an image credit or reference even when an image appears only as
+            decoration.
+          </li>
+        </ul>
+        <div class="callout">
+          <strong>Keep OpenStax only when you actually use it.</strong> If a
+          slide relies only on the new coursebook, cite Hodgson and Norwood (2026).
+          If you also consult OpenStax or another source, cite and reference
+          each source used.
+        </div>
+      </section>
+      <section class="section" id="images-ai">
+        <h2>Images, visuals, and responsible AI use</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Good visual choices</h3>
+            <p>
+              Personal photographs, original drawings, concept symbols, maps,
+              charts, screenshots used for analysis, and images that represent
+              your own Ideal Society plan.
+            </p>
+          </article>
+          <article class="card">
+            <h3>AI may support presentation</h3>
+            <p>
+              When the current course policy permits it, AI may help brainstorm
+              visual possibilities, create an image from your own plan, check
+              grammar, or help you locate research terms.
+            </p>
+          </article>
+          <article class="card">
+            <h3>AI may not replace your work</h3>
+            <p>
+              Do not use AI to write slide content, choose your values, invent
+              your analysis, or complete the sociological reasoning for you.
+            </p>
+          </article>
+        </div>
+        <p>
+          Follow the current Canvas directions for disclosure or citation of
+          AI-generated material. Verify all facts and citations. You remain
+          responsible for the accuracy, originality, and sociological quality of
+          the presentation.
+        </p>
+      </section>
+      <section class="section" id="checklist">
+        <h2>Final check before submission</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Content</h3>
+            <ul>
+              <li>Exactly 10 required slides</li>
+              <li>One consistent society across sections</li>
+              <li>Section prompt answered directly</li>
+              <li>Trade-offs and consequences considered</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Sociology</h3>
+            <ul>
+              <li>At least four bold concepts per content slide</li>
+              <li>Concepts defined in your own words</li>
+              <li>Concepts applied, not merely listed</li>
+              <li>Theory used to explain how society works</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Evidence</h3>
+            <ul>
+              <li>Approximately 3–6 citations per content slide</li>
+              <li>Every reference cited in the presentation</li>
+              <li>No invented sources or citations</li>
+              <li>APA reference slide included</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Presentation</h3>
+            <ul>
+              <li>100–150 words per content slide</li>
+              <li>At least one purposeful visual per slide</li>
+              <li>Readable type and strong contrast</li>
+              <li>Spelling, grammar, and accessibility checked</li>
+            </ul>
+          </article>
+        </div>
+        <h3>File and submission</h3>
+        <p>
+          Create the project in PowerPoint or another presentation program
+          permitted by the current Canvas directions. Submit the finished file
+          in the format required in Canvas. Canvas remains the authority for
+          deadlines, points, file types, and any term-specific changes.
+        </p>
+        <div class="callout">
+          <strong>Work across the semester.</strong> The section panels inside
+          <em>Seeing Society</em> tell you which slide to build next. Save each
+          slide in the same presentation so the final project grows chapter by
+          chapter.
+        </div>
+        <p>
+          <a class="button" href="index.html#appendices"
+            >Return to the textbook appendices</a
+          >
+        </p>
+      </section>
+    </main>
+    <footer>
+      <strong>Seeing Society · SOC-210</strong><br />Hodgson, C., &amp;
+      Norwood, J. (2026)
+    </footer>
+  </body>
+</html>

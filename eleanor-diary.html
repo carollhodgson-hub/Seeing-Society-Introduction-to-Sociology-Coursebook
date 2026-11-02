@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Eleanor's Diary | Seeing Society</title>
+    <style>
+      :root {
+        --ink: #2d281f;
+        --navy: #143744;
+        --gold: #b38a3b;
+        --paper: #f8efd9;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #142f38;
+        color: var(--ink);
+        font:
+          18px/1.75 Georgia,
+          serif;
+      }
+      .wrap {
+        max-width: 980px;
+        margin: auto;
+        padding: 24px;
+      }
+      .back {
+        display: inline-block;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+      .hero {
+        width: 100%;
+        height: auto;
+        border-radius: 18px 18px 0 0;
+        display: block;
+      }
+      .page {
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.22)),
+          repeating-linear-gradient(
+            var(--paper) 0,
+            var(--paper) 31px,
+            #d8c9aa 32px
+          );
+        padding: clamp(24px, 6vw, 64px);
+        border: 1px solid #c5aa70;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+      }
+      h1 {
+        font-size: clamp(2.3rem, 7vw, 4.8rem);
+        line-height: 1;
+        color: #173a46;
+        margin: 0.1em 0;
+      }
+      .date {
+        font-style: italic;
+        color: #6c542b;
+      }
+      .drop:first-letter {
+        float: left;
+        font-size: 4.8rem;
+        line-height: 0.78;
+        padding: 0.08em 0.1em 0 0;
+        color: #8b6424;
+      }
+      .note {
+        font-family: Arial, sans-serif;
+        background: #e8f1f0;
+        border-left: 6px solid #37766f;
+        padding: 18px;
+        margin-top: 35px;
+      }
+      .questions {
+        background: #f3e3b9;
+        padding: 20px;
+        border: 1px solid #caa553;
+        border-radius: 12px;
+      }
+      textarea {
+        width: 100%;
+        min-height: 130px;
+        padding: 12px;
+        font: inherit;
+        border: 1px solid #9d895e;
+        border-radius: 8px;
+        background: #fffdf7;
+      }
+      button {
+        background: #173a46;
+        color: #fff;
+        border: 0;
+        border-radius: 9px;
+        padding: 11px 15px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      @media print {
+        body {
+          background: white;
+        }
+        .back,
+        button {
+          display: none;
+        }
+        .wrap {
+          padding: 0;
+        }
+        .page {
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <a class="back" href="introduction-sociology.html#eleanor"
+        >← Return to the Introduction</a
+      ><img
+        class="hero"
+        src="images/eleanor-diary.png"
+        alt="Eleanor writing beside a window that overlooks an industrial town"
+      />
+      <article class="page">
+        <p class="date">October 14, 1895</p>
+        <h1>Eleanor’s diary</h1>
+        <p class="drop">
+          The trains come more often now. Their whistles interrupt supper,
+          church meetings, and sleep, yet Father says the sound means our town
+          matters. New families arrive looking for factory work. Some neighbors
+          call them strangers even after they have lived here for months.
+        </p>
+        <p>
+          From my window, the factory seems to promise two futures at once. Its
+          lamps glow after dark and its wages give families money they did not
+          earn from a farm. Still, children leave the gate with adults, and
+          everyone walks as if the clock itself were chasing them.
+        </p>
+        <p>
+          People speak of progress as though it were a single road and everyone
+          travels it together. I wonder who chose the road. I wonder why some
+          ride the train while others lay the track.
+        </p>
+        <p>
+          Mother says a young woman should not ask so many questions in company.
+          Perhaps she is right about what company expects. I am less certain
+          that expectation and truth are the same thing.
+        </p>
+        <p>
+          If powerful people repeat a belief often enough, it begins to sound
+          like common sense. I hope progress remembers the people expected to
+          live through it.
+        </p>
+        <div class="note">
+          <strong>Sociologist’s note</strong><br />This diary is a fictional
+          learning narrative grounded in social conditions of the late
+          nineteenth century. It lets us connect biography, historical change,
+          technology, gender norms, work, and power. Eleanor’s observations are
+          a starting point, not evidence by themselves. Sociology asks how we
+          could investigate them.
+        </div>
+        <section class="questions">
+          <h2>Read beneath the surface</h2>
+          <ol>
+            <li>Which parts of Eleanor’s life are personal experiences?</li>
+            <li>Which parts point to public issues or social structures?</li>
+            <li>What does the train symbolize to different groups?</li>
+            <li>
+              What evidence would you collect to test Eleanor’s observations?
+            </li>
+          </ol>
+          <label for="notes"><strong>Your field notes</strong></label
+          ><textarea id="notes"></textarea>
+          <p>
+            <button
+              onclick="
+                localStorage.setItem(
+                  'eleanor-diary-notes',
+                  document.getElementById('notes').value,
+                );
+                document.getElementById('status').textContent =
+                  'Saved on this device.';
+              "
+            >
+              Save notes
+            </button>
+            <span id="status"></span>
+          </p>
+        </section>
+      </article>
+    </main>
+    <script>
+      document.getElementById("notes").value =
+        localStorage.getItem("eleanor-diary-notes") || "";
+    </script>
+  </body>
+</html>

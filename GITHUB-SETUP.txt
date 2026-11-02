@@ -1,0 +1,30 @@
+SEEING SOCIETY: SOC-210 — GITHUB PAGES TRANSFER PACKAGE
+Prepared November 2, 2026 from published Sites version 84.
+
+UPLOAD
+1. Extract this ZIP first. Upload the extracted files and the entire images/ and interactives/ folders, keeping their names and structure.
+2. index.html must be in the repository root, beside book.css, book.js, key-concepts.js, and the two folders. Do not upload just the ZIP, and do not flatten the images folder.
+3. Include .nojekyll (an empty configuration file). This prevents Jekyll from processing this plain HTML website.
+4. In repository Settings > Pages, select Deploy from a branch, choose main and /(root), and save. Wait until the deployment succeeds.
+5. Open the actual Pages URL. Check the home page, every chapter, glossary search, and the interactive activities before replacing any Canvas links.
+
+CHECKED
+29 book HTML pages, 242 bundled image files, 1,152 local references, 28 JavaScript files/blocks.
+No missing local files/anchors, invalid bundled raster images, root-relative URLs, or JavaScript syntax errors were found.
+All relative folder paths are preserved for a GitHub project URL.
+The expanded glossary (428 entries), Section 3.7, group-power lesson, and Kilbourne advertising lesson are included.
+
+REMAINING EXTERNAL DEPENDENCIES
+28 older Imgur image URLs remain, including two images in Section Two and images used by older interactive activities. The image host returned HTTP 429 during a download attempt, so these could not be bundled or confirmed here. Their original URLs remain intact. See EXTERNAL-IMAGE-INVENTORY.txt for the exact list.
+YouTube embeds, music, outside websites, and external image hosts still require an internet connection and continued availability. This local audit does not certify those services or guarantee future availability.
+Before a fully self-contained image release, supply/download the remaining 28 originals and replace their URLs with bundled relative paths. Do not replace historical photographs with generated substitutes.
+
+CONTENT AUTHORITY
+The current Canvas syllabus, dates, assignments, rubrics, and grade policies remain authoritative.
+
+GITHUB DOCUMENTATION
+https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
+https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+
+ADDITIONAL UPLOADS
+Mindfulness poster bundled and its external URL replaced. Assume image.png and Victor.png retained as instructor-reference images; they were not matches for the remaining external image URLs and do not replace existing chapter visuals.
