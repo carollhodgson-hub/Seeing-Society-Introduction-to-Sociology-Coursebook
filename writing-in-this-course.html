@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Writing in This Course | Seeing Society</title>
+    <style>
+      :root {
+        --ink: #243044;
+        --navy: #173b57;
+        --blue: #3d6e9e;
+        --green: #39705a;
+        --gold: #b98520;
+        --plum: #674f88;
+        --line: #ccd7df;
+        --shadow: 0 12px 30px #173b5722;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font:
+          17px/1.65 Arial,
+          sans-serif;
+        color: var(--ink);
+        background: linear-gradient(#eaf3f7, #fff9ec);
+      }
+      a {
+        color: #075d7e;
+      }
+      a:focus,
+      button:focus,
+      summary:focus,
+      input:focus {
+        outline: 3px solid #efbd35;
+        outline-offset: 3px;
+      }
+      .skip {
+        position: absolute;
+        left: -9999px;
+        background: #fff;
+        padding: 10px;
+      }
+      .skip:focus {
+        left: 8px;
+      }
+      header {
+        background: linear-gradient(135deg, #173b57, #65558f);
+        color: #fff;
+        padding: 48px 20px 68px;
+      }
+      .hero,
+      nav div,
+      main,
+      footer {
+        max-width: 1050px;
+        margin: auto;
+      }
+      .eyebrow {
+        color: #ffe299;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+      }
+      h1 {
+        font:
+          clamp(2.5rem, 6vw, 4.8rem)/1.04 Georgia,
+          serif;
+        margin: 0.2rem 0;
+      }
+      header p {
+        font-size: 1.15rem;
+        max-width: 800px;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        box-shadow: 0 4px 15px #18324722;
+        z-index: 4;
+      }
+      nav div {
+        display: flex;
+        gap: 5px;
+        overflow: auto;
+        padding: 8px 12px;
+      }
+      nav a {
+        font-weight: 800;
+        text-decoration: none;
+        white-space: nowrap;
+        padding: 9px;
+        border-radius: 9px;
+      }
+      nav a:hover {
+        background: #e9f2f5;
+      }
+      main {
+        margin-top: -34px;
+        padding: 0 16px 50px;
+        position: relative;
+      }
+      .section {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: clamp(20px, 5vw, 42px);
+        margin-bottom: 24px;
+        box-shadow: var(--shadow);
+      }
+      h2 {
+        font:
+          clamp(1.8rem, 4vw, 2.8rem)/1.15 Georgia,
+          serif;
+        color: var(--navy);
+        margin-top: 0;
+      }
+      h3 {
+        color: var(--blue);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 15px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-top: 6px solid var(--green);
+        border-radius: 14px;
+        padding: 17px;
+      }
+      .gold {
+        border-top-color: var(--gold);
+      }
+      .plum {
+        border-top-color: var(--plum);
+      }
+      .rose {
+        border-top-color: #b95868;
+      }
+      .callout {
+        border-left: 7px solid var(--gold);
+        background: #fff8e7;
+        padding: 17px 19px;
+        border-radius: 4px 14px 14px 4px;
+        margin: 18px 0;
+      }
+      .formula {
+        text-align: center;
+        font-size: 1.22rem;
+        font-weight: 800;
+        background: #eef5ff;
+        padding: 18px;
+        border-radius: 14px;
+      }
+      .button,
+      button {
+        display: inline-block;
+        background: var(--navy);
+        color: #fff;
+        border: 0;
+        border-radius: 11px;
+        padding: 10px 14px;
+        font-weight: 800;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      button.choice {
+        width: 100%;
+        text-align: left;
+        margin: 6px 0;
+        background: #eef4f6;
+        color: var(--ink);
+        border: 1px solid #abc1ca;
+      }
+      .result {
+        display: none;
+        padding: 15px;
+        margin-top: 12px;
+        background: #e8f7ec;
+        border-left: 6px solid #4f8a62;
+        border-radius: 8px;
+      }
+      .result.show {
+        display: block;
+      }
+      details {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        margin: 10px 0;
+        overflow: hidden;
+      }
+      summary {
+        padding: 14px 16px;
+        background: #eef4f7;
+        color: var(--navy);
+        font-weight: 800;
+        cursor: pointer;
+      }
+      details div {
+        padding: 4px 17px 17px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #b9cad3;
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: #e7f1f4;
+      }
+      .check label {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #dce5e9;
+      }
+      .check input {
+        width: 19px;
+        height: 19px;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      footer {
+        padding: 0 18px 35px;
+        color: #526777;
+      }
+      @media (max-width: 600px) {
+        main {
+          margin-top: -25px;
+        }
+        .section {
+          padding: 22px 17px;
+        }
+      }
+      @media print {
+        nav,
+        .actions,
+        button {
+          display: none !important;
+        }
+        body {
+          background: #fff;
+        }
+        .section {
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to main content</a>
+    <header>
+      <div class="hero">
+        <div class="eyebrow">Seeing Society · Student Success Appendix</div>
+        <h1>Writing and Communicating in This Course</h1>
+        <p>
+          A practical guide to strong sociology answers, professional email,
+          discussions, rubrics, and successful Canvas submissions.
+        </p>
+      </div>
+    </header>
+    <nav aria-label="Writing guide navigation">
+      <div>
+        <a href="index.html">Book Home</a><a href="#blueprint">Writing</a
+        ><a href="#email">Email</a><a href="#discussion">Discussions</a
+        ><a href="#canvas">Canvas</a><a href="#checklist">Checklist</a>
+      </div>
+    </nav>
+    <main id="main">
+      <section class="section" id="blueprint">
+        <h2>The social science writing blueprint</h2>
+        <p>
+          Strong writing does not depend on complicated vocabulary. It shows
+          what you understand and how you reached your conclusion.
+        </p>
+        <div class="formula">
+          Concept + Explanation + Example or Evidence + Connection = Strong
+          Answer
+        </div>
+        <div class="grid">
+          <article class="card rose">
+            <h3>Foundation: concept</h3>
+            <p>
+              Identify the sociological idea or theory that helps answer the
+              prompt.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Walls: explanation</h3>
+            <p>
+              Explain the idea accurately in your own words. Naming a term does
+              not demonstrate understanding.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>Windows: evidence</h3>
+            <p>
+              Use a reading, case, observation, research finding, or realistic
+              example.
+            </p>
+          </article>
+          <article class="card plum">
+            <h3>Roof: connection</h3>
+            <p>
+              State clearly how the concept and evidence answer the question.
+            </p>
+          </article>
+        </div>
+        <h3>Which answer is stronger?</h3>
+        <div class="grid">
+          <div class="card rose">
+            <p><strong>Answer A:</strong> Families socialize children.</p>
+            <button class="choice" onclick="reveal('a')">
+              Evaluate Answer A
+            </button>
+            <div class="result" id="a">
+              <strong>Beginning answer:</strong> It names an idea but does not
+              define, illustrate, or connect it to a question.
+            </div>
+          </div>
+          <div class="card">
+            <p>
+              <strong>Answer B:</strong> Socialization is the process through
+              which people learn culture, norms, and values. Families act as
+              primary agents by teaching expected behavior. For example,
+              caregivers model manners and explain social rules. This
+              illustrates how families transmit culture.
+            </p>
+            <button class="choice" onclick="reveal('b')">
+              Evaluate Answer B
+            </button>
+            <div class="result" id="b">
+              <strong>Stronger answer:</strong> It defines the concept, explains
+              the family’s role, supplies an example, and makes the connection.
+            </div>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>Assignment directions remain the authority.</strong> Required
+          length, sources, format, and submission method come from the current
+          Canvas assignment and rubric.
+        </div>
+      </section>
+      <section class="section" id="email">
+        <h2>The art of a professional email</h2>
+        <p>
+          Email is a social interaction. Shared norms help the reader understand
+          the situation and respond efficiently.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h3>1. Subject</h3>
+            <p>Identify the course and purpose.</p>
+            <p>
+              <strong
+                >SOC-210: Question About the Socialization Assignment</strong
+              >
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>2. Greeting</h3>
+            <p>Use the name or title your instructor requests.</p>
+          </article>
+          <article class="card plum">
+            <h3>3. Goodwill</h3>
+            <p>One genuine sentence can establish a courteous tone.</p>
+          </article>
+          <article class="card rose">
+            <h3>4. Question and context</h3>
+            <p>
+              State the question early, then add only the details needed to
+              answer it.
+            </p>
+          </article>
+          <article class="card">
+            <h3>5. Appreciation</h3>
+            <p>Thank the reader for the time required to respond.</p>
+          </article>
+          <article class="card gold">
+            <h3>6. Closing and name</h3>
+            <p>Use a professional closing and your full name.</p>
+          </article>
+        </div>
+        <details>
+          <summary>Open a reusable email template</summary>
+          <div>
+            <p><strong>Subject: SOC-210: [Short purpose]</strong></p>
+            <p>Hello, [instructor’s preferred title and name].</p>
+            <p>[One brief sentence that establishes a courteous tone.]</p>
+            <p>
+              I am writing about [assignment or concern]. [Ask your question.]
+              [Add one or two sentences of necessary context.]
+            </p>
+            <p>Thank you for your time and guidance.</p>
+            <p>
+              Sincerely,<br />[Your full name]<br />[Course section, if needed]
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>The sociology behind email etiquette</summary>
+          <div>
+            <p>
+              <strong>Norms:</strong> Greetings, signatures, and clear subject
+              lines are shared professional expectations.
+            </p>
+            <p>
+              <strong>Roles:</strong> Student and instructor responsibilities
+              shape what information each person needs.
+            </p>
+            <p>
+              <strong>Definition of the situation:</strong> Email lacks facial
+              expression and vocal tone, so structure and wording help define
+              the message as respectful.
+            </p>
+            <p>
+              <strong>Culture and technology:</strong> Digital communication
+              encourages scanning. Clear organization respects attention without
+              requiring cold language.
+            </p>
+          </div>
+        </details>
+      </section>
+      <section class="section" id="discussion">
+        <h2>Successful sociology discussions</h2>
+        <p>
+          A discussion post should move beyond unsupported opinion. It uses
+          sociology to analyze a situation and helps classmates develop the
+          conversation.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h3>Original response</h3>
+            <p>
+              Address every part of the prompt. Apply concepts accurately and
+              cite assigned or credible sources when required.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>Peer response</h3>
+            <p>
+              Add a concept, comparison, respectful question, source, or
+              alternative interpretation. “I agree” cannot complete the
+              response.
+            </p>
+          </article>
+          <article class="card plum">
+            <h3>Professional dialogue</h3>
+            <p>
+              Critique ideas without attacking people. Represent a classmate’s
+              point fairly before extending or questioning it.
+            </p>
+          </article>
+        </div>
+        <div class="callout">
+          <strong>Check the current prompt.</strong> The number of replies,
+          participation days, citations, word counts, and deadlines may vary.
+        </div>
+        <details>
+          <summary>Strong discussion response pattern</summary>
+          <div>
+            <ol>
+              <li>Answer the question directly.</li>
+              <li>Identify and define the relevant concept.</li>
+              <li>Apply it to the example.</li>
+              <li>
+                Support the analysis with course evidence and citations when
+                required.
+              </li>
+              <li>Explain why the analysis matters.</li>
+            </ol>
+          </div>
+        </details>
+      </section>
+      <section class="section" id="canvas">
+        <h2>Submitting work in Canvas</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Before submitting</th>
+              <th>Confirm afterward</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Written file</strong></td>
+              <td>
+                Read directions and rubric. Upload the requested file type and
+                open the final file locally.
+              </td>
+              <td>Canvas shows the correct filename and successful status.</td>
+            </tr>
+            <tr>
+              <td><strong>Text entry or journal</strong></td>
+              <td>
+                Draft longer work elsewhere when possible, then paste and
+                restore formatting.
+              </td>
+              <td>The complete response appears in submission details.</td>
+            </tr>
+            <tr>
+              <td><strong>Presentation</strong></td>
+              <td>
+                Check slides, visuals, citations, accessibility, and links.
+              </td>
+              <td>The uploaded file or shared link opens correctly.</td>
+            </tr>
+            <tr>
+              <td><strong>Discussion</strong></td>
+              <td>
+                Review the prompt, rubric, reply requirements, citations, and
+                deadline.
+              </td>
+              <td>Your response and required replies appear.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <strong>If technology fails:</strong> Save evidence such as a
+          screenshot, keep the original file, and contact the instructor
+          promptly.
+        </div>
+        <h3>Use the rubric as a planning tool</h3>
+        <p>
+          Read the rubric before drafting, use it while revising, and compare it
+          with the finished submission. Look for content requirements,
+          sociological application, development and detail, organization,
+          professionalism, and citation expectations.
+        </p>
+      </section>
+      <section class="section" id="checklist">
+        <h2>Before you submit</h2>
+        <div class="check">
+          <label
+            ><input type="checkbox" /> I answered every part of the
+            prompt.</label
+          ><label
+            ><input type="checkbox" /> I used and explained relevant
+            sociological concepts.</label
+          ><label
+            ><input type="checkbox" /> I included examples or evidence and
+            explained their significance.</label
+          ><label
+            ><input type="checkbox" /> I connected the analysis back to the
+            question.</label
+          ><label
+            ><input type="checkbox" /> I followed the current rubric and
+            directions.</label
+          ><label
+            ><input type="checkbox" /> I cited borrowed ideas, facts, wording,
+            data, and images as required.</label
+          ><label
+            ><input type="checkbox" /> I checked names, dates, course
+            information, and filenames.</label
+          ><label
+            ><input type="checkbox" /> I confirmed Canvas received the correct
+            submission.</label
+          >
+        </div>
+        <div class="actions">
+          <a class="button" href="index.html#appendices"
+            >Return to the appendices</a
+          ><button onclick="window.print()">Print or save as PDF</button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        <strong>Seeing Society</strong> · Hodgson &amp; Norwood (2026)
+      </p>
+    </footer>
+    <script>
+      function reveal(id) {
+        document.getElementById(id).classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

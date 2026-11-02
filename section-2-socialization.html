@@ -1,0 +1,4101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Section Two: Social Structure, Socialization, and the Life Course | Seeing
+      Society
+    </title>
+    <style>
+      :root {
+        --ink: #183247;
+        --navy: #163d5a;
+        --blue: #28749a;
+        --teal: #347d73;
+        --gold: #d4a62a;
+        --cream: #fff8e8;
+        --paper: #fff;
+        --mist: #edf6f7;
+        --rose: #f9e9e5;
+        --lav: #eee9f8;
+        --line: #c8d9df;
+        --danger: #9a3b3b;
+        --shadow: 0 14px 34px rgba(24, 50, 71, 0.13);
+        --radius: 22px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        font:
+          17px/1.7 Arial,
+          Helvetica,
+          sans-serif;
+        background: linear-gradient(180deg, #e8f3f5, #fff9ed 26rem, #f6f9fa);
+      }
+      a {
+        color: #075d7e;
+      }
+      a:focus,
+      button:focus,
+      summary:focus {
+        outline: 3px solid #efbd35;
+        outline-offset: 3px;
+      }
+      .skip {
+        position: absolute;
+        left: -9999px;
+        top: 8px;
+        background: #fff;
+        padding: 10px;
+        z-index: 99;
+      }
+      .skip:focus {
+        left: 8px;
+      }
+      header {
+        background: linear-gradient(135deg, #102f4a, #286e8d 58%, #3d8074);
+        color: #fff;
+        padding: 52px 22px 70px;
+        position: relative;
+        overflow: hidden;
+      }
+      header:after {
+        content: "";
+        position: absolute;
+        width: 330px;
+        height: 330px;
+        border: 70px solid rgba(255, 211, 91, 0.16);
+        border-radius: 50%;
+        right: -150px;
+        top: -155px;
+      }
+      .hero {
+        max-width: 1120px;
+        margin: auto;
+        position: relative;
+        z-index: 1;
+      }
+      .eyebrow {
+        color: #ffe69b;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        font:
+          clamp(2.45rem, 6vw, 4.8rem)/1.03 Georgia,
+          serif;
+        margin: 0.25rem 0 1rem;
+        max-width: 940px;
+      }
+      .lead {
+        font-size: 1.15rem;
+        max-width: 850px;
+      }
+      .byline {
+        font-weight: 700;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.97);
+        box-shadow: 0 5px 18px rgba(24, 50, 71, 0.13);
+      }
+      nav div {
+        max-width: 1120px;
+        margin: auto;
+        display: flex;
+        gap: 4px;
+        overflow: auto;
+        padding: 8px 14px;
+      }
+      nav a {
+        white-space: nowrap;
+        text-decoration: none;
+        font-weight: 800;
+        padding: 9px 11px;
+        border-radius: 10px;
+      }
+      nav a:hover {
+        background: #e7f2f4;
+      }
+      main {
+        max-width: 1120px;
+        margin: -36px auto 0;
+        padding: 0 18px 55px;
+        position: relative;
+        z-index: 2;
+      }
+      .section {
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: clamp(22px, 5vw, 48px);
+        margin-bottom: 26px;
+      }
+      .section h2 {
+        font:
+          clamp(1.9rem, 4vw, 3rem)/1.16 Georgia,
+          serif;
+        color: var(--navy);
+        margin: 0.1rem 0 1rem;
+      }
+      .section h3 {
+        color: var(--blue);
+        margin-top: 1.6rem;
+        line-height: 1.25;
+      }
+      .section-label {
+        color: #7a5900;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+        gap: 16px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-top: 7px solid var(--teal);
+        border-radius: 16px;
+        padding: 18px;
+      }
+      .card.gold {
+        border-top-color: var(--gold);
+      }
+      .card.rose {
+        border-top-color: #c97060;
+      }
+      .card.lav {
+        border-top-color: #8069a3;
+      }
+      .card h3 {
+        margin: 0.05rem 0 0.45rem;
+      }
+      .callout {
+        padding: 18px 20px;
+        border-left: 7px solid var(--gold);
+        background: var(--cream);
+        border-radius: 4px 15px 15px 4px;
+        margin: 20px 0;
+      }
+      .care {
+        border-left-color: #b86255;
+        background: var(--rose);
+      }
+      .protect {
+        border-left-color: var(--teal);
+        background: #e8f5f0;
+      }
+      .small {
+        font-size: 0.92rem;
+        color: #536b79;
+      }
+      .figure {
+        margin: 22px 0;
+      }
+      .figure img {
+        display: block;
+        width: 100%;
+        max-height: 520px;
+        object-fit: cover;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+      }
+      .figure.portrait img {
+        max-height: 430px;
+        object-fit: contain;
+        background: #f2f6f7;
+      }
+      .figure.historical-photo-fit img {
+        max-height: 620px;
+        object-fit: contain;
+        object-position: center top;
+        background: #f2eee5;
+      }
+      .figure figcaption {
+        padding: 8px 4px;
+        color: #536b79;
+        font-size: 0.92rem;
+      }
+      figure.card {
+        margin: 0;
+      }
+      figure.card > img {
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+        border-radius: 11px;
+        margin-bottom: 12px;
+      }
+      figure.card > figcaption {
+        line-height: 1.55;
+      }
+      .chapter-map {
+        float: left;
+        width: 270px;
+        margin: 0 28px 24px 0;
+        padding: 20px;
+        border-radius: 18px;
+        background: #173b56;
+        color: white;
+        box-shadow: var(--shadow);
+      }
+      .chapter-map h3 {
+        color: #ffe49a;
+        margin-top: 0;
+      }
+      .chapter-map a {
+        display: block;
+        padding: 7px 4px;
+        color: white;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      }
+      .chapter-map a:hover {
+        text-decoration: underline;
+      }
+      .chapter-map .legend {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 8px;
+        margin-top: 14px;
+        font-size: 0.88rem;
+      }
+      .theory-lens-tool {
+        margin: 24px 0;
+        padding: 22px;
+        border: 2px solid #b7d5d0;
+        border-radius: 18px;
+        background: #f8fcfb;
+        clear: both;
+      }
+      .theory-lens-tool h3 {
+        margin-top: 0;
+      }
+      .theory-situations {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+      }
+      .theory-result {
+        min-height: 82px;
+        margin-top: 14px;
+        padding: 16px;
+        border-left: 6px solid var(--gold);
+        border-radius: 12px;
+        background: white;
+      }
+      @media (max-width: 820px) {
+        .chapter-map {
+          float: none;
+          width: 100%;
+          margin: 0 0 24px;
+        }
+      }
+      details {
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        background: #fff;
+        margin: 10px 0;
+        overflow: hidden;
+      }
+      summary {
+        padding: 14px 17px;
+        font-weight: 800;
+        color: var(--navy);
+        cursor: pointer;
+        background: #f2f7f8;
+      }
+      details[open] summary {
+        background: #e1eff1;
+      }
+      details > div {
+        padding: 5px 18px 17px;
+      }
+      .stage {
+        border-left: 5px solid var(--teal);
+        padding-left: 14px;
+        margin: 15px 0;
+      }
+      .stage strong {
+        color: var(--navy);
+      }
+      .theory-note {
+        background: var(--lav);
+        padding: 12px 15px;
+        border-radius: 12px;
+        margin: 12px 0;
+      }
+      .button,
+      button {
+        display: inline-block;
+        border: 0;
+        border-radius: 12px;
+        padding: 11px 15px;
+        background: var(--navy);
+        color: #fff;
+        font-weight: 800;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .button.secondary,
+      button.secondary {
+        background: #e7f1f4;
+        color: var(--navy);
+        border: 1px solid #aac0ca;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 18px 0;
+      }
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tabs button[aria-selected="true"] {
+        background: var(--gold);
+        color: #263546;
+      }
+      .tab {
+        display: none;
+        margin-top: 14px;
+      }
+      .tab.active {
+        display: block;
+      }
+      .quiz button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin: 8px 0;
+        background: #edf4f6;
+        color: var(--ink);
+        border: 1px solid #afc7d0;
+      }
+      .quiz button.correct {
+        background: #dff2e7;
+        border-color: #478663;
+      }
+      .quiz button.wrong {
+        background: #fae4e1;
+        border-color: #b9655c;
+      }
+      .feedback {
+        min-height: 1.6em;
+        font-weight: 700;
+      }
+      .symbol-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 14px;
+        margin: 18px 0;
+      }
+      .symbol {
+        min-height: 145px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        border: 2px solid #7b8e99;
+        border-radius: 15px;
+        background: #fff;
+        padding: 15px;
+      }
+      .symbol-mark {
+        font-size: 3.2rem;
+        line-height: 1;
+        color: #6b4e98;
+        font-family: Georgia, serif;
+      }
+      .timeline {
+        border-left: 5px solid var(--gold);
+        padding-left: 24px;
+        margin-left: 10px;
+      }
+      .timeline article {
+        position: relative;
+        margin: 20px 0;
+      }
+      .timeline article:before {
+        content: "";
+        position: absolute;
+        left: -35px;
+        top: 0.4rem;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--gold);
+        border: 4px solid #fff;
+        box-shadow: 0 0 0 2px var(--gold);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+      }
+      th,
+      td {
+        border: 1px solid #b8cbd3;
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: #e7f1f4;
+      }
+      .activity-frame {
+        width: 100%;
+        min-height: 900px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #f4f4f4;
+      }
+      .story-wide {
+        margin: 1.1rem 0 1.5rem;
+      }
+      .story-wide img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+      }
+      .story-wide figcaption {
+        padding: 0.65rem 0.25rem 0;
+        color: #405b68;
+      }
+      .comparison-table-wrap {
+        overflow-x: auto;
+        margin: 1rem 0 1.5rem;
+      }
+      .comparison-table-wrap table {
+        min-width: 760px;
+      }
+      .life-course-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1rem;
+        margin: 1.25rem 0;
+      }
+      .life-card {
+        border: 1px solid var(--line);
+        border-top: 6px solid var(--teal);
+        border-radius: 18px;
+        background: #fff;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(24, 50, 71, 0.1);
+      }
+      .life-card img {
+        width: 100%;
+        height: 210px;
+        display: block;
+        object-fit: cover;
+      }
+      .life-card summary {
+        padding: 0.9rem 1rem;
+        color: var(--navy);
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .life-card p {
+        padding: 0 1rem 1rem;
+        margin: 0;
+      }
+      footer {
+        max-width: 1120px;
+        margin: auto;
+        padding: 0 20px 38px;
+        color: #536b79;
+      }
+      @media (max-width: 700px) {
+        main {
+          margin-top: -28px;
+        }
+        .section {
+          padding: 23px 18px;
+        }
+        .activity-frame {
+          min-height: 1180px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
+      @media print {
+        nav,
+        .actions,
+        .quiz button {
+          display: none !important;
+        }
+        body {
+          background: #fff;
+        }
+        .section {
+          box-shadow: none;
+          break-inside: auto;
+        }
+        .activity-frame {
+          display: none;
+        }
+        details {
+          break-inside: avoid;
+        }
+        details > div {
+          display: block !important;
+        }
+      }
+      /* Section Two key concepts: readable cards with definitions always visible. */
+      #socialization-terms .concept-flashcard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        align-items: stretch;
+        margin-top: 1.25rem;
+      }
+      #socialization-terms .concept-static-card {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 0.9rem;
+        align-items: start;
+        min-height: 0;
+        padding: 1rem 1.1rem;
+        border: 2px solid #285e50;
+        border-left-width: 7px;
+        border-radius: 16px;
+        background: #f5faf7;
+        box-shadow: 0 7px 18px rgba(23, 59, 47, 0.09);
+      }
+      #socialization-terms .concept-static-card.tone-1 { border-color: #b68a20; background: #fff9e8; }
+      #socialization-terms .concept-static-card.tone-2 { border-color: #b96859; background: #fff3f1; }
+      #socialization-terms .concept-static-card.tone-3 { border-color: #7c6594; background: #f7f2ff; }
+      #socialization-terms .concept-static-card .module-concept-icon {
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        margin: 0;
+        border-radius: 50%;
+        background: #fff;
+        font-size: 1.7rem;
+      }
+      #socialization-terms .concept-static-card strong {
+        display: block;
+        margin: 0.1rem 0 0.35rem;
+        color: var(--navy);
+        font-size: 1.05rem;
+        line-height: 1.3;
+      }
+      #socialization-terms .concept-static-card p {
+        display: block !important;
+        margin: 0;
+        color: #344e5e;
+        font-size: 0.94rem;
+        line-height: 1.5;
+      }
+      /* Section Two key concepts: accessible flip cards that expand for long definitions. */
+      #socialization-terms .concept-flashcard-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        align-items: start;
+      }
+      #socialization-terms .concept-flip-card {
+        appearance: none;
+        display: block;
+        width: 100%;
+        min-height: 205px;
+        padding: 0;
+        border: 0;
+        border-radius: 18px;
+        background: transparent;
+        color: var(--ink);
+        font: inherit;
+        cursor: pointer;
+      }
+      #socialization-terms .concept-card-inner,
+      #socialization-terms .concept-card-face {
+        display: flex;
+        width: 100%;
+        min-height: 205px;
+      }
+      #socialization-terms .concept-card-face {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 1.15rem;
+        border: 2px solid #285e50;
+        border-radius: 18px;
+        background: linear-gradient(145deg, #fff, #edf7f2);
+        box-shadow: 0 8px 22px rgba(23, 59, 47, 0.12);
+      }
+      #socialization-terms .concept-card-back {
+        display: none;
+        justify-content: flex-start;
+        min-height: 205px;
+        height: auto;
+        background: #173f35;
+        color: #fff;
+      }
+      #socialization-terms .concept-flip-card.is-flipped .concept-card-front { display: none; }
+      #socialization-terms .concept-flip-card.is-flipped .concept-card-back { display: flex; }
+      #socialization-terms .concept-card-face strong { font-size: 1.1rem; line-height: 1.3; text-align: center; }
+      #socialization-terms .module-concept-icon { display: block; margin: 0; font-size: 2rem; }
+      #socialization-terms .concept-card-back span { font-size: 0.94rem; line-height: 1.5; text-align: left; overflow-wrap: anywhere; }
+      #socialization-terms .concept-card-face small { text-align: center; color: #435b52; }
+      #socialization-terms .concept-card-face em { margin-top: auto; font-size: 0.78rem; font-style: normal; font-weight: 800; text-transform: uppercase; }
+      #socialization-terms .concept-card-back em { color: #d8f2e8; }
+      #socialization-terms .concept-flip-card:focus-visible { outline: 4px solid #d08b2d; outline-offset: 4px; }
+      #self .cooley-visual-process {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.15rem;
+        margin: 1.25rem 0;
+      }
+      #self .cooley-visual-process > b { display: none; }
+      #self .cooley-visual-process article {
+        position: relative;
+        overflow: hidden;
+        padding: 0 1.15rem 1.15rem;
+        border: 1px solid var(--line);
+        border-bottom: 6px solid var(--teal);
+        border-radius: 17px;
+        background: #fff;
+        box-shadow: 0 7px 20px rgba(24, 50, 71, 0.1);
+      }
+      #self .cooley-visual-process article:nth-of-type(2) { border-bottom-color: var(--gold); }
+      #self .cooley-visual-process article:nth-of-type(3) { border-bottom-color: var(--rose); }
+      #self .cooley-visual-process article:nth-of-type(4) { border-bottom-color: #7c6594; }
+      #self .cooley-visual-process img {
+        display: block;
+        width: calc(100% + 2.3rem);
+        height: 235px;
+        margin: 0 -1.15rem 1rem;
+        object-fit: cover;
+        object-position: center;
+      }
+      #self .cooley-visual-process article > span {
+        display: grid;
+        place-items: center;
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: 0.5rem;
+        border-radius: 50%;
+        background: var(--teal);
+        color: #fff;
+        font-weight: 900;
+      }
+      #self .cooley-visual-process article > strong { display: block; margin-bottom: 0.4rem; font-size: 1.08rem; }
+      #self .cooley-visual-process article > p { margin-bottom: 0; }
+      #self .reflection-branch div { display: grid; gap: 0.45rem; margin-top: 0.55rem; }
+      #self .reflection-branch div p { margin: 0; padding: 0.55rem; border-left: 4px solid var(--teal); background: #eef8f4; }
+      #self .reflection-branch div p:last-child { border-left-color: var(--rose); background: #fff0f1; }
+      #self .celebrity-self-grid { display: grid; grid-template-columns: 1fr; gap: 1.4rem; }
+      #self .celebrity-self-grid .figure { overflow: visible; margin: 0; padding: 1rem; border: 1px solid var(--line); border-radius: 18px; background: #f7f4ec; }
+      #self .celebrity-self-grid img {
+        display: block;
+        width: min(100%, 760px);
+        height: auto;
+        max-height: 520px;
+        margin: 0 auto;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 12px;
+        background: #18202c;
+      }
+      #self .celebrity-self-grid figcaption { padding: 0.9rem 0.25rem 0.15rem; }
+      #socialization-music .music-figure {
+        width: min(100%, 520px);
+        margin: 1.25rem auto;
+      }
+      #socialization-music .music-figure img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 230px;
+        object-fit: contain;
+        margin: 0 auto;
+        background: #f5f1e8;
+      }
+      @media (max-width: 680px) {
+        #socialization-terms .concept-flashcard-grid { grid-template-columns: 1fr; }
+        #self .cooley-visual-process { grid-template-columns: 1fr; }
+        #self .cooley-visual-process img { height: auto; aspect-ratio: 3 / 2; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to main content</a>
+    <header>
+      <div class="hero">
+        <div class="eyebrow">Seeing Society · Section 2</div>
+        <h1>Social Structure, Socialization, and the Life Course</h1>
+        <p class="lead">
+          How societies organize relationships and institutions, how people
+          learn their places within those arrangements, and how structure and
+          identity change across the life course.
+        </p>
+        <p class="byline">Hodgson, C., &amp; Norwood, J. (2026)</p>
+      </div>
+    </header>
+    <nav aria-label="Section navigation">
+      <div>
+        <a href="index.html">Book Home</a><a href="#journey">Eleanor</a
+        ><a href="#structure">Social Structure</a><a href="#groups">Groups</a
+        ><a href="#foundations">Socialization</a
+        ><a href="#deprivation">Isolation Cases</a><a href="#self">The Self</a
+        ><a href="#development">Development</a><a href="#agents">Agents</a
+        ><a href="#family">Family &amp; Safety</a><a href="#gender">Gender</a
+        ><a href="#education">Education</a><a href="#life-course">Life Course</a
+        ><a href="#socialization-music">Music</a
+        ><a href="#socialization-ideal">Project Slide</a
+        ><a href="ideal-society-project.html">Full Project Guide</a
+        ><a href="#next">Coming Next</a>
+      </div>
+    </nav>
+    <main id="main">
+      <section class="section">
+        <div class="section-label">Chapter guide</div>
+        <h2>What you will learn</h2>
+        <aside class="chapter-map">
+          <h3>Chapter map and legend</h3>
+          <a href="#journey">⏳ Eleanor’s era and family</a>
+          <a href="#structure">📖 Sociological content</a>
+          <a href="#socialization-music">♫ Sociology through music</a>
+          <a href="#socialization-ideal">✦ Ideal Society slide</a>
+          <a href="#socialization-terms">🔑 Key concepts</a>
+          <a href="#references">📚 References</a>
+          <a href="#socialization-careers">⌘ Career connections</a>
+          <div class="legend">
+            <span>⏳</span><span>Family story and historical era</span>
+            <span>📖</span><span>Definitions, theories, and evidence</span>
+            <span>◆</span><span>Interactive or applied practice</span>
+            <span>♫</span><span>Music, culture, and the historical era</span>
+            <span>⌘</span><span>Career connection</span>
+          </div>
+        </aside>
+        <div class="grid">
+          <article class="card">
+            <h3>Map social structure</h3>
+            <p>
+              Connect statuses, roles, groups, organizations, and institutions
+              across micro, meso, and macro levels.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>Explain socialization</h3>
+            <p>
+              Describe how people learn culture and develop a self through
+              interaction, evidence, and developmental theories.
+            </p>
+          </article>
+          <article class="card rose">
+            <h3>Analyze groups and gender</h3>
+            <p>
+              Examine how belonging, leadership, conformity, gender
+              socialization, and inequality organize everyday life.
+            </p>
+          </article>
+          <article class="card lav">
+            <h3>Examine education</h3>
+            <p>
+              Compare the intended and unintended functions of schools and how
+              expectations, credentials, tracking, and technology shape
+              opportunity.
+            </p>
+          </article>
+        </div>
+        <div class="callout">
+          <strong>Essential question:</strong> How do social structures shape
+          who we become—and how can people reproduce or change those structures
+          through everyday interaction?
+        </div>
+      </section>
+
+      <section class="section" id="journey">
+        <div class="section-label">The Eleanor story continues · 1945</div>
+        <h2>A family learns a changing world</h2>
+        <figure class="story-wide">
+          <img
+            src="images/eleanor-family-1945-socialization.webp"
+            alt="Eleanor, her daughter Ruth, and grandchildren learning together in a 1945 home with a radio, telephone, newspaper, schoolbooks, household work, and wartime community activity outside"
+          />
+          <figcaption>
+            Socialization happens through ordinary family life. Eleanor and Ruth
+            teach the children how to interpret news, complete responsibilities,
+            behave at school, respond to returning soldiers, and use new media
+            without accepting every message uncritically.
+          </figcaption>
+        </figure>
+        <div class="grid">
+          <div>
+            <p>
+              Fifty years after the journey began, Eleanor is sixty-six. Her
+              daughter Ruth is raising children in a home shaped by radio,
+              newsreels, the telephone, mass schooling, wartime separation, and
+              the social changes surrounding the end of World War II. Using
+              these technologies and institutions involves more than operating
+              them.
+            </p>
+            <p>
+              Ruth's children learn when calling is appropriate, how to evaluate
+              radio messages, whose conversations remain private, and why a
+              familiar voice may still carry misleading information. At school
+              they learn punctuality, obedience, competition, and which futures
+              adults consider respectable.
+            </p>
+            <div class="callout">
+              <strong>Past and present:</strong> Radio, cinema, and the
+              telephone extended the family’s social world in 1945. A smartphone
+              extends a child’s social world today. In both eras, technology
+              changes access, but socialization supplies the rules, meanings,
+              limits, and risks.
+            </div>
+          </div>
+          <div class="card gold">
+            <h3>Eleanor’s journal prompt</h3>
+            <p>
+              “The radio voice enters as if invited. I remind the children that
+              a voice can sound familiar without knowing us at all.”
+            </p>
+            <p>
+              <strong>Apply sociology:</strong> Which agent of socialization
+              appears here? Which norm is the family teaching? How does
+              technology alter the family’s protective role?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="structure">
+        <div class="section-label">2.1 · The architecture of social life</div>
+        <h2>Social structure: the patterns beneath everyday life</h2>
+        <p class="lead">
+          <strong>Social structure</strong> is the relatively stable pattern of
+          relationships, positions, groups, and institutions that organizes a
+          society. It does not control every choice, but it distributes
+          opportunities, expectations, and constraints before any one person
+          enters the scene.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h3>Micro level</h3>
+            <p>
+              Face-to-face interaction: a family conversation, classroom
+              exchange, or job interview.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>Meso level</h3>
+            <p>
+              Groups and organizations: schools, workplaces, congregations,
+              clubs, and online communities.
+            </p>
+          </article>
+          <article class="card rose">
+            <h3>Macro level</h3>
+            <p>
+              Large institutions and systems: education, family, economy,
+              government, religion, health care, and media.
+            </p>
+          </article>
+        </div>
+        <h3>Status and role: where a person stands and what others expect</h3>
+        <p>
+          A <strong>status</strong> is a socially recognized position a person
+          occupies. A <strong>role</strong> is the collection of behaviors and
+          obligations people expect from someone occupying that position. The
+          person and the status are not identical: Ruth remains a complex human
+          being while “mother,” “worker,” and “daughter” organize how others
+          approach her. Roles are also negotiated. A status supplies a social
+          script, but people may follow, revise, resist, or be prevented from
+          performing it.
+        </p>
+        <div class="grid story-concept-pair">
+          <figure class="figure">
+            <img src="images/status-story-1945.webp" alt="Eleanor's 1945 family illustrates ascribed status through kinship and age, achieved status through education and skilled work, and master status when strangers respond first to one visible identity" />
+            <figcaption><strong>Status answers “Where is a person located in the social structure?”</strong> Ascribed and achieved describe how a position is entered. Master status describes the position that becomes most influential in a particular interaction.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="images/roles-story-1945.webp" alt="Ruth's family illustrates a role set across home, work, and community; role strain within caregiving; role conflict between employment and family; and role exit as a veteran returns to civilian life" />
+            <figcaption><strong>Role answers “What behavior is expected?”</strong> One status can carry several roles, roles may compete, and leaving a central role requires identity work rather than a simple costume change.</figcaption>
+          </figure>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Concept</th>
+              <th>Meaning</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Status</strong></td>
+              <td>A recognized social position.</td>
+              <td>Student, parent, nurse, citizen, or teammate.</td>
+            </tr>
+            <tr>
+              <td><strong>Ascribed status</strong></td>
+              <td>A position assigned at birth or entered involuntarily.</td>
+              <td>Age category or family relationship.</td>
+            </tr>
+            <tr>
+              <td><strong>Achieved status</strong></td>
+              <td>
+                A position entered partly through action, choice, or
+                accomplishment.
+              </td>
+              <td>Graduate, employee, spouse, or elected leader.</td>
+            </tr>
+            <tr>
+              <td><strong>Master status</strong></td>
+              <td>
+                A status that strongly shapes how others identify a person.
+              </td>
+              <td>
+                An occupation, disability, race, gender, or public reputation
+                may become master status in a particular setting.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Status set</strong></td>
+              <td>All statuses held at one time.</td>
+              <td>
+                One person may be a daughter, veteran, student, and caregiver.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Role</strong></td>
+              <td>Expected behavior attached to a status.</td>
+              <td>
+                A student is expected to prepare, participate, and meet
+                deadlines.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Role set</strong></td>
+              <td>Several roles attached to one status.</td>
+              <td>
+                A teacher instructs, evaluates, mentors, reports, and
+                collaborates.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Role strain</strong></td>
+              <td>Tension among expectations within one status.</td>
+              <td>
+                A teacher must support students while also enforcing standards.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Role conflict</strong></td>
+              <td>Tension between two or more statuses.</td>
+              <td>A worker’s shift conflicts with caregiving duties.</td>
+            </tr>
+            <tr>
+              <td><strong>Role exit</strong></td>
+              <td>
+                The process of leaving a central role and rebuilding identity.
+              </td>
+              <td>Retirement, divorce, or leaving the military.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <strong>Eleanor in 1945:</strong> Ruth’s status set includes daughter,
+          mother, neighbor, and wartime citizen. When paid work, school
+          schedules, and caregiving compete, she experiences role conflict. The
+          difficulty is not merely personal; it is produced where institutions
+          intersect.
+        </div>
+        <h3>Eleanor’s family: one household, many statuses and roles</h3>
+        <div class="comparison-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Family member in 1945</th>
+                <th>Status</th>
+                <th>Related role expectations</th>
+                <th>Structural tension</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Eleanor</strong></td>
+                <td>Grandmother, mother, widow, elder</td>
+                <td>
+                  Preserve family memory, advise younger relatives, provide
+                  care, and model community traditions.
+                </td>
+                <td>
+                  Her experience carries authority, but age and gender norms may
+                  limit her public power.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Ruth</strong></td>
+                <td>Daughter, mother, employee, neighbor</td>
+                <td>
+                  Care for children, manage household needs, meet job
+                  expectations, and support community members.
+                </td>
+                <td>
+                  Paid work and caregiving create role conflict when
+                  institutions demand her time simultaneously.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>School-age child</strong></td>
+                <td>Child, student, sibling, citizen-in-training</td>
+                <td>
+                  Obey adults, learn, complete chores, help siblings, and
+                  demonstrate patriotism and good conduct.
+                </td>
+                <td>
+                  School may reward conformity while family circumstances
+                  require adult-like responsibilities.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Returning service member</strong></td>
+                <td>Veteran, family member, worker</td>
+                <td>
+                  Resume family relationships, find employment, and embody
+                  cultural expectations about strength.
+                </td>
+                <td>
+                  Resocialization may be difficult when wartime routines and
+                  identity no longer fit civilian life.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Institutions connect private lives to public patterns</h3>
+        <p>
+          A <strong>social institution</strong> is an enduring system of beliefs
+          and practices organized around a basic social need. Family organizes
+          care and kinship; education transmits knowledge and credentials; the
+          economy organizes production and exchange; government distributes
+          authority; religion organizes sacred meanings; health care responds to
+          illness. Institutions are interdependent: a school closing changes
+          family routines, work attendance, transportation, food access, and
+          community life.
+        </p>
+        <details>
+          <summary>Try it: build a structure map</summary>
+          <div>
+            <p>
+              Choose one ordinary event, such as missing a class. Identify the
+              statuses and roles involved, one group, one organization, and at
+              least two institutions. Then explain how a decision that looks
+              individual is enabled or constrained by structure.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section class="section" id="groups">
+        <div class="section-label">
+          2.2 · Societies, groups, and organizations
+        </div>
+        <h2>How cooperation changes as societies grow</h2>
+        <p>
+          Technology changes how people obtain food, organize work, store
+          information, and exercise power. These changes reshape social
+          structure, but older arrangements rarely vanish at once. That delay is
+          one form of <strong>cultural lag</strong>.
+        </p>
+        <div class="grid">
+          <figure class="card">
+            <img src="images/education-functions-story-1945.webp" alt="Eleanor’s family viewing a 1940s school scene where lessons, friendships, schedules, credentials, sorting, and workplace preparation appear together" />
+            <figcaption>School teaches more than the lesson on the board. Its intended and unintended consequences connect family life, peer culture, citizenship, and work.</figcaption>
+          </figure>
+          <figure class="card">
+            <img
+              src="images/society-hunting-gathering.jpg"
+              alt="A small community cooperating in a hunting and gathering setting"
+            />
+            <figcaption>
+              <strong>Hunting-and-gathering societies</strong> rely on mobile,
+              small groups, shared knowledge, and relatively limited material
+              accumulation.
+            </figcaption>
+          </figure>
+          <figure class="card gold">
+            <img
+              src="images/society-agricultural.jpg"
+              alt="Workers and crops in an agricultural society"
+            />
+            <figcaption>
+              <strong>Pastoral, horticultural, and agrarian societies</strong>
+              produce food surpluses, allowing permanent settlements,
+              specialization, and deeper inequality.
+            </figcaption>
+          </figure>
+          <figure class="card rose">
+            <img
+              src="images/postindustrial-microchip.jpg"
+              alt="Close view of a microchip representing information technology"
+            />
+            <figcaption>
+              <strong>Industrial and postindustrial societies</strong> organize
+              life through factories, cities, formal organizations, services,
+              data, and specialized knowledge.
+            </figcaption>
+          </figure>
+        </div>
+        <h3>A proposed next social revolution: AI and the quantum frontier</h3>
+        <figure class="story-wide">
+          <img src="images/ai-quantum-social-revolution.png" loading="lazy" width="1672" height="941" alt="A visual transition from microchip manufacturing and contemporary institutions to a society reorganized around artificial intelligence, quantum computing, education, medicine, scientific research, transportation, and changing work" />
+          <figcaption><strong>Hodgson’s proposed AI–quantum social revolution:</strong> The claim is not that one invention changes everything by itself. A social revolution occurs when connected technologies reorganize work, knowledge, authority, institutions, relationships, and everyday expectations.</figcaption>
+        </figure>
+        <div class="callout">
+          <p><strong>A theory to investigate—not a settled sociological category:</strong> Some accounts identify biotechnology as the likely successor to the information revolution. Caroll Hodgson proposes a broader possibility: society may already be entering an <strong>AI–quantum social revolution</strong>, driven by the convergence of artificial intelligence, quantum research, biotechnology, advanced sensors, and inexpensive high-quality cameras. The proposal should be evaluated by whether these technologies produce durable institutional and cultural transformation—not merely impressive products or headlines.</p>
+        </div>
+        <div class="grid">
+          <article class="card gold">
+            <h3>Artificial intelligence</h3>
+            <p>AI systems now generate language and images, assist scientific research, identify patterns, automate decisions, and alter education and work. In 2025, general-purpose AI systems reached gold-medal-level performance on International Mathematical Olympiad problems. That achievement does not make AI universally intelligent, but it illustrates a rapid expansion of tasks institutions may delegate to machines.</p>
+          </article>
+          <article class="card rose">
+            <h3>Quantum technology</h3>
+            <p>Quantum computing uses physical properties of quantum systems to perform certain specialized calculations differently from classical computers. Recent processors and algorithms have produced important experimental milestones, but useful large-scale quantum computing still faces severe error-correction, scaling, verification, and cost problems. Quantum physics is real; predictions about a near-term quantum society remain hypotheses.</p>
+          </article>
+          <article class="card lav">
+            <h3>Cameras and distributed observation</h3>
+            <p>Billions of people now carry cameras, location sensors, clocks, and network connections. This can document violence, disasters, wildlife, weather, public behavior, and unusual events that once disappeared without a record. It also produces enormous quantities of ambiguous material shaped by zoom, compression, autofocus, motion, reflections, perspective, editing, and missing metadata.</p>
+          </article>
+        </div>
+        <h3>Unexplained footage, extra dimensions, and the evidence boundary</h3>
+        <figure class="story-wide">
+          <img src="images/camera-anomaly-evidence-path.png" loading="lazy" width="1672" height="941" alt="A person records an ambiguous light while analysts compare pixels, metadata, camera angle, movement, and environmental information against possible explanations including aircraft, birds, balloons, lens effects, or insufficient data; a separate mathematical model represents theoretical extra dimensions" />
+          <figcaption><strong>Unidentified is a starting point, not a conclusion.</strong> A striking recording may remain unresolved because the available data are limited. Scientists compare independent observations, original files, metadata, sensor behavior, geometry, weather, and ordinary alternatives before advancing an extraordinary explanation.</figcaption>
+        </figure>
+        <p>Major news organizations have reported government-released images and videos of <strong>unidentified anomalous phenomena (UAP)</strong>. Some cases remain unresolved; others have later been associated with aircraft, balloons, birds, motion parallax, autofocus, vibration, compression, or other sensor effects. “Unresolved” means investigators do not yet have enough reliable information to identify an event. It does not mean the event is unexplainable, extraterrestrial, supernatural, or moving between dimensions.</p>
+        <p>Some theories in physics mathematically permit additional dimensions, and researchers have proposed experiments that could look for their predicted effects. Scientists have not established that macroscopic objects enter and leave such dimensions, nor has camera footage provided evidence of that process. A serious interdimensional hypothesis would need clear definitions, testable predictions, original high-quality data, independent sensors, reproducible measurements, and results that distinguish it from competing explanations.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Evidence level</th><th>What can responsibly be said</th><th>What remains open</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Documented</strong></td><td>AI, cameras, sensor networks, and quantum research are advancing and changing organizations.</td><td>How extensive, equal, safe, and durable their social effects will become.</td></tr>
+              <tr><td><strong>Scientifically plausible but developing</strong></td><td>Quantum technologies may transform selected forms of computing, sensing, communication, chemistry, and medicine.</td><td>Which systems will scale, when they will become practical, and who will control their benefits.</td></tr>
+              <tr><td><strong>Unresolved observation</strong></td><td>A recording may contain something investigators cannot identify from the available data.</td><td>Its cause; better evidence may resolve it or leave it unknown.</td></tr>
+              <tr><td><strong>Speculative interpretation</strong></td><td>Extra dimensions appear in some theoretical models.</td><td>Whether extra dimensions exist physically and whether any observed phenomenon is connected to them.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Sociological prediction:</strong> If AI, quantum technologies, and distributed observation reshape authority over knowledge—who can see, calculate, verify, decide, and define reality—then they may constitute more than another collection of gadgets. They may reorganize institutions and social relationships enough to become a new social revolution. During that transition, <strong>cultural lag</strong> can intensify <strong>anomie</strong>: capabilities change faster than laws, norms, education, employment, and shared explanations. Understanding the difference between evidence, uncertainty, and speculation helps people adapt without denying change or treating every unexplained event as proof of one preferred conclusion.</p>
+        <p>
+          Rapid change can weaken shared expectations and produce
+          <strong>anomie</strong>—a condition of normlessness or uncertainty
+          described by Émile Durkheim. New technology may connect millions while
+          leaving rules, protections, and values struggling to catch up.
+        </p>
+        <h3>Not every collection of people is a group</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Form</th>
+              <th>What makes it distinct</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Aggregate</strong></td>
+              <td>
+                People temporarily sharing a place without sustained
+                interaction.
+              </td>
+              <td>Passengers at a bus stop.</td>
+            </tr>
+            <tr>
+              <td><strong>Category</strong></td>
+              <td>People who share a characteristic but may never meet.</td>
+              <td>First-generation college students.</td>
+            </tr>
+            <tr>
+              <td><strong>Primary group</strong></td>
+              <td>Small, enduring, emotionally close relationships.</td>
+              <td>Family or close friends.</td>
+            </tr>
+            <tr>
+              <td><strong>Secondary group</strong></td>
+              <td>Larger, impersonal, goal-oriented relationships.</td>
+              <td>A class, committee, or workplace team.</td>
+            </tr>
+            <tr>
+              <td><strong>In-group / out-group</strong></td>
+              <td>“We” membership contrasted with people treated as “they.”</td>
+              <td>School rivalry or political identity.</td>
+            </tr>
+            <tr>
+              <td><strong>Reference group</strong></td>
+              <td>A group used to evaluate oneself or guide aspirations.</td>
+              <td>A professional community a student hopes to join.</td>
+            </tr>
+            <tr>
+              <td><strong>Social network</strong></td>
+              <td>
+                A web of ties through which information, support, influence, and
+                opportunities flow.
+              </td>
+              <td>Friends, coworkers, relatives, and online contacts.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="grid">
+          <figure class="story-wide">
+            <img src="images/groups-networks-story-1945.webp" alt="Eleanor's family illustrates an intimate primary group, a task-focused classroom group, an in-group and out-group boundary, graduates as a reference group, and a network linking family, school, church, neighborhood, and work" />
+            <figcaption>Read clockwise: the family is a primary group; the classroom committee is secondary; the club doorway creates an in-group boundary; admired graduates become a reference group; and the network shows that relationships connect people to information, help, and opportunity.</figcaption>
+          </figure>
+        </div>
+        <h3>Group size, leadership, conformity, and decision-making</h3>
+        <p>
+          Georg Simmel observed that a <strong>dyad</strong> depends on both
+          members, while a <strong>triad</strong> permits coalitions, mediation,
+          or two-against-one pressure. As groups grow, stability may increase
+          but intimacy and individual responsibility can decline. This helps
+          explain <strong>diffusion of responsibility</strong>, when each person
+          assumes someone else will act.
+        </p>
+        <figure class="story-wide">
+          <img src="images/leadership-styles-story-1945.webp" alt="The same postwar community task is led three ways: an authoritarian leader directs, a democratic leader invites shared decisions, and a laissez-faire leader leaves the group largely on its own" />
+          <figcaption><strong>Leadership style changes the interaction.</strong> Authoritarian leaders centralize decisions; democratic leaders organize participation; laissez-faire leaders provide little direction. An instrumental leader helps complete the task, while an expressive leader protects morale and relationships. One person may perform both functions.</figcaption>
+        </figure>
+        <div class="grid">
+          <article class="card gold">
+            <h3>Asch: conformity to a majority</h3>
+            <p>Solomon Asch asked participants to match the length of a line to one of three comparison lines. The correct answer was usually obvious, but confederates deliberately gave the same incorrect answer on selected trials. Many participants conformed at least once, while others remained independent.</p>
+            <p><strong>What it demonstrates:</strong> unanimity creates normative pressure—the desire not to appear different—and can make people doubt their own perception. A single ally sharply reduces the pressure because the majority is no longer unanimous.</p>
+            <p><strong>What it does not demonstrate:</strong> people are mindless or always conform. The task was artificial, participants varied, and culture and group relationships affect conformity.</p>
+          </article>
+          <article class="card rose">
+            <h3>Milgram: obedience to authority</h3>
+            <p>Stanley Milgram assigned an adult participant the role of “teacher” and instructed the person to administer what appeared to be escalating electric shocks after errors. No real shocks were delivered, but the participant believed the situation was real enough to experience conflict while an experimenter used standardized prompts.</p>
+            <p><strong>What it demonstrates:</strong> a prestigious setting, gradual escalation, divided responsibility, and direct authority can increase obedience. Variations showed obedience fell when authority was distant, peers resisted, or the learner was closer.</p>
+            <p><strong>Ethical lesson:</strong> deception and severe stress made the study controversial and helped strengthen modern protections involving informed consent, right to withdraw, risk, and debriefing.</p>
+          </article>
+        </div>
+        <figure class="story-wide">
+          <img src="images/asch-milgram-story.webp" alt="An ethical historical illustration shows adults comparing line cards in an Asch-style conformity task and an adult participant facing authority pressure at a Milgram-style laboratory console; an inset emphasizes reflection and agency" />
+          <figcaption><strong>Do not collapse the concepts:</strong> Asch primarily studied conformity to peers; Milgram primarily studied obedience to an authority. Both show situational pressure, and both also recorded resistance.</figcaption>
+        </figure>
+        <figure class="story-wide">
+          <img src="images/groupthink-story-1945.webp" alt="A civic committee first rushes toward one plan while a member suppresses doubt, then holds a healthier meeting that invites dissent, alternatives, and outside evidence" />
+          <figcaption>Irving Janis used <strong>groupthink</strong> for flawed decision-making when a cohesive group values agreement more than careful evaluation. Warning signs include self-censorship, pressure on dissenters, illusions of unanimity, and ignoring contrary evidence. Safeguards include a devil’s advocate, independent subgroups, outside experts, anonymous input, and a second-chance meeting.</figcaption>
+        </figure>
+        <details>
+          <summary>Visual challenge: redesign a risky decision</summary>
+          <div>
+            <p>
+              Imagine a school committee rushing to adopt facial-recognition
+              software. Identify authority pressure, in-group loyalty, diffusion
+              of responsibility, and possible groupthink. Add one safeguard for
+              each problem.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section class="section" id="foundations">
+        <div class="section-label">2.3</div>
+        <h2>Socialization makes social life possible</h2>
+        <p class="lead">
+          <strong>Socialization</strong> is the lifelong process through which
+          people learn culture and develop the skills, values, beliefs, roles,
+          and sense of self needed to participate in society. It is interactive:
+          people receive social messages, interpret them, respond, and sometimes
+          resist or change them.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h3>Primary socialization</h3>
+            <p>
+              Early learning, commonly within families and close caregiving
+              relationships. Language, attachment, emotional regulation, trust,
+              routines, and basic norms develop here.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>Anticipatory socialization</h3>
+            <p>
+              Practicing for a role before entering it, such as learning college
+              expectations, rehearsing for a job interview, or preparing to
+              become a parent.
+            </p>
+          </article>
+          <article class="card rose">
+            <h3>Resocialization</h3>
+            <p>
+              Learning new expectations when roles or environments change.
+              Starting college, migrating, changing careers, military training,
+              and reentering society after confinement can require
+              resocialization.
+            </p>
+          </article>
+          <article class="card lav">
+            <h3>Social control</h3>
+            <p>
+              Approval, disapproval, rewards, punishment, rules, and laws
+              encourage conformity. Informal control includes praise or
+              ridicule; formal control includes institutional policies and legal
+              sanctions.
+            </p>
+          </article>
+        </div>
+        <h3>Nature and nurture work together</h3>
+        <p>
+          Human beings arrive with biological capacities and individual
+          differences, but development requires social relationships and
+          cultural environments. A child may possess the biological capacity for
+          language, yet language develops through exposure, interaction,
+          practice, and responsive communication. Sociology examines how access
+          to these experiences varies.
+        </p>
+        <div class="callout care">
+          <strong>Language matters:</strong> Historical sources often called
+          children “wild” or “feral.” Those labels can dehumanize children who
+          experienced abuse, neglect, disability, or isolation. This chapter
+          uses the historical term only when explaining the literature and
+          centers the child’s humanity.
+        </div>
+      </section>
+
+      <section class="section" id="deprivation">
+        <div class="section-label">2.4 · Case evidence</div>
+        <h2>Feral, isolated, and institutionalized children</h2>
+        <p>
+          These categories describe different circumstances and should not be
+          treated as interchangeable. Reports about “feral children” often mix
+          documented evidence with folklore. Cases of severe isolation and
+          institutional deprivation provide stronger evidence that responsive
+          human contact, language exposure, stable caregiving, nutrition,
+          safety, and stimulation are essential to development.
+        </p>
+        <figure class="story-wide">
+          <img
+            src="images/institutional-deprivation-history.webp"
+            alt="Respectful historical scenes show Victor learning with Itard, Genie represented privately with supportive professionals, deprived institutional care contrasted with responsive caregiving in the Skeels and Dye study, a historical asylum corridor, and adults with disabilities included in community, work, learning, and relationships"
+          />
+          <figcaption>
+            These cases differ greatly. Victor and Genie were individual cases
+            with incomplete histories; Skeels and Dye compared changes in
+            children’s development when the quality of responsive social contact
+            changed. None should be treated as an ethical experiment created by
+            researchers.
+          </figcaption>
+        </figure>
+        <div class="callout care">
+          <strong>Disability is not deprivation.</strong> A child with an intellectual, developmental, sensory, communication, or physical disability may socialize and communicate differently. That does not mean the child lacks a self, relationships, preferences, or capacity for growth. Accessible education, communication supports, stable relationships, supported employment, community living, friendship, and—when the person chooses—adult partnership or marriage can expand participation. The damaging condition studied here is isolation, neglect, instability, or denial of opportunity.
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Meaning</th>
+              <th>Evidence caution</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Feral child</strong></td>
+              <td>
+                A historical label for a child alleged to have lived apart from
+                humans, sometimes with animals.
+              </td>
+              <td>
+                Many accounts are poorly documented or exaggerated. Avoid
+                assuming animal upbringing when neglect, disability, or hidden
+                abuse may better explain the evidence.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Isolated child</strong></td>
+              <td>
+                A child deprived of ordinary human interaction, language
+                exposure, movement, care, or stimulation.
+              </td>
+              <td>
+                Known cases often involve severe abuse. Researchers cannot
+                ethically create such conditions, so evidence comes from
+                naturally occurring tragedies.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Institutionalized child</strong></td>
+              <td>
+                A child raised in institutional care that may involve rotating
+                caregivers, high child-to-adult ratios, and limited responsive
+                interaction.
+              </td>
+              <td>
+                Institutions differ. Harm comes from deprivation and
+                instability, not from a building or label alone. High-quality,
+                stable care can support development.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="grid">
+          <article class="card rose">
+            <h3>Victor of Aveyron</h3>
+            <p>
+              A boy found in France around 1800 became known as Victor.
+              Physician Jean-Marc-Gaspard Itard attempted to teach him language
+              and social skills. Victor made gains in communication and daily
+              routines but did not develop fluent spoken language.
+            </p>
+            <p>
+              <strong>What the case suggests:</strong> Early social and language
+              experience matters.
+              <strong>What it cannot prove:</strong> Victor’s prior history,
+              age, disability status, and experiences remain uncertain, so no
+              single cause can explain his development.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>Genie</h3>
+            <p>
+              Authorities discovered “Genie,” a pseudonym, in California in 1970
+              after years of extreme confinement and abuse. She learned
+              vocabulary and forms of nonverbal communication after rescue, but
+              her grammatical language remained limited.
+            </p>
+            <p>
+              <strong>What the case suggests:</strong> Severe deprivation can
+              produce lasting developmental harm.
+              <strong>Ethical lesson:</strong> Her needs as a child and patient
+              sometimes conflicted with researchers’ interests, demonstrating
+              why protection, consent, continuity of care, and boundaries
+              matter.
+            </p>
+          </article>
+          <article class="card lav">
+            <h3>Institutional deprivation</h3>
+            <p>
+              Research involving children who experienced severely deprived
+              institutions found higher risks in physical growth, attachment,
+              cognition, language, and social-emotional development. Earlier
+              placement into stable family care generally predicted better
+              outcomes, while individual outcomes varied.
+            </p>
+            <p>
+              <strong>Key point:</strong> Development remains possible, but
+              timing, duration, health, quality of later care, and the child’s
+              circumstances influence recovery.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Skeels and Dye</h3>
+            <p>
+              Harold Skeels and Helen Dye studied children living in an Iowa
+              institution during the 1930s. A small group received sustained,
+              responsive interaction from older girls and women in another
+              institutional setting, while a comparison group remained in less
+              stimulating care. The children receiving greater attention showed
+              substantial developmental gains.
+            </p>
+            <p>
+              <strong>Importance:</strong> Their work challenged the belief that
+              low early test scores proved fixed incapacity and emphasized how
+              relationships and environment affect development.
+              <strong>Caution:</strong> The study was small and reflected the
+              methods and terminology of its era; it should not be read as a
+              modern randomized experiment.
+            </p>
+          </article>
+        </div>
+        <h3>Hidden at home, sent away, or supported in community</h3>
+        <p>
+          In the nineteenth and twentieth centuries, disability was often interpreted through shame, heredity, dependency, and social “fitness.” Some families kept disabled children out of public view; others were pressured or required to place children in poorhouses, asylums, training schools, residential hospitals, or large state institutions. Historical institutions differed, and some staff tried to provide education or care, but overcrowding, rotating caregivers, segregation, coercion, abuse, and extremely limited stimulation could turn institutional life into deprivation.
+        </p>
+        <p>
+          Popular accounts sometimes call a concealed domestic space a <strong>“disappointment room.”</strong> The phrase is useful for discussing family secrecy and stigma, but it is not a well-established technical category in the historical record. The documented pattern is broader: disabled or socially disapproved children could be hidden, excluded from school and community, or institutionalized under labels that treated ability as fixed and human worth as hierarchical.
+        </p>
+        <div class="grid">
+          <article class="card rose"><h3>Sanitariums, asylums, and “schools”</h3><p>These words covered different institutions and changed over time. A sanitarium was generally associated with long-term medical treatment; an asylum or state school could combine custody, treatment, training, and social control. The name alone does not reveal the quality of life inside.</p></article>
+          <article class="card gold"><h3>Why families complied</h3><p>Families faced stigma, poverty, inaccessible schools, little respite or medical support, professional pressure, and laws that excluded children. Conflict theory asks who had authority to define the child’s needs and whose costs were made invisible.</p></article>
+          <article class="card lav"><h3>From custody to inclusion</h3><p>Disability-rights organizing, family advocacy, investigative reporting, court decisions, special-education rights, community services, and self-advocacy challenged segregation. Community placement succeeds only when housing, health care, education, work, transportation, relationships, and adequate support are actually available.</p></article>
+        </div>
+        <details>
+          <summary>
+            Why are these cases called a “forbidden experiment”?
+          </summary>
+          <div>
+            <p>
+              Scientists could never ethically assign children to severe
+              isolation. Researchers therefore study tragic cases that occurred
+              without scientific control. These cases reveal possible
+              consequences but contain many confounding factors, including
+              malnutrition, physical abuse, uncertain medical histories, and
+              possible disabilities. They illustrate; they do not provide a
+              clean experiment.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Critical periods and sensitive periods</summary>
+          <div>
+            <p>
+              A <strong>critical period</strong> implies a narrow biological
+              window after which a capacity cannot develop normally. A
+              <strong>sensitive period</strong> describes a time when learning
+              is especially responsive to experience, although later growth may
+              remain possible. Genie’s case contributed to debate about language
+              timing, but one complex case cannot settle that debate.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Apply the three theoretical perspectives</summary>
+          <div>
+            <p>
+              <strong>Structural functionalism:</strong> Socialization transmits
+              culture and prepares people to perform social roles. Severe
+              deprivation disrupts both individual development and social
+              participation.
+            </p>
+            <p>
+              <strong>Conflict theory:</strong> Ask who controlled the child,
+              whose authority went unchallenged, how resources were distributed,
+              and whether institutions protected the vulnerable or benefited
+              from them.
+            </p>
+            <p>
+              <strong>Symbolic interactionism:</strong> Language, gestures,
+              labels, mirroring, play, and shared meanings build the self
+              through repeated interaction.
+            </p>
+          </div>
+        </details>
+        <div class="callout care">
+          <strong>Trauma-informed study:</strong> Focus on what social
+          conditions reveal, not sensational details. A child’s behavior in
+          survival conditions is adaptation, not entertainment and not a measure
+          of human worth.
+        </div>
+      </section>
+
+      <section class="section" id="self">
+        <div class="section-label">2.5</div>
+        <h2>The social development of the self</h2>
+        <p>The <strong>self</strong> is our awareness of who we are in relation to other people. It develops largely through social interaction: other people name us, respond to us, assign roles, communicate expectations, and provide the social mirrors through which we learn to interpret ourselves. Biology and temperament matter, but no person develops a social self in isolation.</p>
+        <div class="self-definition-grid">
+          <article><span aria-hidden="true">🧠</span><h3>Personality</h3><p>Relatively enduring patterns of thinking, feeling, and behaving. Temperament has biological influences, while experience, relationships, culture, and social conditions also shape personality.</p></article>
+          <article><span aria-hidden="true">🪞</span><h3>Self-concept</h3><p>What you think and believe about yourself: your identities, abilities, roles, traits, and answer to “Who am I?” Interaction and reflected judgments help build this picture.</p></article>
+          <article><span aria-hidden="true">💛</span><h3>Self-esteem</h3><p>How you evaluate and feel about your worth. Self-concept and self-esteem often influence one another, but they are not identical. A person may recognize exceptional ability or enormous success while still struggling with self-worth.</p></article>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Cooley’s looking-glass self</h3>
+            <p>
+              We imagine how we appear to others, imagine how they judge us, and
+              develop feelings about ourselves from that perceived judgment. The
+              “mirror” may be inaccurate because we respond to what we think
+              others think.
+            </p>
+            <p>
+              <strong>Today:</strong> Likes, comments, rankings, filters, and
+              silence can act as digital mirrors.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>Mead’s “I” and “Me”</h3>
+            <p>
+              The <strong>I</strong> is the spontaneous response; the
+              <strong>Me</strong> reflects internalized social expectations. The
+              self develops as these parts remain in conversation.
+            </p>
+            <p>
+              <strong>Today:</strong> “I want to post this” meets “How will my
+              family, friends, employer, or future self interpret it?”
+            </p>
+          </article>
+        </div>
+        <h3>Cooley’s looking-glass self: a social reflection process</h3>
+        <div class="cooley-process cooley-visual-process" aria-label="Four-step looking-glass self process">
+          <article><img src="images/cooley-1-imagine-prepare.webp" alt="A student rehearses and prepares in front of a mirror before meeting an audience" /><span>1</span><strong>Imagine and prepare</strong><p>We imagine how we appear to an audience and may rehearse, dress, edit, filter, or prepare a performance.</p></article><b aria-hidden="true">→</b>
+          <article><img src="images/cooley-2-interpret-reaction.webp" alt="The student presents while observing the audience’s expressions, applause, silence, and body language" /><span>2</span><strong>Interpret the reaction</strong><p>We notice words, expressions, applause, silence, likes, criticism, or other signals—and infer what they mean.</p></article><b aria-hidden="true">→</b>
+          <article class="reflection-branch"><img src="images/cooley-3-reflected-judgment.webp" alt="The student imagines both an approving audience and a disapproving audience and experiences different self-feelings" /><span>3</span><strong>Experience a reflected judgment</strong><div><p><em>Perceived approval</em> can enhance self-feelings.</p><p><em>Perceived disapproval</em> can diminish self-feelings.</p></div></article><b aria-hidden="true">→</b>
+          <article><img src="images/cooley-4-carry-forward.webp" alt="The student journals later as interpreted audience reactions become part of an ongoing self-image" /><span>4</span><strong>Carry it forward</strong><p>Repeated reflections may enter self-concept and self-esteem—even when our interpretation of the audience is incomplete or wrong.</p></article>
+        </div>
+        <h3>Mead’s stages of role-taking</h3>
+        <figure class="figure mead-stage-figure"><img src="images/mead-stages-imitation-play-game.webp" alt="The same child grows from imitating a caregiver on a toy phone, to pretending to be a doctor, to coordinating several roles and rules in a team game" /><figcaption><strong>Imitation → play → game:</strong> children move from copying conduct, to taking one significant other’s role, to coordinating multiple roles under shared rules. The generalized other develops as wider community expectations become internalized.</figcaption></figure>
+        <div class="mead-stage-labels" aria-label="Mead stage summary"><article><strong>Imitation</strong><span>Copy conduct before fully understanding the role.</span></article><article><strong>Play</strong><span>Take one role at a time through imagination.</span></article><article><strong>Game</strong><span>Coordinate several roles, relationships, and rules.</span></article></div>
+        <details>
+          <summary>1. Preparatory stage: imitation</summary>
+          <div>
+            <p>
+              Young children copy gestures, words, and routines without fully
+              understanding the roles behind them. Family members guide
+              development by modeling language, emotional expression,
+              cooperation, and safe behavior.
+            </p>
+            <p>
+              <strong>Real-life example:</strong> A toddler holds a block like a
+              phone after watching an adult take calls.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>2. Play stage: one role at a time</summary>
+          <div>
+            <p>
+              Children pretend to be a parent, teacher, physician, or fictional
+              character and begin viewing situations from a significant other’s
+              perspective.
+            </p>
+            <p>
+              <strong>Family role:</strong> Imaginative play lets caregivers
+              explain emotions, fairness, danger, and consequences in a form
+              children can practice.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>3. Game stage: coordinated roles</summary>
+          <div>
+            <p>
+              Children understand that several people occupy related roles
+              governed by shared rules. A player must anticipate teammates,
+              opponents, officials, and the game itself.
+            </p>
+            <p>
+              <strong>Application:</strong> Group projects require students to
+              understand their own task and how it affects everyone else.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>4. Generalized other: the wider community</summary>
+          <div>
+            <p>
+              People internalize the broader expectations of a group or society.
+              The generalized other helps a person imagine what “people,” “the
+              school,” or “the community” expects.
+            </p>
+            <p>
+              <strong>Critical question:</strong> Which community’s expectations
+              are being generalized, and who may be excluded from its definition
+              of normal?
+            </p>
+          </div>
+        </details>
+        <div class="i-me-lab" id="iMeLab"><div><span class="section-label">◆ Try Mead’s “I” and “Me”</span><h3>A selfie is an action—and a social conversation</h3><p>Imagine that you take a selfie and consider posting it. Select each thought to identify the part of the self at work.</p></div><div class="i-me-actions"><button type="button" data-ime="i">“I want to take this picture right now.”</button><button type="button" data-ime="me">“How might my friends, family, or future employer interpret it?”</button><button type="button" data-ime="both">“I might add a filter before I post it.”</button></div><p class="i-me-feedback" id="iMeFeedback" aria-live="polite">The <strong>I</strong> initiates and responds; the <strong>Me</strong> brings internalized audience expectations into the decision.</p></div>
+        <h3>Public acclaim and private self-feelings are not the same</h3>
+        <p>A large audience can produce powerful positive reflections, yet ridicule, rejection, exploitation, family conflict, or early adverse experiences may also be internalized. Sociology cannot diagnose a public figure’s private self-esteem from photographs. It can examine the feedback, roles, institutions, labels, and pressures surrounding that person.</p>
+        <div class="celebrity-self-grid">
+          <figure class="figure"><img src="images/marilyn-public-image-transformation.webp" loading="lazy" alt="An educational illustration contrasts young Norma Jeane in a dressing room with Marilyn Monroe’s carefully styled Hollywood public image" /><figcaption><strong>Norma Jeane to Marilyn Monroe:</strong> Hollywood helped construct a stage name, styling, poses, publicity, and a recognizable brand. Millions could admire the public image without knowing the private person. The visual emphasizes social presentation and branding rather than making claims about a particular medical procedure.</figcaption></figure>
+          <figure class="figure"><img src="https://i.imgur.com/vL3tp06.png" loading="lazy" alt="A six-image sequence showing Michael Jackson at ages 18, 22, 25, 35, 42, and 50" /><figcaption><strong>Michael Jackson across six ages:</strong> separate visible changes from assumptions about their causes. Childhood performance, family relationships, global fame, fans, critics, media scrutiny, appearance-based ridicule, illness, and public branding all became part of his social environment.</figcaption></figure>
+        </div>
+        <div class="callout care"><strong>Apply Cooley carefully:</strong> Monroe and Jackson demonstrate that widespread admiration does not automatically reveal private self-esteem. Positive and negative reflections can coexist, and early experiences may remain influential even after extraordinary success. These cases illustrate sociological processes; they do not allow us to read a person’s mind or reduce an entire life to childhood adversity.</div>
+        <figure class="figure historical-photo-fit">
+          <img
+            src="https://i.imgur.com/7V3vicw.jpeg"
+            alt="Historical photograph connected to the childhood case of Eunice Winstead Johns"
+          />
+          <figcaption>
+            Historical cases remind us that childhood itself is socially
+            defined. Laws, family authority, gender expectations, and ideas
+            about maturity have changed across time.
+          </figcaption>
+        </figure>
+        <div class="callout">
+          <strong>Social construction connection:</strong> A label such as
+          “mature,” “gifted,” “troublemaker,” “popular,” or “too young” changes
+          how others interact with a child. Repeated interaction can make the
+          label part of the child’s self-concept, even when the original
+          judgment was incomplete or unfair.
+        </div>
+      </section>
+
+      <section class="section" id="development">
+        <div class="section-label">2.6 · Interactive theory guide</div>
+        <h2>Development across multiple dimensions</h2>
+        <p>
+          No single theory explains the whole person. Each theorist focuses
+          attention on a different developmental question. Open any theory, then
+          open individual stages for definitions, importance, everyday
+          application, and the family’s role.
+        </p>
+        <figure class="figure">
+          <img
+            src="images/guided-development-life-course.webp"
+            alt="A child develops from infancy through adolescence while caregivers provide safety, language, play, feedback, boundaries, practice, and increasing independence"
+          />
+          <figcaption>
+            Guidance changes with development: protection and co-regulation
+            gradually expand into explanation, practice, responsibility, and
+            autonomy.
+          </figcaption>
+        </figure>
+        <figure class="story-wide">
+          <img
+            src="images/piaget-kohlberg-gilligan.webp"
+            alt="Interpretive portraits of Jean Piaget using conservation materials, Lawrence Kohlberg considering moral choices, and Carol Gilligan listening during a research conversation"
+          />
+          <figcaption>
+            <strong>Piaget</strong> studied changing cognitive structures;
+            <strong>Kohlberg</strong> studied reasoning about justice and rules;
+            <strong>Gilligan</strong> showed how research design could
+            undervalue care, relationships, and responsibility. The portraits
+            are interpretive illustrations rather than archival photographs.
+          </figcaption>
+        </figure>
+        <div class="grid">
+          <article class="card gold">
+            <h3>Urie Bronfenbrenner: ecological systems</h3>
+            <p>
+              Development occurs within nested environments: immediate
+              relationships; connections between home and school; indirect
+              settings such as a caregiver’s workplace; culture and policy; and
+              historical change. A child develops within society, not outside
+              it.
+            </p>
+            <p>
+              <strong>Family application:</strong> When a child struggles, ask
+              not only “What is wrong with the child?” but also what is
+              happening across home, school, neighborhood, work schedules,
+              healthcare, media, and policy.
+            </p>
+          </article>
+          <article class="card rose">
+            <h3>Albert Bandura: observational learning</h3>
+            <p>
+              Children learn by observing models, remembering behavior,
+              attempting it, and noticing its consequences. People are more
+              likely to imitate models they value or see rewarded.
+            </p>
+            <p>
+              <strong>Family application:</strong> Adults model conflict,
+              emotion, technology use, prejudice, consent, persistence, and
+              repair. What adults repeatedly do may teach more powerfully than
+              what they say.
+            </p>
+          </article>
+        </div>
+        <div class="theory-lens-tool" aria-labelledby="theory-lens-title">
+          <h3 id="theory-lens-title">Interactive developmental-theory lens</h3>
+          <p>
+            Select a situation to compare what different theories help the
+            family notice.
+          </p>
+          <div class="theory-situations" id="developmentTheoryButtons">
+            <button data-theory="object">Hidden toy</button>
+            <button data-theory="model">Adult yelling</button>
+            <button data-theory="school">Home–school conflict</button>
+            <button data-theory="identity">Teen identity</button>
+            <button data-theory="online">First social-media account</button>
+          </div>
+          <div
+            class="theory-result"
+            id="developmentTheoryResult"
+            role="status"
+            aria-live="polite"
+          >
+            Choose a situation to reveal several connected interpretations.
+          </div>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Development theories">
+          <button
+            role="tab"
+            aria-selected="true"
+            aria-controls="erikson"
+            id="tab-erikson"
+          >
+            Erikson</button
+          ><button
+            role="tab"
+            aria-selected="false"
+            aria-controls="piaget"
+            id="tab-piaget"
+          >
+            Piaget</button
+          ><button
+            role="tab"
+            aria-selected="false"
+            aria-controls="kohlberg"
+            id="tab-kohlberg"
+          >
+            Kohlberg &amp; Gilligan</button
+          ><button
+            role="tab"
+            aria-selected="false"
+            aria-controls="freud"
+            id="tab-freud"
+          >
+            Freud</button
+          ><button
+            role="tab"
+            aria-selected="false"
+            aria-controls="ekman"
+            id="tab-ekman"
+          >
+            Ekman
+          </button>
+        </div>
+        <div
+          id="erikson"
+          class="tab active"
+          role="tabpanel"
+          aria-labelledby="tab-erikson"
+        >
+          <h3>Erik Erikson: psychosocial development</h3>
+          <figure class="story-wide">
+            <img
+              src="images/erikson-family-life-course.webp"
+              alt="Eleanor’s family shown across the life course, from a securely held infant through childhood, adolescence, adulthood, caregiving, and reflective older age"
+            />
+            <figcaption>
+              Erikson’s theory follows social development across an entire life.
+              Eleanor’s family changes roles at every stage while relationships,
+              institutions, and historical conditions shape each challenge.
+              Open each stage below for its task, importance, family role, and
+              real-life application.
+            </figcaption>
+          </figure>
+          <p>
+            Erikson described development as a lifelong series of social crises.
+            A “crisis” means a central tension, not necessarily a catastrophe.
+            Culture, opportunity, relationships, and institutions affect how
+            people experience each stage; stages are guides rather than rigid
+            deadlines.
+          </p>
+          <details>
+            <summary>1. Trust vs. mistrust · infancy</summary>
+            <div>
+              <p>
+                <strong>Task:</strong> Learn whether caregivers and the
+                environment respond reliably to needs.
+                <strong>Importance:</strong> Consistent care supports security
+                and openness to relationships.
+                <strong>Application:</strong> Comforting, feeding, and
+                responding do not “spoil” an infant.
+                <strong>Family role:</strong> Create predictable, warm routines
+                and seek help when stress interferes with caregiving.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>2. Autonomy vs. shame and doubt · toddlerhood</summary>
+            <div>
+              <p>
+                <strong>Task:</strong> Develop controlled independence.
+                <strong>Importance:</strong> Safe choice builds confidence.
+                <strong>Application:</strong> A toddler chooses between two
+                appropriate outfits. <strong>Family role:</strong> Set limits
+                without humiliation; allow manageable choices and mistakes.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>3. Initiative vs. guilt · early childhood</summary>
+            <div>
+              <p>
+                <strong>Task:</strong> Plan, imagine, and initiate activities.
+                <strong>Importance:</strong> Purpose grows when curiosity
+                receives guidance. <strong>Application:</strong> A child invents
+                a game and assigns roles.
+                <strong>Family role:</strong> Encourage questions and play while
+                teaching how actions affect others.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>4. Industry vs. inferiority · school age</summary>
+            <div>
+              <p>
+                <strong>Task:</strong> Build competence in valued skills.
+                <strong>Importance:</strong> Feedback shapes whether effort
+                feels worthwhile. <strong>Application:</strong> A student
+                practices reading, music, sports, building, or caregiving.
+                <strong>Family role:</strong> Praise specific effort, provide
+                support, and avoid comparing children as if worth were a
+                ranking.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>5. Identity vs. role confusion · adolescence</summary>
+            <div>
+              <p>
+                <strong>Task:</strong> Explore values, relationships, work,
+                beliefs, and group memberships.
+                <strong>Importance:</strong> Identity links the private self to
+                social possibilities. <strong>Application:</strong> Online
+                spaces expand audiences and identity experiments.
+                <strong>Family role:</strong> Offer belonging and boundaries
+                while allowing age-appropriate exploration.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>6. Intimacy vs. isolation · young adulthood</summary>
+            <div>
+              <p>
+                <strong>Task:</strong> Form close, mutual relationships without
+                losing the self. <strong>Application:</strong> Friendship and
+                chosen family matter alongside romantic partnership.
+                <strong>Family role:</strong> Model consent, respect, repair,
+                communication, and healthy boundaries.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>7. Generativity vs. stagnation · middle adulthood</summary>
+            <div>
+              <p>
+                <strong>Task:</strong> Contribute to future generations through
+                parenting, mentoring, work, creativity, or community care.
+                <strong>Application:</strong> Generativity does not require
+                biological parenthood. <strong>Family role:</strong> Share
+                knowledge and care while respecting younger people’s agency.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>8. Integrity vs. despair · later adulthood</summary>
+            <div>
+              <p>
+                <strong>Task:</strong> Interpret one’s life with coherence and
+                acceptance. <strong>Application:</strong> Storytelling, repair,
+                mourning, and meaning-making can continue.
+                <strong>Family role:</strong> Include older adults in decisions,
+                preserve dignity, and support connection rather than treating
+                aging as social disappearance.
+              </p>
+            </div>
+          </details>
+        </div>
+        <div
+          id="piaget"
+          class="tab"
+          role="tabpanel"
+          aria-labelledby="tab-piaget"
+        >
+          <h3>Jean Piaget: cognitive development</h3>
+          <figure class="figure">
+            <img
+              src="images/piaget-stages.jpg"
+              alt="Course lecture visual of Piaget’s four stages of cognitive development"
+            />
+            <figcaption>
+              Piaget’s sequence helps adults adapt explanations to developing
+              reasoning, while individual development varies.
+            </figcaption>
+          </figure>
+          <p>
+            Piaget examined how children organize knowledge. Later research
+            shows more variation and competence than his original tasks
+            sometimes captured, but the framework still helps adults match
+            explanations to developing reasoning.
+          </p>
+          <details>
+            <summary>Sensorimotor · birth to about age 2</summary>
+            <div>
+              <p>
+                Learning occurs through senses and action.
+                <strong>Key development:</strong> object permanence, the
+                understanding that something continues to exist when out of
+                view. <strong>Family application:</strong> responsive talk,
+                peekaboo, safe exploration, and naming actions connect
+                experience to meaning.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Preoperational · about ages 2–7</summary>
+            <div>
+              <p>
+                Symbolic thought and language expand, while perspective-taking
+                and logical operations remain limited.
+                <strong>Application:</strong> a child may assume others see
+                exactly what the child sees. <strong>Family role:</strong> use
+                concrete explanations, stories, pictures, repetition, and calm
+                correction.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Concrete operational · about ages 7–11</summary>
+            <div>
+              <p>
+                Children reason logically about tangible situations and
+                understand conservation, classification, and multiple features.
+                <strong>Family application:</strong> involve children in
+                measuring recipes, sorting recycling, planning time, and
+                discussing concrete consequences.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Formal operational · adolescence and beyond</summary>
+            <div>
+              <p>
+                Abstract and hypothetical reasoning becomes more available,
+                although people do not use it equally in every situation.
+                <strong>Family application:</strong> discuss values, media
+                claims, long-term consequences, and alternative explanations
+                rather than demanding agreement without reasoning.
+              </p>
+            </div>
+          </details>
+        </div>
+        <div
+          id="kohlberg"
+          class="tab"
+          role="tabpanel"
+          aria-labelledby="tab-kohlberg"
+        >
+          <h3>Lawrence Kohlberg and Carol Gilligan: moral reasoning</h3>
+          <p>
+            Kohlberg studied the reasoning people use when judging moral
+            dilemmas. Gilligan argued that research centered on boys and men
+            could undervalue an <strong>ethic of care</strong> focused on
+            responsibility and relationships. Justice and care can both inform
+            moral judgment.
+          </p>
+          <details>
+            <summary>Preconventional reasoning</summary>
+            <div>
+              <p>
+                Judgments emphasize punishment, reward, and personal
+                consequences. <strong>Family role:</strong> explain why a rule
+                protects people rather than relying only on “because I said so.”
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Conventional reasoning</summary>
+            <div>
+              <p>
+                Judgments emphasize approval, duty, law, and maintaining
+                relationships or order. <strong>Application:</strong> a student
+                follows academic rules because trustworthy membership in the
+                community matters.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Postconventional reasoning</summary>
+            <div>
+              <p>
+                Judgments may evaluate laws against broader principles such as
+                rights and justice. Not everyone uses this form consistently.
+                <strong>Family role:</strong> discuss cases where laws changed
+                because people challenged injustice.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Gilligan’s care perspective</summary>
+            <div>
+              <p>
+                Moral reasoning may focus on preventing harm and sustaining
+                relationships. <strong>Application:</strong> ask both “What is
+                fair?” and “Who may be hurt, unheard, or abandoned?” Avoid
+                treating care as naturally female; gendered socialization and
+                research design influence observed differences.
+              </p>
+            </div>
+          </details>
+        </div>
+        <div id="freud" class="tab" role="tabpanel" aria-labelledby="tab-freud">
+          <h3>Sigmund Freud: personality and social restraint</h3>
+          <figure class="figure portrait">
+            <img
+              src="images/id-ego-superego.png"
+              alt="Course lecture diagram of the id, ego, and superego"
+            />
+            <figcaption>
+              A historical model of desire, mediation, and internalized social
+              control.
+            </figcaption>
+          </figure>
+          <p>
+            Many specific Freudian claims lack modern empirical support, but
+            sociology still uses his three-part model as a historical way to
+            discuss desire, social rules, and internal conflict.
+          </p>
+          <details>
+            <summary>Id</summary>
+            <div>
+              <p>Immediate drives and gratification: “I want it now.”</p>
+            </div>
+          </details>
+          <details>
+            <summary>Ego</summary>
+            <div>
+              <p>
+                Practical negotiation with reality: “How can I respond safely
+                and effectively?”
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Superego</summary>
+            <div>
+              <p>
+                Internalized rules and ideals: “What should a good person do?”
+                Families and institutions help build this moral voice, although
+                the rules taught may reproduce cultural bias and inequality.
+              </p>
+            </div>
+          </details>
+        </div>
+        <div id="ekman" class="tab" role="tabpanel" aria-labelledby="tab-ekman">
+          <h3>Paul Ekman: emotion and expression</h3>
+          <p>
+            Ekman’s cross-cultural research argued that some facial expressions
+            have broad recognition, while culture teaches
+            <strong>display rules</strong> about when, where, and how strongly
+            people should show emotion.
+          </p>
+          <details>
+            <summary>Biology and culture together</summary>
+            <div>
+              <p>
+                A capacity for emotion can have biological foundations while
+                families, peers, workplaces, and cultures teach the meanings and
+                acceptable expression of feelings.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Real-life application</summary>
+            <div>
+              <p>
+                One family may encourage open grief while another values private
+                restraint. Online communication removes many facial and vocal
+                cues, increasing the chance of misinterpretation.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Use with caution</summary>
+            <div>
+              <p>
+                A fleeting expression does not provide a reliable window into
+                guilt, honesty, or intent. Context matters, and people vary. Do
+                not use facial-expression claims to diagnose or accuse someone.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="section" id="agents">
+        <div class="section-label">2.7</div>
+        <h2>Agents of socialization</h2>
+        <figure class="story-wide">
+          <img
+            src="images/agents-socialization-then-now.webp"
+            alt="A comparison of family, school, peers, community, media, religion, and work socializing children and adults in 1945 and today"
+          />
+          <figcaption>
+            The agents remain recognizable, but their reach and relationships
+            change. In 1945, home, school, neighborhood, radio, congregation,
+            and local work were often more geographically concentrated. Today,
+            digital media can bring distant peers, workplaces, communities, and
+            competing value systems into the home continuously.
+          </figcaption>
+        </figure>
+        <div class="grid">
+          <article class="card">
+            <h3>🏠 Family</h3>
+            <p>
+              Teaches language, care, trust, identity, norms, beliefs, emotion,
+              safety, gender expectations, and class-related habits. Families
+              also interpret messages from other institutions.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>🏫 School</h3>
+            <p>
+              Provides formal curriculum and a
+              <strong>hidden curriculum</strong> of punctuality, competition,
+              cooperation, authority, schedules, and evaluation.
+            </p>
+          </article>
+          <article class="card rose">
+            <h3>🫂 Peers</h3>
+            <p>
+              Offer belonging and practice with independence. Peer groups can
+              support exploration and solidarity, but may also enforce
+              conformity through approval, exclusion, or ridicule.
+            </p>
+          </article>
+          <article class="card lav">
+            <h3>📻 Media and technology</h3>
+            <p>
+              Teach scripts for beauty, success, conflict, gender, consumption,
+              and relationships. Algorithms also shape which models and messages
+              appear repeatedly.
+            </p>
+          </article>
+          <article class="card">
+            <h3>🕯️ Religion and community</h3>
+            <p>
+              May transmit moral frameworks, rituals, identity, service,
+              authority, and belonging. Experiences differ across and within
+              traditions.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>🧰 Work</h3>
+            <p>
+              Socializes adults into occupational roles, emotional expectations,
+              dress, language, hierarchy, teamwork, and ideas about
+              professionalism.
+            </p>
+          </article>
+        </div>
+        <h3>Manifest and latent socialization</h3>
+        <p>
+          <strong>Manifest socialization</strong> is intended: a caregiver
+          directly teaches a child to look both ways before crossing.
+          <strong>Latent socialization</strong> is an unintended lesson: the
+          child notices who performs housework, whose voice ends arguments, or
+          which emotions adults permit.
+        </p>
+        <div class="callout">
+          <strong>Technology thread:</strong> A platform is both a tool and a
+          social environment. Design features such as likes, streaks, autoplay,
+          disappearing messages, recommendations, and public counts reward
+          certain behaviors and teach users what receives attention.
+        </div>
+        <h3>Agents of socialization: 1945 and today</h3>
+        <div class="comparison-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Agent</th>
+                <th>Eleanor’s family in 1945</th>
+                <th>Families today</th>
+                <th>Continuing sociological question</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Family</strong></td>
+                <td>
+                  Interprets radio news, teaches household roles, manners,
+                  safety, and obligations to kin and community.
+                </td>
+                <td>
+                  Interprets online content, negotiates privacy and screen use,
+                  and guides children through diverse identities and networks.
+                </td>
+                <td>
+                  Who provides care, authority, protection, and belonging?
+                </td>
+              </tr>
+              <tr>
+                <td><strong>School</strong></td>
+                <td>
+                  Uses age-graded classrooms, bells, textbooks, patriotism, and
+                  teacher authority.
+                </td>
+                <td>
+                  Adds digital platforms, standardized data, collaborative
+                  learning, and online communication.
+                </td>
+                <td>Which knowledge and behavior are rewarded?</td>
+              </tr>
+              <tr>
+                <td><strong>Peers</strong></td>
+                <td>
+                  Gather through neighborhoods, schools, work, clubs, worship,
+                  movies, and dances.
+                </td>
+                <td>
+                  Move between in-person groups, games, group chats, fandoms,
+                  and social platforms.
+                </td>
+                <td>How do approval and exclusion shape identity?</td>
+              </tr>
+              <tr>
+                <td><strong>Media</strong></td>
+                <td>
+                  A limited number of radio, film, newspaper, and advertising
+                  gatekeepers reach large audiences.
+                </td>
+                <td>
+                  Streaming, creators, targeted advertising, algorithms, and
+                  users all circulate messages.
+                </td>
+                <td>Who selects the repeated models people see?</td>
+              </tr>
+              <tr>
+                <td><strong>Work</strong></td>
+                <td>
+                  Apprenticeship, factory routines, military experience,
+                  offices, farms, and gendered occupations teach adult conduct.
+                </td>
+                <td>
+                  Service work, professional settings, remote teams, automation,
+                  and platform labor teach changing expectations.
+                </td>
+                <td>Whose behavior is defined as professional?</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Stereotypes are learned—and can be interrupted</h3>
+        <figure class="story-wide">
+          <img
+            src="images/stereotypes-then-now.webp"
+            alt="Eleanor's family and a contemporary community comparing simplified media stereotypes with the varied occupations, relationships, interests, and leadership roles of real people"
+          />
+          <figcaption>
+            Stereotypes compress diverse people into a simplified social image.
+            Newspapers, advertisements, radio, film, school materials, gossip,
+            television, memes, and algorithms can all repeat those images until
+            they feel like common sense.
+          </figcaption>
+        </figure>
+        <p>
+          In Eleanor’s era, stereotypes about gender, race, class, disability,
+          nationality, age, and “respectability” influenced education, work,
+          housing, citizenship, and family roles. Contemporary media may reject
+          some older stereotypes while reproducing others through casting,
+          headlines, coded language, data categories, and recommendation
+          systems. <strong>Counter-socialization</strong> occurs when families,
+          educators, peers, and communities explicitly question a stereotype,
+          supply missing histories, and provide repeated contact with people who
+          contradict the oversimplified image.
+        </p>
+      </section>
+
+      <section class="section" id="family">
+        <div class="section-label">2.8 · Guidance and protection</div>
+        <h2>The family prepares children for social life</h2>
+        <p class="lead">
+          Caregivers cannot remove every risk, but they can build the child’s
+          skills, relationships, judgment, and pathways to help. Protection
+          works best as continuing socialization rather than one frightening
+          conversation.
+        </p>
+        <figure class="figure">
+          <img
+            src="images/parenting-guidance-modern-life.webp"
+            alt="A caregiver guides a younger child and adolescent through emotional regulation, online safety, boundaries, fact-checking, and increasing independence"
+          />
+          <figcaption>
+            Protection and preparation work together: adults create safety while
+            children gradually practice judgment, boundaries, digital
+            citizenship, and responsibility.
+          </figcaption>
+        </figure>
+        <div class="grid">
+          <article class="card">
+            <h3>Model</h3>
+            <p>
+              Show respectful communication, consent, boundaries, repair after
+              mistakes, privacy, and responsible technology use.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>Teach</h3>
+            <p>
+              Use developmentally appropriate language for bodies, feelings,
+              unsafe requests, secrets, manipulation, and how advertising or
+              algorithms seek attention.
+            </p>
+          </article>
+          <article class="card rose">
+            <h3>Stay connected</h3>
+            <p>
+              Make disclosure safe. A child needs to know that asking for help
+              will bring calm support rather than automatic blame or loss of
+              every social connection.
+            </p>
+          </article>
+          <article class="card lav">
+            <h3>Supervise with growth</h3>
+            <p>
+              Use privacy settings, family media plans, age-appropriate access,
+              shared review, and gradually expanding independence. Explain the
+              reason for limits.
+            </p>
+          </article>
+        </div>
+        <div class="callout protect">
+          <strong>Online safety conversation:</strong> People may pretend to be
+          younger, build trust slowly, give gifts or attention, ask a child to
+          move to a private channel, request images, create secrecy, use
+          threats, or claim the child will get in trouble. Teach children to
+          stop contact, preserve evidence, and tell a trusted adult. Never blame
+          a child for an adult’s manipulation.
+        </div>
+        <h3>Family guidance in public-facing childhood industries</h3>
+        <figure class="story-wide">
+          <img
+            src="images/child-pageant-safeguarding.webp"
+            alt="A child on a small pageant stage looking toward a supportive caregiver who holds a checklist while adults manage lights, costumes, contracts, and cameras in the background"
+          />
+          <figcaption>
+            A child’s talent or enthusiasm never cancels an adult’s duty to
+            protect the child’s privacy, education, earnings, boundaries, and
+            right to stop.
+          </figcaption>
+        </figure>
+        <p>
+          Modeling, pageantry, acting, music, competitive sports, and online
+          content can offer creativity, friendship, discipline, and opportunity.
+          They can also place children inside adult-controlled industries where
+          attention, money, appearance, travel, and access create unequal power.
+          Support participation when it reflects the <em>child’s</em> sustained
+          interest—not a caretaker’s identity, income goal, or preference—and
+          check regularly that the child still wants to continue.
+        </p>
+        <div class="grid">
+          <article class="card"><h3>Choice and voice</h3><p>Give the child age-appropriate information, meaningful choices, permission to refuse physical contact or a performance, and a way to leave without shame.</p></article>
+          <article class="card gold"><h3>Presence and boundaries</h3><p>Know who has access, avoid isolated one-on-one situations, supervise communication and travel, and insist on clear rules for changing areas, photography, coaching, and auditions.</p></article>
+          <article class="card rose"><h3>Contracts, money, and privacy</h3><p>Review contracts independently, protect earnings, limit identifying information, and ask who owns and can redistribute a child’s image, voice, location, or data.</p></article>
+          <article class="card lav"><h3>Education and well-being</h3><p>Protect schooling, rest, friendships, medical care, and unstructured childhood. Success should never require chronic fear, pain, secrecy, dieting, humiliation, or isolation.</p></article>
+        </div>
+        <div class="callout care">
+          <strong>Do not treat a symbol as evidence by itself.</strong> Logos,
+          jewelry, doodles, and geometric shapes can have innocent meanings.
+          Respond to behavior and context: secrecy, sexual requests, coercion,
+          threats, boundary violations, or attempts to isolate a child. Report
+          suspected online child sexual exploitation to the appropriate platform
+          and the National Center for Missing &amp; Exploited Children
+          CyberTipline; contact emergency services when someone faces immediate
+          danger.
+        </div>
+        <details>
+          <summary>A family protection checklist</summary>
+          <div>
+            <ul>
+              <li>
+                Keep communication open and repeat that the child can ask for
+                help without being blamed.
+              </li>
+              <li>
+                Teach that an online contact is still a stranger until a trusted
+                adult verifies the person offline.
+              </li>
+              <li>
+                Review privacy, location sharing, contacts, games, and app
+                permissions together.
+              </li>
+              <li>
+                Explain that images can be copied even when an app says they
+                disappear.
+              </li>
+              <li>
+                Create a family code word for unusual pickup requests or urgent
+                messages.
+              </li>
+              <li>
+                Save usernames, URLs, messages, and screenshots when reporting;
+                avoid redistributing exploitative content.
+              </li>
+              <li>
+                Use the
+                <a
+                  href="https://report.cybertip.org/"
+                  target="_blank"
+                  rel="noopener"
+                  >NCMEC CyberTipline</a
+                >
+                for suspected online exploitation in the United States.
+              </li>
+            </ul>
+          </div>
+        </details>
+        <p class="small">
+          Law-enforcement agencies have documented coded symbols used by some
+          offenders, but an image or symbol alone is not proof of abuse. Families
+          should focus on behavior, context, grooming patterns, and boundary
+          violations—and involve trained investigators rather than confronting a
+          suspected offender themselves. Contemporary reporting resource:
+          <a
+            href="https://report.cybertip.org/reporting"
+            target="_blank"
+            rel="noopener"
+            >National Center for Missing &amp; Exploited Children
+            CyberTipline</a
+          >.
+        </p>
+      </section>
+
+      <section class="section" id="gender">
+        <div class="section-label">2.9 · Gender and socialization</div>
+        <h2>Society teaches meanings around sex and gender</h2>
+        <p class="lead">
+          <strong>Sex</strong> refers to biological traits, which are more
+          varied than a simple binary suggests. <strong>Gender</strong> refers
+          to the identities, roles, meanings, and expectations societies build
+          around perceived sex. <strong>Gender socialization</strong> begins
+          when people respond differently to children’s names, clothing, bodies,
+          emotions, toys, and behavior—and it continues throughout life.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h3>Family</h3>
+            <p>
+              Caregivers may assign chores, freedoms, colors, toys, emotional
+              rules, and future expectations differently. They can also
+              deliberately expand children’s choices.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>School and peers</h3>
+            <p>
+              Course tracking, sports, dress codes, praise, teasing, and
+              friendship groups reward some performances of gender and
+              discourage others.
+            </p>
+          </article>
+          <article class="card rose">
+            <h3>Media and technology</h3>
+            <p>
+              Stories, advertising, influencers, games, and recommendation
+              systems repeatedly model appearance, work, romance, power, and
+              family roles.
+            </p>
+          </article>
+          <article class="card lav">
+            <h3>Work and institutions</h3>
+            <p>
+              Hiring, pay, leave policies, occupational segregation, caregiving
+              expectations, and harassment can turn cultural beliefs into
+              unequal outcomes.
+            </p>
+          </article>
+        </div>
+        <h3>Three sociological lenses</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Lens</th>
+              <th>Central question</th>
+              <th>Gender example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Structural functionalism</strong></td>
+              <td>
+                How do patterned roles contribute to stability, and when do they
+                become dysfunctional?
+              </td>
+              <td>
+                Traditional divisions may coordinate labor, but rigid roles can
+                waste talent and limit adaptation.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Conflict and feminist theories</strong></td>
+              <td>
+                Who gains resources, authority, safety, and freedom from an
+                arrangement?
+              </td>
+              <td>
+                <strong>Patriarchy</strong> describes a system in which men as a
+                group hold disproportionate power. Feminist movements have
+                challenged exclusion in voting, education, work, health, and
+                bodily autonomy.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Symbolic interactionism</strong></td>
+              <td>
+                How is gender created and negotiated in everyday interaction?
+              </td>
+              <td>
+                People “do gender” through language, appearance, body movement,
+                tasks, and others’ reactions.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <strong>Gender as a master status:</strong> In some situations,
+          observers interpret nearly everything about a person through gender.
+          Intersectionality reminds us that gender is never experienced alone;
+          race, class, age, disability, sexuality, and other positions shape
+          both identity and inequality.
+        </div>
+        <details>
+          <summary>Apply it: audit a social message</summary>
+          <div>
+            <p>
+              Choose a toy aisle, school rule, advertisement, game, or short
+              video. What gender script appears? Who rewards it? What sanction
+              discourages alternatives? Redesign the message so it expands
+              rather than restricts possible selves.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section class="section" id="education">
+        <div class="section-label">
+          2.10 · Education as institution and agent
+        </div>
+        <h2>Schools teach content, culture, and social position</h2>
+        <p>
+          <strong>Formal education</strong> is planned instruction within an
+          organized system. Industrialization increased demand for literacy,
+          punctuality, specialized skills, and standardized credentials, helping
+          mass schooling expand. Education can increase opportunity and social
+          integration while also reproducing inequality.
+        </p>
+        <div class="grid">
+          <figure class="card">
+            <img
+              src="images/education-segregated-school.png"
+              alt="Historical schoolchildren in a segregated education setting"
+            />
+            <figcaption>
+              Access to schooling has always reflected struggles over
+              citizenship, race, gender, class, disability, and public
+              responsibility.
+            </figcaption>
+          </figure>
+          <article class="card gold">
+            <h3>Manifest functions</h3>
+            <p>
+              Intended outcomes include teaching knowledge and skills,
+              transmitting culture, preparing people for work and citizenship,
+              and awarding credentials.
+            </p>
+          </article>
+          <article class="card rose">
+            <h3>Latent functions</h3>
+            <p>
+              Unintended outcomes include friendship networks, childcare,
+              delayed entry into the labor force, relationship formation, and
+              learning how institutions operate.
+            </p>
+          </article>
+        </div>
+        <h3>What schools sort, signal, and teach</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Concept</th>
+              <th>How it works</th>
+              <th>Sociological question</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>📚 Cultural transmission</strong></td>
+              <td>
+                Schools pass language, history, practices, values, and shared
+                symbols to a new generation.
+              </td>
+              <td>Whose culture becomes official knowledge?</td>
+            </tr>
+            <tr>
+              <td><strong>🤝 Social integration</strong></td>
+              <td>
+                Students encounter common rules and people beyond their
+                household.
+              </td>
+              <td>Who experiences belonging, and who is marked as outside?</td>
+            </tr>
+            <tr>
+              <td><strong>🚪 Social placement and gatekeeping</strong></td>
+              <td>
+                Grades, tests, recommendations, and degrees channel people
+                toward opportunities.
+              </td>
+              <td>
+                Do the measures identify ability, prior advantage, or both?
+              </td>
+            </tr>
+            <tr>
+              <td><strong>🛤️ Tracking</strong></td>
+              <td>Students are placed into different instructional paths.</td>
+              <td>
+                Does placement provide support or lock expectations into unequal
+                futures?
+              </td>
+            </tr>
+            <tr>
+              <td><strong>🕰️ Hidden curriculum</strong></td>
+              <td>
+                Schedules, discipline, competition, and authority teach unstated
+                institutional lessons.
+              </td>
+              <td>
+                Which workplace and citizenship behaviors are being rehearsed?
+              </td>
+            </tr>
+            <tr>
+              <td><strong>🏭 Correspondence principle</strong></td>
+              <td>
+                School organization may mirror workplace hierarchy and
+                discipline.
+              </td>
+              <td>
+                Does education liberate learners or train them to accept unequal
+                authority?
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>The hidden curriculum: then and now</h3>
+        <figure class="story-wide">
+          <img src="images/hidden-curriculum-then-now.webp" alt="Parallel classrooms show Eleanor’s era with bells, rows, uniforms, and obedience beside a contemporary classroom with devices, collaborative work, digital monitoring, and participation expectations" />
+          <figcaption>Neither classroom teaches only academic content. Both also teach punctuality, authority, acceptable speech, competition or cooperation, technology etiquette, and whose knowledge receives attention.</figcaption>
+        </figure>
+        <p>In Eleanor’s era, rows of desks, bells, dress expectations, patriotic rituals, and unequal access could teach obedience and social rank without naming those lessons. Contemporary students may learn collaboration and digital fluency, but they may also learn that constant connectivity, surveillance, self-presentation, and rapid response are normal. The hidden curriculum is not a conspiracy; it is the collection of unstated lessons built into routines, rewards, architecture, discipline, and technology.</p>
+        <div class="grid">
+          <figure class="card">
+            <img
+              src="images/credential-society.jpg"
+              alt="Graduation cap and diploma representing educational credentials"
+            />
+            <figcaption>
+              In a <strong>credential society</strong>, degrees and certificates
+              increasingly regulate access to work—even when the credential
+              exceeds the job’s actual skill needs.
+            </figcaption>
+            <p>A credential may protect the public by demonstrating necessary training, or it may become a costly gate that screens people without improving job performance. Functionalists ask what competence it verifies; conflict theorists ask who can afford it and who benefits when requirements rise.</p>
+          </figure>
+          <figure class="card gold">
+            <div class="pygmalion-cycle" role="img" aria-label="Pygmalion effect cycle: expectation shapes treatment, treatment changes opportunity and feedback, opportunity influences performance and identity, and observed performance reinforces or challenges the expectation">
+              <span><b>1 · Expectation</b>What a teacher, manager, or group anticipates</span><i aria-hidden="true">→</i><span><b>2 · Treatment</b>Attention, warmth, difficulty, wait time, and encouragement</span><i aria-hidden="true">→</i><span><b>3 · Opportunity</b>Practice, feedback, correction, resources, and trust</span><i aria-hidden="true">→</i><span><b>4 · Performance &amp; identity</b>Behavior and self-understanding respond</span><i aria-hidden="true">↺</i><span><b>5 · Interpretation</b>The result may reinforce—or challenge—the original expectation</span>
+            </div>
+            <figcaption>
+              The <strong>Pygmalion effect</strong> shows how expectations can
+              become self-fulfilling prophecies through attention, feedback,
+              opportunity, and interpretation.
+            </figcaption>
+            <p>The cycle is social rather than magical: an expectation can alter warmth, wait time, difficulty of work, correction, and encouragement; those experiences can affect performance; the result may then appear to confirm the original belief. Expectations influence outcomes but do not determine a student’s destiny.</p>
+          </figure>
+          <article class="card lav">
+            <h3>Rist and classroom labeling</h3>
+            <p>
+              Ray Rist observed a kindergarten classroom in which children were
+              grouped early according to teachers’ judgments that were entangled
+              with perceived ability, appearance, behavior, and social class.
+              Groups then received different seating, attention, pacing, and
+              opportunities to speak. The study illustrates how a label can
+              organize later interaction until the institution begins producing
+              evidence that seems to justify its first judgment. Labeling does
+              not make outcomes inevitable, but repeated institutional reactions
+              can accumulate—and fair reassessment can interrupt the cycle.
+            </p>
+          </article>
+        </div>
+        <div class="callout">
+          <strong>Technology and cultural lag:</strong> Online classes, AI
+          tools, surveillance software, and unequal broadband access change
+          education faster than norms and policies adapt. Ask who gains
+          flexibility, who supplies data, whose work is recognized, and what
+          human relationships learning still requires.
+        </div>
+        <details>
+          <summary>Mini policy lab: move research into action</summary>
+          <div>
+            <p>
+              A district finds that one student group is placed in advanced
+              courses less often despite similar prior achievement. State a
+              hypothesis, identify evidence needed, propose one policy change,
+              and name an outcome that would show whether the change worked.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section class="section" id="life-course">
+        <div class="section-label">Interactive activity</div>
+        <h2>Socialization across the life course</h2>
+        <p>
+          Socialization continues as people enter new roles and institutions.
+          The cards now appear directly in the chapter so the images and text
+          remain available without opening another page. Select any life stage
+          to reveal its sociological explanation.
+        </p>
+        <div class="life-course-grid">
+          <details class="life-card">
+            <summary>
+              <img
+                src="images/life-course-childhood.webp"
+                alt="Illustration representing childhood"
+              /><span>Childhood · birth–12</span>
+            </summary>
+            <p>
+              Industrialization, schooling laws, developmental science, and
+              child-protection movements helped construct the modern expectation
+              that childhood should include education, care, play, guidance, and
+              protection.
+            </p>
+          </details>
+          <details class="life-card">
+            <summary>
+              <img
+                src="images/life-course-adolescence.webp"
+                alt="Illustration representing adolescence"
+              /><span>Adolescence · 13–17</span>
+            </summary>
+            <p>
+              Biology matters, but laws, schools, peer cultures, media, work
+              rules, and families organize what adolescence means and how much
+              independence young people receive.
+            </p>
+          </details>
+          <details class="life-card">
+            <summary>
+              <img
+                src="images/life-course-transition-adulthood.webp"
+                alt="Illustration representing transitional adulthood"
+              /><span>Transitional adulthood · 18–29</span>
+            </summary>
+            <p>
+              Extended education, housing costs, changing work, and delayed
+              family transitions have made movement into established adult roles
+              longer and less uniform for many people.
+            </p>
+          </details>
+          <details class="life-card">
+            <summary>
+              <img
+                src="images/life-course-early-middle.webp"
+                alt="Illustration representing early middle years"
+              /><span>Early middle years · 30–49</span>
+            </summary>
+            <p>
+              Work, caregiving, relationships, and community roles often
+              intensify. Parenthood, migration, disability, divorce, or job loss
+              may require resocialization.
+            </p>
+          </details>
+          <details class="life-card">
+            <summary>
+              <img
+                src="images/life-course-later-middle.webp"
+                alt="Illustration representing later middle years"
+              /><span>Later middle years · 50–65</span>
+            </summary>
+            <p>
+              People may reassess work, family, health, identity, and future
+              plans. Experiences vary by occupation, culture, discrimination,
+              health, and access to resources.
+            </p>
+          </details>
+          <details class="life-card">
+            <summary>
+              <img
+                src="images/life-course-older.webp"
+                alt="Illustration representing older years"
+              /><span>Older years · 65+</span>
+            </summary>
+            <p>
+              Retirement rules, medicine, family structure, and cultural beliefs
+              organize later life. Ageism can wrongly treat older adults as one
+              dependent category.
+            </p>
+          </details>
+          <details class="life-card">
+            <summary>
+              <img
+                src="images/life-course-advanced-age.webp"
+                alt="Illustration representing advanced older age"
+              /><span>Advanced older age</span>
+            </summary>
+            <p>
+              Needs and abilities remain diverse. Dignity, autonomy, accessible
+              communities, meaningful roles, care, and social connection remain
+              important at every age.
+            </p>
+          </details>
+        </div>
+        <h3>Total institutions and resocialization</h3>
+        <figure class="story-wide">
+          <img
+            src="images/total-institution-resocialization.webp"
+            alt="An adult entering a tightly scheduled institution, learning standardized routines under one authority, and later rebuilding relationships and community roles after leaving"
+          />
+          <figcaption>
+            Resocialization can involve leaving familiar identities, learning a
+            new schedule and status system, and later negotiating another change
+            when returning to community life.
+          </figcaption>
+        </figure>
+        <p>
+          Erving Goffman used <strong>total institution</strong> for a setting
+          where many parts of life occur under one authority and daily activity
+          follows a tightly managed schedule. Prisons, some military training
+          environments, some residential treatment settings, and historical
+          asylums vary greatly, but may use identity stripping and new routines
+          to produce resocialization. Sociologists ask who controls the process,
+          whether rights and dignity remain protected, and how people rebuild
+          roles after leaving.
+        </p>
+        <div class="grid">
+          <article class="card rose">
+            <h3>Identity stripping</h3>
+            <p>
+              Personal possessions, clothing, privacy, names, schedules, and
+              earlier relationships may be reduced or controlled so an
+              institutional identity becomes more important.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>New routines and sanctions</h3>
+            <p>
+              Repeated schedules, rules, surveillance, rewards, punishment, peer
+              expectations, and institutional language teach what the new
+              setting considers normal.
+            </p>
+          </article>
+          <article class="card lav">
+            <h3>Reentry is resocialization too</h3>
+            <p>
+              Leaving the institution does not simply restore an earlier life.
+              Family relationships, technology, work, laws, stigma, and the
+              person’s own identity may have changed.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">Practice</div>
+        <h2>Socialization detective</h2>
+        <div class="quiz" id="quiz">
+          <h3>
+            1. A teenager deletes a post after imagining how classmates will
+            judge it. Which concept fits best?
+          </h3>
+          <button data-answer="wrong">Resocialization</button
+          ><button data-answer="correct">Looking-glass self</button
+          ><button data-answer="wrong">Object permanence</button>
+          <p class="feedback" aria-live="polite"></p>
+          <h3>
+            2. A child learns punctuality because the school day follows bells
+            and schedules, although the lesson is not listed in the course
+            objectives.
+          </h3>
+          <button data-answer="correct">Hidden curriculum</button
+          ><button data-answer="wrong">Critical period</button
+          ><button data-answer="wrong">Id</button>
+          <p class="feedback" aria-live="polite"></p>
+          <h3>3. Which response best supports online safety?</h3>
+          <button data-answer="wrong">
+            Treat every unfamiliar symbol as proof of a crime.</button
+          ><button data-answer="wrong">
+            Remove all devices without inviting the child to explain.</button
+          ><button data-answer="correct">
+            Maintain open communication, teach warning behaviors, preserve
+            evidence, and report credible concerns.
+          </button>
+          <p class="feedback" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="section" id="next">
+        <div class="section-label">Bridge to Section Three</div>
+        <h2>Coming next: deviance and social control</h2>
+        <p>
+          The group concepts introduced here prepare us to ask who defines
+          deviance, how labels change identity, and how societies enforce norms.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h3>Group boundaries</h3>
+            <p>
+              In-groups and out-groups shape belonging, loyalty, stereotypes,
+              and whose rule-breaking receives attention. Organizations turn
+              informal judgments into records, classifications, and sanctions.
+            </p>
+          </article>
+          <article class="card gold">
+            <h3>Deviance is socially constructed</h3>
+            <p>
+              Deviance means violating a social norm, not automatically causing
+              harm or breaking law. Definitions vary by group, place, time, and
+              power. Social reactions can turn a behavior or identity into a
+              lasting label.
+            </p>
+          </article>
+          <article class="card rose">
+            <h3>Social control</h3>
+            <p>
+              Families, peers, schools, workplaces, media, medicine, religion,
+              and the legal system encourage conformity through informal and
+              formal sanctions. Conflict theorists ask whose norms become law
+              and whose behavior receives surveillance.
+            </p>
+          </article>
+        </div>
+        <div class="callout">
+          <strong>Connection:</strong> Socialization teaches the norms; groups
+          reinforce them; social control responds when people follow or violate
+          them. Section Three will examine this relationship in depth.
+        </div>
+        <p>
+          <a class="button" href="module-3-groups-deviance.html"
+            >Continue to Section Three</a
+          >
+        </p>
+      </section>
+
+      <section class="section" id="references">
+        <div class="section-label">Chapter conclusion</div>
+        <h2>What Eleanor helps us see</h2>
+        <p>
+          Eleanor’s family did not simply learn to operate a telephone. Their
+          statuses and roles were organized by family, school, work, government,
+          and media. They learned a new social world around the technology:
+          etiquette, privacy, access, danger, and responsibility. Today’s tools
+          change faster, but the process remains familiar: people construct
+          meanings, teach them through groups, embed them in institutions, and
+          pass them to the next generation.
+        </p>
+        <p>
+          Human development needs more than biology. It needs sustained
+          relationships, language, safety, opportunities to practice roles, and
+          guidance that grows with the learner. Socialization helps society
+          continue, but it can also reproduce inequality. Sociology gives us the
+          tools to decide which lessons deserve transmission and which need to
+          change.
+        </p>
+        <div class="actions">
+          <a class="button" href="index.html">Return to book home</a
+          ><button class="secondary" onclick="window.print()">
+            Print or save as PDF
+          </button>
+        </div>
+        <h3>References and further reading</h3>
+        <ul>
+          <li>
+            Asch, S. E. (1956). Studies of independence and conformity: I. A
+            minority of one against a unanimous majority.
+            <em>Psychological Monographs: General and Applied, 70</em>(9), 1–70.
+          </li>
+          <li>
+            Bandura, A. (1977). <em>Social learning theory</em>. Prentice Hall.
+          </li>
+          <li>
+            Bowles, S., &amp; Gintis, H. (1976).
+            <em>Schooling in capitalist America</em>. Basic Books.
+          </li>
+          <li>
+            Bronfenbrenner, U. (1979).
+            <em>The ecology of human development</em>. Harvard University Press.
+          </li>
+          <li>
+            Cooley, C. H. (1902). <em>Human nature and the social order</em>.
+            Charles Scribner’s Sons.
+          </li>
+          <li>
+            Curtiss, S. (1977).
+            <em>Genie: A psycholinguistic study of a modern-day “wild child”</em
+            >. Academic Press.
+          </li>
+          <li>
+            Durkheim, E. (1951). <em>Suicide: A study in sociology</em> (J. A.
+            Spaulding &amp; G. Simpson, Trans.). Free Press. (Original work
+            published 1897)
+          </li>
+          <li>
+            Janis, I. L. (1972). <em>Victims of groupthink</em>. Houghton
+            Mifflin.
+          </li>
+          <li>
+            Gilligan, C. (1982).
+            <em
+              >In a different voice: Psychological theory and women’s
+              development</em
+            >. Harvard University Press.
+          </li>
+          <li>
+            Itard, J. M. G. (1962). <em>The wild boy of Aveyron</em> (G.
+            Humphrey &amp; M. Humphrey, Trans.). Appleton-Century-Crofts.
+            (Original work published 1801)
+          </li>
+          <li>
+            Kohlberg, L. (1981).
+            <em
+              >The philosophy of moral development: Moral stages and the idea of
+              justice</em
+            >. Harper &amp; Row.
+          </li>
+          <li>
+            <em
+              >A new book shifts the narrative on Elvis and Colonel Tom
+              Parker</em
+            >. (2025, July 29). <em>Time</em>.
+            <a
+              href="https://time.com/7307618/the-colonel-and-the-king-tom-parker-elvis-presley-book/"
+              target="_blank"
+              rel="noopener"
+              >https://time.com/7307618/the-colonel-and-the-king-tom-parker-elvis-presley-book/</a
+            >
+          </li>
+          <li>
+            Mead, G. H. (1934). <em>Mind, self, and society</em>. University of
+            Chicago Press.
+          </li>
+          <li>
+            Milgram, S. (1963). Behavioral study of obedience.
+            <em>Journal of Abnormal and Social Psychology, 67</em>(4), 371–378.
+          </li>
+          <li>
+            Piaget, J. (1952). <em>The origins of intelligence in children</em>
+            (M. Cook, Trans.). International Universities Press. (Original work
+            published 1936)
+          </li>
+          <li>
+            Rist, R. C. (1970). Student social class and teacher expectations:
+            The self-fulfilling prophecy in ghetto education.
+            <em>Harvard Educational Review, 40</em>(3), 411–451.
+          </li>
+          <li>
+            Rosenthal, R., &amp; Jacobson, L. (1968).
+            <em>Pygmalion in the classroom</em>. Holt, Rinehart and Winston.
+          </li>
+          <li>
+            Simmel, G. (1950). <em>The sociology of Georg Simmel</em> (K. H.
+            Wolff, Ed. &amp; Trans.). Free Press.
+          </li>
+          <li>
+            Skeels, H. M., &amp; Dye, H. B. (1939). A study of the effects of
+            differential stimulation on mentally retarded children.
+            <em
+              >Proceedings and Addresses of the American Association on Mental
+              Deficiency, 44</em
+            >, 114–136.
+          </li>
+          <li>
+            American Sociological Association. (n.d.).
+            <a
+              href="https://www.asanet.org/wp-content/uploads/savvy/introtosociology/Documents/PersellSocializationReading37.htm"
+              target="_blank"
+              rel="noopener"
+              ><em>Socialization and the life course</em></a
+            >.
+          </li>
+          <li>Goffman, E. (1961). <em>Asylums</em>. Anchor Books.</li>
+          <li>
+            OpenStax. (2021).
+            <a
+              href="https://openstax.org/books/introduction-sociology-3e/pages/5-introduction"
+              target="_blank"
+              rel="noopener"
+              ><em>Introduction to Sociology 3e</em>, Chapter 5:
+              Socialization</a
+            >.
+          </li>
+          <li>
+            National Center for Missing &amp; Exploited Children. (n.d.).
+            <a
+              href="https://report.cybertip.org/reporting"
+              target="_blank"
+              rel="noopener"
+              ><em>CyberTipline</em></a
+            >.
+          </li>
+          <li>
+            Nelson, C. A., Fox, N. A., &amp; Zeanah, C. H. (2014).
+            <em
+              >Romania's abandoned children: Deprivation, brain development, and
+              the struggle for recovery</em
+            >. Harvard University Press.
+          </li>
+          <li>
+            All-domain Anomaly Resolution Office. (2024).
+            <a href="https://media.defense.gov/2024/Nov/14/2003583603/-1/-1/0/FY24-CONSOLIDATED-ANNUAL-REPORT-ON-UAP-508.PDF" target="_blank" rel="noopener"><em>Fiscal year 2024 consolidated annual report on unidentified anomalous phenomena</em></a>.
+          </li>
+          <li>
+            Associated Press. (2026). <a href="https://apnews.com/article/3e658d2cf3742465127c0049c872240a" target="_blank" rel="noopener">Bright lights and hot orbs: UFO files shed light on sightings but leave interpretation to the public</a>.
+          </li>
+          <li>
+            CERN. (n.d.). <a href="https://home.cern/science/physics/extra-dimensions-gravitons-and-tiny-black-holes/" target="_blank" rel="noopener"><em>Extra dimensions, gravitons, and tiny black holes</em></a>.
+          </li>
+          <li>
+            NASA. (2023). <a href="https://science.nasa.gov/wp-content/uploads/2023/09/uap-independent-study-team-final-report.pdf" target="_blank" rel="noopener"><em>Unidentified anomalous phenomena independent study team report</em></a>.
+          </li>
+          <li>
+            Reuters. (2025, July 21). <a href="https://www.reuters.com/world/asia-pacific/google-openais-ai-models-win-milestone-gold-at-global-math-competition-2025-07-21/" target="_blank" rel="noopener">Google and OpenAI’s AI models win milestone gold at global math competition</a>.
+          </li>
+          <li>
+            Reuters. (2025, October 22). <a href="https://www.reuters.com/technology/google-says-it-has-developed-landmark-quantum-computing-algorithm-2025-10-22/" target="_blank" rel="noopener">Google says it has developed landmark quantum computing algorithm</a>.
+          </li>
+        </ul>
+      </section>
+      <section class="section music-application" id="socialization-music">
+        <div class="section-label">
+          ♫ Application of sociology · Music as a cultural universal
+        </div>
+        <h2>Postwar sound: learning age, race, and belonging</h2>
+        <figure class="music-figure">
+          <img
+            src="images/music-1950s-youth-records.png"
+            alt="Teenagers and adults in a 1950s living room around a portable record player while sound bubbles evoke Black rhythm-and-blues and white rock-and-roll performers"
+          />
+          <figcaption>
+            <strong>1950s · Records, radio, and youth culture:</strong>
+            listening technology brings performers into the home and gives peers
+            a new resource for identity. The performers are era-inspired, not
+            exact portraits.
+          </figcaption>
+        </figure>
+        <p>
+          In the 1950s, records, radio, television, cars, and jukeboxes helped a
+          distinct youth market grow. Elvis Presley’s success can be studied
+          alongside the Black gospel, blues, and rhythm-and-blues traditions
+          that shaped rock and roll. The sociological question is larger than
+          whether one performer “stole” a style: how did segregated
+          institutions, record labels, broadcasting, and unequal access to
+          national audiences distribute recognition and wealth?
+        </p>
+        <h3>First listen: Big Mama Thornton’s “Hound Dog”</h3>
+        <p>
+          Willie Mae “Big Mama” Thornton recorded “Hound Dog” in 1952, and it
+          became a major rhythm-and-blues hit in 1953. Her performance provides
+          the starting point for examining how race, gender, voice, genre,
+          promotion, and access to national audiences influence whose version of
+          a song becomes most widely remembered.
+        </p>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/BmpwvxW0gW0"
+            title="Big Mama Thornton performs Hound Dog"
+            loading="lazy"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="media-note">
+          <strong>Listen and observe:</strong> notice Thornton’s vocal
+          authority, phrasing, interaction with the musicians, clothing,
+          gesture, and control of the performance. What gender and racial
+          expectations might audiences have brought to this performance?
+          Students who cannot stream the video can use the written description
+          and questions.
+        </p>
+        <div class="callout">
+          <strong>Power behind the playlist:</strong> Creating an influential
+          performance and gaining the largest commercial audience are not the
+          same social process. Record labels, radio formats, segregated markets,
+          television, promotion, and cultural expectations all affect which
+          artists receive visibility and financial rewards.
+        </div>
+        <h3>Second listen: Elvis Presley’s “Hound Dog”</h3>
+        <p>
+          Elvis Presley recorded a substantially reworked version in 1956. The
+          comparison is not simply a contest over which performance is “better.”
+          It is evidence for studying how genre, race, gender, television,
+          marketing, and access to a mass youth audience shape cultural memory.
+        </p>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/aNYWl13IWhY"
+            title="Elvis Presley performs Hound Dog"
+            loading="lazy"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="media-note">
+          <strong>Listen and observe:</strong> compare tempo, vocal delivery,
+          movement, staging, audience response, and the performer’s public
+          image. Which differences come from artistic interpretation, and which
+          become sociologically important because of the institutions carrying
+          the performance to a national audience?
+        </p>
+        <details>
+          <summary>
+            Compare the two versions: innovation, access, and memory
+          </summary>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Question</th>
+                  <th>Thornton performance</th>
+                  <th>Presley performance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Musical presentation</td>
+                  <td>
+                    How do blues phrasing, authority, and the band’s interaction
+                    shape the meaning?
+                  </td>
+                  <td>
+                    How do tempo, movement, and a rock-and-roll arrangement
+                    reshape it?
+                  </td>
+                </tr>
+                <tr>
+                  <td>Social identity</td>
+                  <td>
+                    How might expectations about a Black woman performer affect
+                    reception?
+                  </td>
+                  <td>
+                    How might expectations about a young white male performer
+                    affect reception?
+                  </td>
+                </tr>
+                <tr>
+                  <td>Institutions</td>
+                  <td>
+                    Which markets, stations, venues, and labels were available?
+                  </td>
+                  <td>
+                    How did television, national promotion, and the youth market
+                    expand reach?
+                  </td>
+                </tr>
+                <tr>
+                  <td>Collective memory</td>
+                  <td>
+                    Why might an influential earlier recording receive less
+                    recognition?
+                  </td>
+                  <td>
+                    Why did this later version become the one many audiences
+                    remember?
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <strong>Make a claim:</strong> Is this best understood as cultural
+              diffusion, unequal opportunity, appropriation, artistic
+              reinterpretation, or a combination? Support the answer with
+              evidence from both performances and the surrounding institutions.
+            </p>
+          </div>
+        </details>
+        <div class="key-example">
+          <strong>Privilege does not eliminate exploitation:</strong> Presley
+          gained access to audiences and opportunities that segregation often
+          denied Black performers, but he was also a young artist operating
+          inside powerful management, publishing, recording, film, and touring
+          systems. His long relationship with manager Colonel Tom Parker
+          included unusually large managerial shares and restrictions that
+          remain historically debated. Conflict theory therefore maps
+          relationships rather than assigning each person one permanent label:
+          Presley could benefit from racial privilege relative to Thornton while
+          possessing less contractual and institutional power than managers,
+          publishers, labels, and promoters.
+        </div>
+        <div class="music-lenses">
+          <article>
+            <h3>Socialization</h3>
+            <p>
+              Peers and mass media taught young people dress, dance, slang,
+              taste, and the boundaries of respectable behavior.
+            </p>
+          </article>
+          <article>
+            <h3>Conflict</h3>
+            <p>
+              Gatekeepers could amplify white performers while limiting the
+              reach and earnings of Black originators and performers.
+            </p>
+          </article>
+          <article>
+            <h3>Life course</h3>
+            <p>
+              A song may symbolize rebellion to adolescents, danger to parents,
+              nostalgia later in adulthood, and history to a new generation.
+            </p>
+          </article>
+        </div>
+        <details>
+          <summary>1965 bridge: Cash, Rouse, and recognition</summary>
+          <div>
+            <p>
+              Johnny Cash’s recording of “Orange Blossom Special” carried a 1938
+              song into a new media era. By locating Ervin Rouse, inviting him
+              to perform, and naming him in the album notes, Cash used celebrity
+              status to return public recognition to the songwriter. How can a
+              higher-status person act as an ally without making the story about
+              himself?
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section
+        class="section"
+        id="socialization-ideal"
+        style="background: #fbf0d2; border: 2px solid #d1ac4e"
+      >
+        <div class="section-label">Ideal Society Project · Section 2 slide</div>
+        <h2>How does your society teach people its values?</h2>
+        <p>
+          Design the social structure of your ideal society. Show how its
+          statuses, roles, groups, and institutions connect, then explain how
+          people learn expectations, develop identities, and gain access to
+          education and opportunity.
+        </p>
+        <p>
+          <strong>Possible concepts:</strong> <b>social structure</b>,
+          <b>status</b>, <b>role</b>, <b>social institution</b>,
+          <b>socialization</b>, <b>family</b>, <b>education</b>,
+          <b>peer groups</b>, <b>social networks</b>, <b>gender roles</b>,
+          <b>resocialization</b>, and <b>hidden curriculum</b>.
+        </p>
+        <ol>
+          <li>
+            Map the major institutions and explain how they depend on one
+            another.
+          </li>
+          <li>Explain which values families and other agents teach.</li>
+          <li>
+            Show how one developmental theory informs age-appropriate support.
+          </li>
+          <li>
+            Describe how people learn to use technology safely and responsibly.
+          </li>
+          <li>
+            Address guidance, belonging, protection, gender equity, educational
+            access, and the freedom to question harmful norms.
+          </li>
+        </ol>
+        <p>
+          <strong>Slide requirements:</strong> Approximately 100–150 words, at
+          least four bold concepts, one purposeful visual, and approximately 3–6
+          APA in-text citations.
+        </p>
+        <div class="actions">
+          <a class="button" href="ideal-society-examples.html#module2"
+            >View the Section Two model slide</a
+          ><a
+            class="button secondary"
+            href="ideal-society-project.html#citations"
+            >Citation help</a
+          >
+        </div>
+      </section>
+      <section class="section" id="socialization-terms">
+        <div class="section-label">Key concepts</div>
+        <h2>Terms to carry forward</h2>
+        <dl class="term-list">
+          <div class="term">
+            <dt>Socialization</dt>
+            <dd>
+              Lifelong learning of culture, roles, identity, and self through
+              interaction.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Primary socialization</dt>
+            <dd>
+              Foundational early learning through close caregivers and
+              relationships.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Anticipatory socialization</dt>
+            <dd>Practicing expectations before entering a new role.</dd>
+          </div>
+          <div class="term">
+            <dt>Resocialization</dt>
+            <dd>
+              Learning new norms and identities after a role or setting changes.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Agent of socialization</dt>
+            <dd>
+              A person, group, or institution that transmits cultural
+              expectations.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Family</dt>
+            <dd>
+              A kinship and caregiving institution and a major agent of primary
+              socialization.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>School</dt>
+            <dd>
+              An educational institution that teaches formal knowledge and an
+              informal hidden curriculum.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Peer group</dt>
+            <dd>
+              People of similar age or social standing who shape belonging,
+              identity, and norms.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Mass media</dt>
+            <dd>
+              Communication systems that distribute symbols, stories, and social
+              models to large audiences.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Religion</dt>
+            <dd>
+              An institution organized around sacred beliefs and practices that
+              may transmit identity, morality, ritual, and community.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Looking-glass self</dt>
+            <dd>
+              Self-feelings formed through imagined judgments from others.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Role-taking</dt>
+            <dd>
+              Imagining a situation from another person’s social position.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Significant other</dt>
+            <dd>
+              A specific person whose response matters strongly to the
+              developing self.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Generalized other</dt>
+            <dd>Internalized expectations of a wider group or community.</dd>
+          </div>
+          <div class="term">
+            <dt>I and Me</dt>
+            <dd>
+              Mead’s spontaneous response and the internalized social self.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Hidden curriculum</dt>
+            <dd>Unstated lessons taught through institutional routines.</dd>
+          </div>
+          <div class="term">
+            <dt>Critical period</dt>
+            <dd>
+              A proposed narrow developmental window required for a capacity.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Sensitive period</dt>
+            <dd>
+              A time when experience has especially strong developmental
+              effects.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Object permanence</dt>
+            <dd>
+              Understanding that an object continues to exist when unseen.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Identity crisis</dt>
+            <dd>
+              Erikson’s developmental challenge of forming a coherent sense of
+              self.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Display rules</dt>
+            <dd>
+              Cultural expectations for when and how emotions should be
+              expressed.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Life course</dt>
+            <dd>
+              Socially patterned stages and transitions across a lifetime.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Total institution</dt>
+            <dd>
+              A setting where one authority organizes many areas of daily life.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Stereotype</dt>
+            <dd>
+              An oversimplified belief applied to members of a social category,
+              often ignoring individual variation and social context.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Counter-socialization</dt>
+            <dd>
+              Deliberate teaching that questions or replaces previously learned
+              norms, assumptions, stereotypes, or behaviors.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Social control</dt>
+            <dd>Formal and informal processes that encourage conformity.</dd>
+          </div>
+          <div class="term">
+            <dt>Institutional deprivation</dt>
+            <dd>
+              Developmental harm associated with unstable, unresponsive, or
+              severely limited care.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Social structure</dt>
+            <dd>
+              Relatively stable patterns of relationships, positions, groups,
+              and institutions.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Status</dt>
+            <dd>
+              A recognized social position; a status may be ascribed, achieved,
+              or operate as a master status.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Status set</dt>
+            <dd>All the statuses one person holds at a given time.</dd>
+          </div>
+          <div class="term">
+            <dt>Role</dt>
+            <dd>Expected behavior attached to a status.</dd>
+          </div>
+          <div class="term">
+            <dt>Role set</dt>
+            <dd>Multiple roles attached to one status.</dd>
+          </div>
+          <div class="term">
+            <dt>Role strain</dt>
+            <dd>Tension among expectations within one status.</dd>
+          </div>
+          <div class="term">
+            <dt>Role conflict</dt>
+            <dd>
+              Tension between expectations attached to different statuses.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Role exit</dt>
+            <dd>
+              The process of leaving a central role and rebuilding identity.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Social institution</dt>
+            <dd>
+              An enduring system of practices organized around a basic social
+              need.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Aggregate</dt>
+            <dd>
+              People sharing a place without sustained interaction or group
+              identity.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Social category</dt>
+            <dd>People classified together by a shared characteristic.</dd>
+          </div>
+          <div class="term">
+            <dt>Primary group</dt>
+            <dd>
+              A small group characterized by close, enduring, personal
+              relationships.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Secondary group</dt>
+            <dd>A larger, impersonal group organized around a task or goal.</dd>
+          </div>
+          <div class="term">
+            <dt>In-group and out-group</dt>
+            <dd>
+              A group experienced as “we” and a contrasting group treated as
+              “they.”
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Reference group</dt>
+            <dd>
+              A group used as a standard for self-evaluation or aspiration.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Social network</dt>
+            <dd>
+              A web of ties through which information, resources, and influence
+              move.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Dyad and triad</dt>
+            <dd>
+              Two-person and three-person groups with different possibilities
+              for stability and coalition.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Diffusion of responsibility</dt>
+            <dd>
+              Reduced personal responsibility when others are present and
+              assumed likely to act.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Instrumental and expressive leadership</dt>
+            <dd>
+              Leadership focused respectively on completing tasks and
+              maintaining relationships.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Conformity</dt>
+            <dd>
+              Changing behavior or expressed judgment to align with group
+              expectations.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Obedience</dt>
+            <dd>Following a directive from a perceived authority.</dd>
+          </div>
+          <div class="term">
+            <dt>Groupthink</dt>
+            <dd>
+              Suppression of doubt and alternatives to preserve apparent group
+              agreement.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Anomie</dt>
+            <dd>Normlessness or uncertainty during rapid social change.</dd>
+          </div>
+          <div class="term">
+            <dt>Cultural lag</dt>
+            <dd>
+              A delay between technological or material change and the
+              adaptation of values, norms, or institutions.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>AI–quantum social revolution (proposed)</dt>
+            <dd>
+              A hypothesis that converging artificial intelligence, quantum
+              technologies, biotechnology, advanced sensors, and distributed
+              cameras may reorganize institutions and relationships enough to
+              constitute a new social revolution.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Self-concept</dt>
+            <dd>A person’s understanding and evaluation of who they are.</dd>
+          </div>
+          <div class="term">
+            <dt>Self-esteem</dt>
+            <dd>A person’s feelings and evaluation of their own worth; it is related to, but distinct from, the descriptive beliefs contained in self-concept.</dd>
+          </div>
+          <div class="term">
+            <dt>Personality</dt>
+            <dd>Relatively enduring patterns of thinking, feeling, and behaving, shaped by interacting biological and social influences.</dd>
+          </div>
+          <div class="term">
+            <dt>Psychosocial development</dt>
+            <dd>
+              Erikson’s account of identity developing through life-stage social
+              challenges.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Cognitive development</dt>
+            <dd>
+              Piaget’s account of changes in how children reason and organize
+              knowledge.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Ecological systems theory</dt>
+            <dd>
+              Bronfenbrenner’s explanation of development within connected
+              relationships, organizations, institutions, culture, and
+              historical time.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Observational learning</dt>
+            <dd>
+              Bandura’s process of learning by attending to models, remembering
+              and reproducing behavior, and observing consequences.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Moral development</dt>
+            <dd>
+              Changes in reasoning about right, wrong, rules, care, and justice
+              studied by Kohlberg and Gilligan.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Gender socialization</dt>
+            <dd>
+              The process of learning cultural meanings, behaviors, and
+              expectations associated with gender.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Social construction of gender</dt>
+            <dd>
+              The creation and maintenance of gender meanings through
+              interaction and institutions.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Gender stratification</dt>
+            <dd>
+              Unequal access to power, status, safety, and resources organized
+              around gender.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Patriarchy</dt>
+            <dd>
+              A social system in which men as a group hold disproportionate
+              authority and resources.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Formal education</dt>
+            <dd>
+              Planned instruction delivered through an organized educational
+              system.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Manifest and latent functions</dt>
+            <dd>
+              Intended, recognized consequences and unintended or less visible
+              consequences.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Cultural transmission</dt>
+            <dd>
+              The process of passing knowledge, practices, values, and symbols
+              to another generation.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Social placement and gatekeeping</dt>
+            <dd>
+              Processes that sort people and regulate access to educational or
+              occupational opportunities.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Tracking</dt>
+            <dd>
+              Placing students into differentiated instructional pathways.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Credential society</dt>
+            <dd>
+              A society in which formal qualifications increasingly regulate
+              access to occupations.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Correspondence principle</dt>
+            <dd>
+              The argument that school organization mirrors workplace hierarchy
+              and discipline.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Self-fulfilling prophecy</dt>
+            <dd>
+              An expectation that influences behavior in ways that help produce
+              the expected outcome.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Pygmalion effect</dt>
+            <dd>
+              The influence of higher expectations on treatment and performance.
+            </dd>
+          </div>
+        </dl>
+      </section>
+      <section class="section" id="socialization-careers">
+        <div class="section-label">Career connections · after the references</div>
+        <h2>Sociological thinking travels across college pathways</h2>
+        <p>This section builds transferable skills for recognizing socialization, status, roles, development, institutions, group influence, and unequal opportunity across the life course.</p>
+        <div class="table-scroll"><table class="career-matrix"><thead><tr><th>College pathway</th><th>Section benefit</th><th>At work</th></tr></thead><tbody>
+          <tr><td>🍎 Education</td><td>Recognize development, socialization, hidden curriculum, labeling, and unequal educational pathways.</td><td>Make expectations visible, support different developmental needs, and check whether tracking or labels restrict opportunity.</td></tr>
+          <tr><td>🩺 Medical and nursing</td><td>Connect life-course development, family roles, culture, institutions, and communication.</td><td>Adapt explanations and care to developmental stage, family context, disability, and the patient’s social environment.</td></tr>
+          <tr><td>🤲 Caregiving and human services</td><td>Understand family guidance, trauma, institutional deprivation, total institutions, and resocialization.</td><td>Assess safety while protecting dignity, relationships, communication, autonomy, and access to community life.</td></tr>
+          <tr><td>🧠 Counseling and behavioral health</td><td>Place identity and development within attachment, interaction, roles, family relationships, and social institutions.</td><td>Distinguish developmental or social differences from personal failure and build support across home, school, work, and community.</td></tr>
+          <tr><td>🦷 Rehabilitation and dental</td><td>See how age, ability, family socialization, status, roles, and prior experiences influence participation in care.</td><td>Use accessible communication and create realistic routines that patients and support networks can sustain.</td></tr>
+          <tr><td>🚒 Public safety</td><td>Analyze authority, obedience, social control, total institutions, family protection, and community trust.</td><td>Explain rules clearly, avoid dehumanizing labels, recognize vulnerability, and support safe reintegration.</td></tr>
+          <tr><td>🔧 Skilled trades</td><td>Recognize workplace roles, status hierarchies, occupational socialization, networks, and apprenticeship culture.</td><td>Use the ideas when entering homes, explaining options, mentoring coworkers, resolving conflict, and serving diverse customers.</td></tr>
+          <tr><td>✂️ Personal-care services</td><td>Understand identity, role performance, family influence, consent, boundaries, and life-course differences.</td><td>Use the ideas to maintain consent and boundaries, read client needs, avoid bias, and create a respectful environment.</td></tr>
+          <tr><td>🔬 STEM</td><td>Connect technology and research to development, education, socialization, privacy, access, and human diversity.</td><td>Use the ideas to ask better questions and design research, data, products, systems, and teams for real human diversity.</td></tr>
+        </tbody></table></div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        <strong>Seeing Society</strong> · Hodgson &amp; Norwood (2026) ·
+        Interactive practice does not submit a grade unless Canvas directions
+        state otherwise.
+      </p>
+    </footer>
+    <script>
+      // Keep the reading flow aligned with the chapter legend: development is
+      // followed by the life course, while application features precede review.
+      const developmentSection = document.getElementById("development");
+      const lifeCourseSection = document.getElementById("life-course");
+      if (developmentSection && lifeCourseSection)
+        developmentSection.after(lifeCourseSection);
+      const educationSection = document.getElementById("education");
+      const applicationSections = [
+        "socialization-music",
+        "socialization-ideal",
+        "socialization-terms",
+      ].map((id) => document.getElementById(id)).filter(Boolean);
+      if (educationSection && applicationSections.length)
+        educationSection.after(...applicationSections);
+
+      document.querySelectorAll('[role="tab"]').forEach((btn) =>
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll('[role="tab"]')
+            .forEach((b) => b.setAttribute("aria-selected", "false"));
+          document
+            .querySelectorAll(".tab")
+            .forEach((p) => p.classList.remove("active"));
+          btn.setAttribute("aria-selected", "true");
+          document
+            .getElementById(btn.getAttribute("aria-controls"))
+            .classList.add("active");
+        }),
+      );
+      document.querySelectorAll(".quiz button").forEach((btn) =>
+        btn.addEventListener("click", () => {
+          const group = btn.parentElement;
+          let p = btn.nextElementSibling;
+          while (p && !p.classList.contains("feedback"))
+            p = p.nextElementSibling;
+          let first = btn;
+          while (
+            first.previousElementSibling &&
+            !/^H3$/.test(first.previousElementSibling.tagName)
+          )
+            first = first.previousElementSibling;
+          let node = first;
+          while (node && node !== p) {
+            if (node.tagName === "BUTTON") {
+              node.classList.remove("correct", "wrong");
+            }
+            node = node.nextElementSibling;
+          }
+          const ok = btn.dataset.answer === "correct";
+          btn.classList.add(ok ? "correct" : "wrong");
+          p.textContent = ok
+            ? "Correct. Apply the concept to explain why."
+            : "Not quite. Try another response and compare it with the definition.";
+        }),
+      );
+      const developmentTheoryExamples = {
+        object:
+          "<strong>Piaget:</strong> Does the infant search for the hidden object, showing object permanence? <strong>Family guidance:</strong> Use safe hiding games, repetition, and language while remembering that developmental timing varies.",
+        model:
+          "<strong>Bandura:</strong> What behavior is being modeled, and what consequences follow it? <strong>Mead:</strong> What role and meaning might the child rehearse later? <strong>Family guidance:</strong> Repair the conflict aloud and model the behavior adults want copied.",
+        school:
+          "<strong>Bronfenbrenner:</strong> This is a mesosystem question because home and school are interacting. Work schedules, transportation, disability access, language, and policy may also enter through wider systems. <strong>Family guidance:</strong> Build communication across settings instead of treating the problem as the child’s alone.",
+        identity:
+          "<strong>Erikson:</strong> How is the teen exploring identity versus role confusion? <strong>Mead and Cooley:</strong> Which significant others, audiences, mirrors, and generalized expectations shape the self? <strong>Family guidance:</strong> Pair belonging and safety with age-appropriate room to explore.",
+        online:
+          "<strong>Piaget:</strong> Can the child reason about abstract and future consequences? <strong>Bandura:</strong> Which creators and peers become models? <strong>Bronfenbrenner:</strong> How do platform design, school peers, family rules, law, and culture interact? <strong>Family guidance:</strong> Practice privacy and reporting together before granting greater independence.",
+      };
+      document
+        .querySelectorAll("#developmentTheoryButtons button")
+        .forEach((button) =>
+          button.addEventListener("click", () => {
+            document
+              .querySelectorAll("#developmentTheoryButtons button")
+              .forEach((item) => item.setAttribute("aria-pressed", "false"));
+            button.setAttribute("aria-pressed", "true");
+            document.getElementById("developmentTheoryResult").innerHTML =
+              developmentTheoryExamples[button.dataset.theory];
+          }),
+        );
+    </script>
+    <script>
+      document.querySelectorAll("[data-ime]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          const feedback = document.getElementById("iMeFeedback");
+          const explanations = {
+            i: '<strong>“I”:</strong> this is the spontaneous impulse to act. The I responds before the whole social situation is fully known.',
+            me: '<strong>“Me”:</strong> this thought uses internalized expectations to imagine how significant others or a generalized audience may respond.',
+            both: '<strong>It could involve both.</strong> The I can creatively choose a filter, while the Me may guide that choice because of anticipated audience judgments. The technology itself is not automatically I or Me; the social reasoning matters.',
+          };
+          feedback.innerHTML = explanations[button.dataset.ime];
+          document.querySelectorAll("[data-ime]").forEach(function (item) {
+            item.setAttribute("aria-pressed", String(item === button));
+          });
+        });
+      });
+    </script>
+  <script src="key-concepts.js"></script></body>
+</html>
